@@ -1,0 +1,18 @@
+%backgroundColor  { background-color : #f9f4ea}
+
+%lightFont { font-weight: 100;}
+
+%flex-column {display: flex;  align-items: center; flex-direction: column; justify-content: center; }
+
+%flex-row {display: flex;  align-items: center; justify-content: center; }
+
+%mobileBackgroundColor {background-color: #f7e0b2;}
+
+
+@mixin baseTitle($userHeight) {
+margin-bottom: 23px;
+margin-right: 5%;
+height: $userHeight;
+font-size: 30px;
+font-weight: 900;
+}
