@@ -1,0 +1,79 @@
+@import '../../../assets/base.styles.scss';
+
+.desktop{
+    .wrapper{
+        background-color: #fafafa;
+        height: 265px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin-top : 87px;
+    }
+    
+    .title{
+        height: 35px;
+      margin: 0 0 24px;
+      font-size: 30px;
+      font-weight: 100;
+      text-align: center;
+    }
+    
+    .icons{
+        display: flex;
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .icons-title{
+        width: 100%;
+        justify-content: center;
+        font-size: 25.2px;
+        font-weight: 100;
+    }
+    .icon{
+        margin: 0 104px;
+    }
+    
+    .icon-name{
+        margin: 30px 34px 0 53px;
+    }
+}
+
+
+
+.mobile{
+    .wrapper{
+        background-color: #fafafa;
+        height: 134px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin-top : 95px;
+    }
+    
+    .title{
+      height: 17px;
+      margin: 16px 0 22px 0;
+      font-size: 14px;
+      text-align: center;
+    }
+    
+    .icons{
+        @extend %flex-row;
+        width: 100%;
+        justify-content: space-around;
+
+        img{
+            height: 35px;
+        }
+        .icon-name{
+            margin: 16px 0 0 0
+        }
+    }
+    
+   .icon{
+       @extend %flex-column;
+   }
+}
