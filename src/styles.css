@@ -1,0 +1,36 @@
+/* You can add global styles to this file, and also import other style files */
+html, body { height: 100%;  width: 100%;}
+body {
+     margin: 0;
+     font-family: "Roboto";
+
+}
+
+* {
+     box-sizing: border-box;
+   }
+
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+ .mat-dialog-container{
+     padding: 0 !important;
+ }
+
+ .cdk-overlay-pane{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+ }
+
+ .mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle{
+      border-color: black;
+ }
+ .mat-radio-button.mat-accent .mat-radio-inner-circle{
+      background-color: black;
+ }
+
+ .mat-button{
+     background: black;
+     color: white;
+ }
