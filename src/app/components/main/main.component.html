@@ -1,0 +1,54 @@
+<div ngClass.lt-md="mobile" ngClass.gt-sm="desktop">
+    <div class="content">
+        <div class="nav-buttons" fxHide.gt-sm>
+            <div class="button">Chefs</div>
+            <div class="button">Restaurants</div>
+        </div>
+        <p class="popular-rest">THE POPULAR RESTAURANTS IN EPICURE :</p>
+        <swiper [config]='config'>
+            <div class="card">
+                <app-card [restaurant]="'Claro'" [chef]="'Ran Shmueli'" [img_src]='"../../../assets/claro.jpg"'>
+                </app-card>
+            </div>
+            <div class="card">
+                <app-card [restaurant]='"Lumina"' [img_src]='"../../../assets/mizlala-gret-mullet-fillet.jpg"'
+                    [chef]='"Meir Adoni"'></app-card>
+            </div>
+            <div class="card">
+                <app-card [restaurant]='"Tiger Lilly"' [chef]="'Yanir Green'"
+                    [img_src]='"../../../assets/tiger-lili.jpg"'>
+                </app-card>
+            </div>
+        </swiper>
+        <p class="all-restaurants" fxHide.lt-md>All Restaurants <img src="assets/all-restaurants-arrows.svg"></p>
+        <p class="signature-dish">SIGNATURE DISH OF :</p>
+        <swiper [config]='config'>
+            <div class="card">
+                <p class="title">Tiger Lilly</p>
+                <app-card [restaurant]="'Pad Ki Mao'"
+                    [chef]="'Shrimps, Glass Noodles, Kemiri Nuts, Shallots,Lemon Grass, Magic Chili Brown Coconut'"
+                    [img_src]='"../../../assets/rectangle1.jpg"' [icon]='"assets/group-2.svg"' [price]="'88'">
+                </app-card>
+            </div>
+            <div class="card">
+                <p class="title">Kab Kem</p>
+                <app-card [restaurant]='"Garbanzo Frito"' [img_src]='"../../../assets/rectangle2.jpg"'
+                    [chef]='"Polenta fingers, veal cheek, magic chili cured lemon cream, yellow laksa"' [price]="'88'">
+                </app-card>
+            </div>
+            <div class="card">
+                <p class="title">Popina</p>
+                <app-card [restaurant]='"Smoked Pizza"'
+                    [chef]="'Basil dough, cashew butter, demi-glace, bison & radish'"
+                    [img_src]='"../../../assets/rectangle.jpg"' [price]="'88'" [icon]='"assets/group-7-copy.svg"'>
+                </app-card>
+            </div>
+        </swiper>
+    </div>
+    <app-icon-meaning></app-icon-meaning>
+    <div class="content">
+        <app-chef-of-the-week></app-chef-of-the-week>
+    </div>
+    <app-about></app-about>
+    <app-footer></app-footer>
+</div>

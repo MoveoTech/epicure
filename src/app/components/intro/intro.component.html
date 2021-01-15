@@ -1,0 +1,19 @@
+<div ngClass.lt-md="mobile" ngClass.gt-sm="desktop">
+    <div class="wrapper">
+        <div class="content">
+            <p class="description">Epicure works with the top chef restaurants in Tel Aviv</p>
+            <form [formGroup]='restForm'>
+                <input matInput class="Search-Field" type="text" id="search" name="search"
+                    placeholder="Search for restaurants cuisine, chef" [matAutocomplete]="autoGroup"
+                    formControlName="restaurant">
+                <mat-autocomplete #autoGroup="matAutocomplete">
+                    <mat-optgroup *ngFor="let group of restOptions | async" [label]="group.option">
+                        <mat-option *ngFor="let name of group.names" [value]="name">
+                            {{name}}
+                        </mat-option>
+                    </mat-optgroup>
+                </mat-autocomplete>
+            </form>
+        </div>
+    </div>
+</div>

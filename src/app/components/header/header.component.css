@@ -1,0 +1,193 @@
+.desktop .Restaurants, .desktop .Chefs, .desktop input::-webkit-input-placeholder, .mobile .Restaurants, .mobile .Chefs {
+  font-weight: 100;
+}
+
+.desktop .Restaurants, .desktop .Chefs, .desktop input:-ms-input-placeholder, .mobile .Restaurants, .mobile .Chefs {
+  font-weight: 100;
+}
+
+.desktop .Restaurants, .desktop .Chefs, .desktop input::-ms-input-placeholder, .mobile .Restaurants, .mobile .Chefs {
+  font-weight: 100;
+}
+
+.desktop .Restaurants, .desktop .Chefs, .desktop input::placeholder, .mobile .Restaurants, .mobile .Chefs {
+  font-weight: 100;
+}
+
+.desktop .wrapper {
+  width: 100%;
+  height: 53px;
+  padding: 14px 123px 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.desktop .wrapper .icons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.desktop .Logo {
+  height: 33px;
+  margin: 0 0 1px 0;
+}
+
+.desktop .epicure {
+  height: 32px;
+  margin: 6px 31px 1px 15px;
+  font-size: 27px;
+  font-weight: 100;
+}
+
+.desktop .Restaurants {
+  height: 21px;
+  margin: 7px 28px 6px 0px;
+  font-size: 18px;
+}
+
+.desktop .Chefs {
+  height: 21px;
+  margin: 7px 292px 6px 0;
+  font-size: 18px;
+}
+
+.desktop input[type="text"] {
+  min-width: 362px;
+  height: 34px;
+  margin: 0;
+  padding: 7px 13px 5px 16px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  border-radius: 4px;
+  border: solid 0.5px gray;
+  background-color: rgba(255, 255, 255, 0.11);
+}
+
+.desktop input::-webkit-input-placeholder {
+  width: 301px;
+  height: 21px;
+  margin: 0 63px 1px 0;
+  opacity: 0.8;
+  font-size: 18px;
+}
+
+.desktop input:-ms-input-placeholder {
+  width: 301px;
+  height: 21px;
+  margin: 0 63px 1px 0;
+  opacity: 0.8;
+  font-size: 18px;
+}
+
+.desktop input::-ms-input-placeholder {
+  width: 301px;
+  height: 21px;
+  margin: 0 63px 1px 0;
+  opacity: 0.8;
+  font-size: 18px;
+}
+
+.desktop input::placeholder {
+  width: 301px;
+  height: 21px;
+  margin: 0 63px 1px 0;
+  opacity: 0.8;
+  font-size: 18px;
+}
+
+.desktop input#search {
+  background: url("../../../assets/search-icon.svg");
+  background-size: 22px 22px;
+  background-position: 97%;
+  background-repeat: no-repeat;
+  text-indent: 20px;
+}
+
+.desktop input#search:focus {
+  background-image: none;
+  text-indent: 0;
+}
+
+.desktop .User-icon {
+  height: 23px;
+  margin: 7px 28px 4px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.desktop .Bag-icon {
+  height: 22px;
+  margin: 7px 0 5px 0px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.mobile .wrapper {
+  width: 100%;
+  height: 53px;
+  padding: 0 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.mobile .wrapper .icons {
+  width: 30%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.mobile .Logo {
+  height: 33px;
+  margin: 0 0 1px 0;
+}
+
+.mobile .epicure {
+  height: 32px;
+  margin: 6px 31px 1px 15px;
+  font-size: 27px;
+  font-weight: 100;
+}
+
+.mobile .Restaurants {
+  height: 21px;
+  margin: 7px 28px 6px 0px;
+  font-size: 18px;
+}
+
+.mobile .Chefs {
+  height: 21px;
+  margin: 7px 292px 6px 0;
+  font-size: 18px;
+}
+
+.mobile input {
+  display: none;
+}
+
+.mobile .Bag-icon {
+  height: 22px;
+  margin: 7px 0 5px 0px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+/*# sourceMappingURL=header.component.css.map */

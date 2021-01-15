@@ -1,0 +1,134 @@
+.mobile .card, .mobile .details, .mobile .priceContent {
+  background-color: #f7e0b2;
+}
+
+.desktop .card {
+  width: 360px;
+  background-color: #f9f4ea;
+}
+
+.desktop .card:hover {
+  cursor: pointer;
+}
+
+.desktop .details {
+  background-color: #f9f4ea;
+  text-align: center;
+}
+
+.desktop .restaurant {
+  font-size: 40px;
+  height: 47px;
+  margin: 25px 0 0 0;
+}
+
+.desktop .chef {
+  font-size: 25px;
+  font-weight: 100;
+  height: 70px;
+  margin: 30px 0 0 0;
+}
+
+.desktop .line {
+  width: 112px;
+  height: 1px;
+  border: solid 0.5px #979797;
+  margin: 0px 10px;
+}
+
+.desktop .priceContent {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: #f9f4ea;
+  height: 110px;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.desktop .price {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.mobile .card {
+  width: 100%;
+}
+
+.mobile .card img {
+  width: 100%;
+}
+
+.mobile .card:hover {
+  cursor: pointer;
+}
+
+.mobile .details {
+  text-align: center;
+}
+
+.mobile .restaurant {
+  font-size: 27.6px;
+  height: 40px;
+  margin: 25px 0 0 0;
+}
+
+.mobile .chef {
+  font-size: 17.3px;
+  font-weight: 100;
+  padding: 0px 7px;
+  height: 70px;
+  margin: 30px 0 0 0;
+}
+
+.mobile .line {
+  width: 76px;
+  height: 1px;
+  border: solid 0.5px #979797;
+  margin: 0px 10px;
+}
+
+.mobile .priceContent {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-top: 20px;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  height: 70px;
+}
+
+.mobile .priceContent img {
+  margin: 0;
+  padding: 0px 0 10px 0px;
+}
+
+.mobile .price {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+/*# sourceMappingURL=card.component.css.map */
