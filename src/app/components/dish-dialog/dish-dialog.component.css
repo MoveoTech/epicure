@@ -1,0 +1,266 @@
+.desktop .wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 423px;
+}
+
+.desktop .content {
+  width: 50%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 100%;
+}
+
+.desktop .img {
+  width: 100%;
+  height: 292px;
+}
+
+.desktop .head {
+  text-align: center;
+  height: 212px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.desktop .title {
+  font-size: 35px;
+  letter-spacing: 2.33px;
+  text-align: center;
+  margin: 27px 0 0 0;
+}
+
+.desktop .description {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.desktop .line {
+  width: 112px;
+  height: 1px;
+  border: solid 0.5px #979797;
+  margin: 0px 10px;
+}
+
+.desktop .price {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.desktop .side-dish {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 50px 0 0 0;
+}
+
+.desktop .side-title {
+  font-size: 20.4px;
+  font-weight: 400;
+  border-bottom: 1px solid rgba(222, 146, 0, 0.9);
+}
+
+.desktop .sides {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.desktop .quantity {
+  margin: 23px 0 0 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 30px;
+  font-weight: 400;
+  width: 70%;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.desktop .action:hover {
+  cursor: pointer;
+}
+
+.desktop .quantity > p {
+  margin: 0;
+}
+
+.desktop #button {
+  margin: 67px 0 35px 0;
+  width: 40%;
+}
+
+.mobile .wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.mobile .content {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 100%;
+}
+
+.mobile .img {
+  width: 100%;
+}
+
+.mobile .head {
+  text-align: center;
+  height: 212px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 70%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.mobile .title {
+  font-size: 35px;
+  letter-spacing: 2.33px;
+  text-align: center;
+  margin: 27px 0 0 0;
+}
+
+.mobile .description {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.mobile .line {
+  width: 112px;
+  height: 1px;
+  border: solid 0.5px #979797;
+  margin: 0px 10px;
+}
+
+.mobile .price {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.mobile .side-dish {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 50px 0 0 0;
+}
+
+.mobile .side-title {
+  font-size: 20.4px;
+  font-weight: 400;
+  border-bottom: 1px solid rgba(222, 146, 0, 0.9);
+}
+
+.mobile .sides {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.mobile .quantity {
+  margin: 23px 0 0 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 30px;
+  font-weight: 400;
+  width: 70%;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.mobile .action:hover {
+  cursor: pointer;
+}
+
+.mobile .quantity > p {
+  margin: 0;
+}
+
+.mobile #button {
+  margin: 67px 0 35px 0;
+  width: 40%;
+}
+/*# sourceMappingURL=dish-dialog.component.css.map */

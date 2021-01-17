@@ -1,0 +1,186 @@
+.desktop .wrapper {
+  margin-top: 100px;
+  text-align: center;
+}
+
+.desktop .chef-week {
+  height: 37px;
+  font-size: 30px;
+  font-weight: 100;
+}
+
+.desktop .content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  width: 100%;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.desktop .description {
+  width: 47%;
+  height: 292px;
+  font-size: 25px;
+  font-weight: 100;
+  margin-top: 0;
+  text-align: left;
+  margin-right: 10px;
+  line-height: 1.2;
+}
+
+.desktop .name {
+  height: 78px;
+  background-color: rgba(255, 255, 255, 0.8);
+  font-size: 40px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.desktop .chefs-restaurant {
+  height: 30px;
+  font-size: 30px;
+  font-weight: 100;
+  margin: 59px 0 20px 0;
+}
+
+.desktop .cards {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.desktop .card {
+  margin: 0 10px;
+}
+
+.desktop .pic {
+  background: url("../../../assets/untitled-1.jpg");
+  width: 338px;
+  position: relative;
+}
+
+.mobile .wrapper {
+  margin-top: 100px;
+  text-align: center;
+}
+
+.mobile .chef-week {
+  height: 17px;
+  font-size: 14px;
+  font-weight: 100;
+}
+
+.mobile .content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  width: 100%;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.mobile .content .pic {
+  background: url("../../../assets/untitled-1.jpg");
+  position: relative;
+  height: 240px;
+  width: 90%;
+  margin: 0 auto;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+}
+
+.mobile .description {
+  width: 80%;
+  height: 180px;
+  font-size: 13.5px;
+  font-weight: 300;
+  margin-top: 20px;
+  text-align: center;
+  margin-right: 10px;
+  line-height: 1.2;
+}
+
+.mobile .name {
+  height: 78px;
+  background-color: rgba(255, 255, 255, 0.8);
+  font-size: 30px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.mobile .chefs-restaurant {
+  height: 30px;
+  font-size: 30px;
+  font-weight: 100;
+  margin: 59px 0 20px 0;
+}
+
+.mobile .cards {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.mobile .card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 0 0 0 15px;
+  width: 80%;
+}
+/*# sourceMappingURL=chef-of-the-week.component.css.map */
