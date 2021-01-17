@@ -23,21 +23,18 @@
 .Logo {
     height: 33px;
     margin: 0 15px 0 0;
-    
   }
 
 .epicure {
     font-size: 27px;
     font-weight: 300;
-    letter-spacing: 1.25px;
 }
 
 .Restaurants {
   @extend %lightFont;
     margin: 7px 28px 6px 31px;
     font-size: 18px;
-    letter-spacing: 1.92px;
-   ;
+    letter-spacing : 1.92px;
   }
 
   .Chefs {
