@@ -1,0 +1,49 @@
+.mobile .wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.desktop .wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 100px;
+}
+
+.desktop p {
+  height: 21px;
+  margin: 0 45px 0 0;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.mobile .wrapper {
+  width: 100%;
+  height: 100px;
+  margin: 23px 0;
+}
+
+.mobile p {
+  height: 15px;
+  font-size: 12px;
+  font-weight: 300;
+}
+/*# sourceMappingURL=footer.component.css.map */

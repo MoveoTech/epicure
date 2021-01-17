@@ -1,0 +1,166 @@
+.desktop .icons, .mobile .content, .mobile .icons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.desktop .wrapper {
+  width: 100%;
+  background-color: #fafafa;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-bottom: 40px;
+  margin: 117px 0 0 0;
+  position: relative;
+}
+
+.desktop .title {
+  font-size: 30px;
+  font-weight: 100;
+  margin: 65px 0 20px 0;
+}
+
+.desktop .content {
+  width: 35%;
+  margin: 0px 10%;
+}
+
+.desktop .about {
+  height: 269px;
+  font-size: 22px;
+  font-weight: 100;
+}
+
+.desktop img {
+  background-color: #fafafa;
+}
+
+.desktop .icons .icon {
+  height: 129px;
+  position: absolute;
+  right: 15%;
+}
+
+.desktop .downloads {
+  width: 40%;
+  margin: 0 15%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+}
+
+.desktop .download {
+  height: 52.8px;
+  padding: 8px 11.7px 7.4px 10.5px;
+  border-radius: 9.6px;
+  border: solid 0.6px black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  width: 30%;
+  max-width: 180px;
+  margin: 20px 8px;
+}
+
+.mobile .wrapper {
+  width: 100%;
+  background-color: #fafafa;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding-bottom: 40px;
+  margin: 117px 0 0 0;
+}
+
+.mobile .title {
+  font-size: 16px;
+  font-weight: 500;
+  margin: 28px 0 20px 0;
+}
+
+.mobile .content {
+  text-align: center;
+}
+
+.mobile .content .about {
+  height: 260px;
+  font-size: 14px;
+  font-weight: 300;
+  width: 80%;
+}
+
+.mobile img {
+  background-color: #fafafa;
+}
+
+.mobile .icons {
+  width: 100%;
+}
+
+.mobile .icons .icon {
+  height: 129px;
+}
+
+.mobile .downloads {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 40px 0 0 0;
+}
+
+.mobile .download {
+  height: 37px;
+  border-radius: 9.6px;
+  padding: 5.6px 7.9px 5.1px 7.3px;
+  border: solid 0.6px black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  max-width: 180px;
+  margin: 20px 8px;
+  font-size: 9.2px;
+  text-align: center;
+}
+
+.mobile .download img {
+  height: 22px;
+}
+/*# sourceMappingURL=about.component.css.map */
