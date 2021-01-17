@@ -6,10 +6,10 @@
             <p *ngIf='chef' class="chef">{{chef}}</p>
         </div>
         <div *ngIf='price' class="priceContent">
-            <img src={{icon}} alt="">
+            <img style="margin:10px 0 0px 0;" src={{icon}} alt="">
             <div class="price">
                 <div class="line"></div>
-                <p style=" font-size: 24.9px; font-weight: 100;">{{price}}₪</p>
+                <p class="price-number">₪{{price}}</p>
                 <div class="line"></div>
             </div>
         </div>

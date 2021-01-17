@@ -12,17 +12,19 @@
     }
     
     .title{
-        height: 35px;
-      margin: 0 0 24px;
       font-size: 30px;
-      font-weight: 100;
+      margin-top: 11px;
+      font-weight: 300;
+      letter-spacing: 2.14px;
       text-align: center;
     }
     
     .icons{
-        display: flex;
-        width: 100%;
-        justify-content: center;
+        width: 35%;
+        margin-top: 34px;
+        @extend %flex-row;
+        justify-content: space-around;
+
     }
     
     .icons-title{
@@ -32,11 +34,16 @@
         font-weight: 100;
     }
     .icon{
-        margin: 0 104px;
+        @extend %flex-column;
+        justify-content: space-between;
+        height: 110px;
     }
     
     .icon-name{
-        margin: 30px 34px 0 53px;
+        font-size: 25.2px;
+        font-weight: 100;
+        letter-spacing: 1.94px;
+        margin: 0;
     }
 }
 
