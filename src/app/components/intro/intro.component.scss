@@ -29,23 +29,21 @@
         align-items: center;
         }
     
-        .description{
-            width: 437px;
-        height: 73px;
-        margin: 0 36px 18px 38px;
+      .description{
+        width: 60%;
         font-size: 35px;
-        font-weight: 100;
-        font-stretch: normal;
-        font-style: normal;
+        letter-spacing: 0.97px;
+        font-weight: 300;
+        height: 73px;
         text-align: center;
         line-height: 1;
         }
         input[type="text"] { 
         width: 511px;
         height: 48px;
-        margin: 18px 0 0;
         object-fit: contain;
         border-radius: 4px;
+        padding: 7px 18px 0 0px;
         background-color: rgba(255, 255, 255, 0);
         border: solid 0.6px gray;
         text-align: center;
@@ -53,16 +51,11 @@
     
     
         input::placeholder{
-        width: 367px;
-        height: 26px;
-        margin: 2px 0 3px 20px;
         opacity: 0.53;
         font-size: 22px;
-        font-weight: 100;
-        font-stretch: normal;
-        font-style: normal;
-        line-height: normal;
-        letter-spacing: 1.57px;
+        font-weight: 600;
+        letter-spacing: 1.87px;
+        font-family: HelveticaNeueLight;
         text-align: center;
         color: black;
         }
