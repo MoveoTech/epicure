@@ -70,17 +70,21 @@
     .icons{
         @extend %flex-row;
         width: 100%;
-        justify-content: space-around;
+        justify-content: space-evenly;
 
         img{
             height: 35px;
         }
         .icon-name{
-            margin: 16px 0 0 0
+
         }
     }
     
    .icon{
        @extend %flex-column;
+       img{
+           height: 37px !important;
+           width: 37px !important;
+       }
    }
 }

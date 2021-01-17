@@ -111,15 +111,17 @@
 
 .mobile .icons {
   width: 100%;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
 }
 
 .mobile .icons img {
   height: 35px;
 }
 
-.mobile .icons .icon-name {
-  margin: 16px 0 0 0;
+.mobile .icon img {
+  height: 37px !important;
+  width: 37px !important;
 }
 /*# sourceMappingURL=icon-meaning.component.css.map */

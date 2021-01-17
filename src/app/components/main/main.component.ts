@@ -19,9 +19,9 @@ export class MainComponent implements OnInit {
 
   ngOnInit(): void {
 
-    window.innerWidth > 1160 ? this.config.slidesPerView = 3 : this.config.slidesPerView = 1
-    window.innerWidth > 1160 ? this.config.spaceBetween = -10 : this.config.spaceBetween = 11
-    // window.innerWidth > 1160 ? null : this.config.width = 500
+    window.innerWidth > 1160 ? this.config.slidesPerView = 3 : this.config.slidesPerView = 2
+    window.innerWidth > 1160 ? this.config.spaceBetween = -10 : this.config.spaceBetween = 0
+    window.innerWidth > 1160 ? null : this.config.width = 420
   }
 
 }

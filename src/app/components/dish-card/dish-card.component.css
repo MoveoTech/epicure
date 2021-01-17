@@ -108,7 +108,7 @@
   font-weight: 100;
   padding: 0px 7px;
   height: 70px;
-  margin: 30px 0 0 0;
+  margin: 0 0 0 0;
 }
 
 .mobile .line {
@@ -130,12 +130,12 @@
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
-  height: 70px;
+  height: 110px;
 }
 
 .mobile .priceContent img {
   margin: 0;
-  padding: 0px 0 10px 0px;
+  padding: 20px 0px 11px 0px;
 }
 
 .mobile .price {
@@ -148,5 +148,6 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  font-size: 25px;
 }
 /*# sourceMappingURL=dish-card.component.css.map */

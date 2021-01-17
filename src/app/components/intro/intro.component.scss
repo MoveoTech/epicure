@@ -80,7 +80,7 @@
         width: 100%;
         box-sizing: border-box;
         height: 270px;
-        background: url('../../../assets/hero-picture.jpg') no-repeat;
+        background: url('/assets/screen-shot-2019-01-06-at-10-56-44.jpg') no-repeat;
         background-size: cover;
         display: flex;
         justify-content: center;
@@ -107,14 +107,16 @@
           }
       
           .description{
-          width: 80%;
+          width: 70%;
           font-size: 16px;
-          font-weight: 100;
-          margin: 0%;
+          letter-spacing: 1px;
+          font-weight: 300;
           text-align: center;
+          margin-bottom: 11px;
           }
+
           input[type="text"] { 
-          height: 48px;
+          height: 33px;
           width: 270px;
           border-radius: 4px;
           background-color: rgba(255, 255, 255, 0);
@@ -124,7 +126,7 @@
       
           input#search{
           background: url('../../../assets/search-icon.svg');
-              background-size:13px 13px;
+              background-size:15px 15px;
               background-position: 4.1%;
               background-repeat: no-repeat;
               text-indent: 20px;
