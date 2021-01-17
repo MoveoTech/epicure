@@ -1,0 +1,127 @@
+@import '../../../assets/base.styles.scss';
+
+.desktop{
+    .card{
+        width: 360px;
+        background-color: #f9f4ea;
+    }
+    
+    .card:hover{
+        cursor: pointer;
+      }
+      
+    .details{
+        background-color: #f9f4ea;
+        text-align: center;
+        margin: 25px 0 0 0;
+    }
+    
+    .restaurant{
+        font-size: 40px;
+        letter-spacing: 2.67px;
+        width: 230px;
+        font-weight: 400;
+        padding: 0 9px 0 0;
+        line-height: 1.1;
+        margin: 0 0 6px 0;
+        margin: 0 auto;
+        margin-top: -9px
+    }
+    .chef{
+        font-size: 24px;
+        font-weight: 100;
+        width: 290px;
+        white-space: pre-line;
+        height: 140px;
+        letter-spacing: 1.6px;
+        line-height: 1.2;
+        margin: 0 auto;
+        margin-top: 17px;
+    }
+    
+    .line{
+         width: 112px;
+      height: 1px;
+      border: solid 0.5px #979797;
+      margin: 0px 10px;
+     }
+    
+    .priceContent{
+        display: flex;
+        flex-direction: column;
+        background-color: #f9f4ea;
+        height: 110px;
+       justify-content: flex-end;
+        
+    }
+    .price{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+}
+
+
+
+
+.mobile{
+    .card{
+    width: 100%;
+    @extend %mobileBackgroundColor;
+    img{
+        width: 100%;
+    }
+}
+
+.card:hover{
+    cursor: pointer;
+  }
+  
+.details{
+    @extend %mobileBackgroundColor;
+    text-align: center;
+}
+
+.restaurant{
+    font-size: 27.6px;
+    height: 40px;
+    margin:25px 0 0 0 ;
+}
+.chef{
+    font-size: 17.3px;
+    font-weight: 100;
+    padding: 0px 7px;
+  height: 70px;
+  margin:30px 0 0 0;
+}
+
+.line{
+  width: 76px;
+  height: 1px;
+  border: solid 0.5px #979797;
+  margin: 0px 10px;
+ }
+
+.priceContent{
+    display: flex;
+    flex-direction: column;
+    @extend %mobileBackgroundColor;
+    margin-top: 20px;
+   justify-content: flex-end;
+   height: 70px;
+
+   img{
+       margin: 0;
+       padding: 0px 0 10px 0px;
+}
+    
+}
+.price{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+}
+

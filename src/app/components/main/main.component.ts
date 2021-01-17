@@ -14,6 +14,9 @@ export class MainComponent implements OnInit {
 
   constructor() { }
 
+  spaceDescription = `Polenta fingers, veal cheek,
+ magic chili cured lemon cream, yellow laksa`
+
   ngOnInit(): void {
 
     window.innerWidth > 1160 ? this.config.slidesPerView = 3 : this.config.slidesPerView = 1

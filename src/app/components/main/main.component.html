@@ -25,23 +25,24 @@
         <swiper [config]='config'>
             <div class="card">
                 <p class="title">Tiger Lilly</p>
-                <app-card [restaurant]="'Pad Ki Mao'"
+                <app-dish-card [restaurant]="'Pad Ki Mao'"
                     [chef]="'Shrimps, Glass Noodles, Kemiri Nuts, Shallots,Lemon Grass, Magic Chili Brown Coconut'"
                     [img_src]='"../../../assets/rectangle1.jpg"' [icon]='"assets/group-2.svg"' [price]="'88'">
-                </app-card>
+                </app-dish-card>
             </div>
             <div class="card">
                 <p class="title">Kab Kem</p>
-                <app-card [restaurant]='"Garbanzo Frito"' [img_src]='"../../../assets/rectangle2.jpg"'
-                    [chef]='"Polenta fingers, veal cheek, magic chili cured lemon cream, yellow laksa"' [price]="'88'">
-                </app-card>
+                <app-dish-card [restaurant]='"Garbanzo Frito"' [img_src]='"../../../assets/rectangle2.jpg"'
+                    [chef]='spaceDescription'
+                    [price]="'88'">
+                </app-dish-card>
             </div>
             <div class="card">
                 <p class="title">Popina</p>
-                <app-card [restaurant]='"Smoked Pizza"'
+                <app-dish-card [restaurant]='"Smoked Pizza"'
                     [chef]="'Basil dough, cashew butter, demi-glace, bison & radish'"
                     [img_src]='"../../../assets/rectangle.jpg"' [price]="'88'" [icon]='"assets/group-7-copy.svg"'>
-                </app-card>
+                </app-dish-card>
             </div>
         </swiper>
     </div>
