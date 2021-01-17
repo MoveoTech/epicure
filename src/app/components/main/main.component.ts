@@ -11,6 +11,9 @@ export class MainComponent implements OnInit {
   config: SwiperOptions = {
     slidesPerView: 2,
   }
+  dishConfig : SwiperOptions = {
+    // width : 530
+  }
 
   constructor() { }
 
@@ -20,8 +23,9 @@ export class MainComponent implements OnInit {
   ngOnInit(): void {
 
     window.innerWidth > 1160 ? this.config.slidesPerView = 3 : this.config.slidesPerView = 2
-    window.innerWidth > 1160 ? this.config.spaceBetween = -10 : this.config.spaceBetween = 0
-    window.innerWidth > 1160 ? null : this.config.width = 420
+    window.innerWidth > 1160 ? this.dishConfig.slidesPerView = 3 : this.dishConfig.slidesPerView = 2
+    window.innerWidth > 1160 ? this.config.spaceBetween = -5 : this.config.spaceBetween = 0
+    window.innerWidth > 1160 ? null : this.dishConfig.width = 530
   }
 
 }

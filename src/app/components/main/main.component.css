@@ -56,7 +56,7 @@
   font-size: 30px;
   text-align: right;
   letter-spacing: 2.3px;
-  margin: 31px 10px 0 0;
+  margin: 33px 10px 0 0;
   line-height: 1;
 }
 
@@ -175,9 +175,6 @@
 }
 
 .mobile .title {
-  margin-bottom: 23px;
-  margin-right: 5%;
-  height: 35px;
   font-size: 16px;
   font-weight: 500;
 }
