@@ -10,7 +10,7 @@ body {
      box-sizing: border-box;
    }
 
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 0; font-family: HelveticaNeue, Roboto, sans-serif; }
 
 
  .mat-dialog-container{
@@ -34,3 +34,9 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
      background: black;
      color: white;
  }
+
+ 
+ @font-face {
+     font-family: HelveticaNeue;
+     src: url(assets/fonts/HelveticaNeueCyr-Light.ttf) format("opentype");
+   }
