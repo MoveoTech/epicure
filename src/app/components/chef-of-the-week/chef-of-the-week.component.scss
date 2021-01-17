@@ -47,7 +47,8 @@
   height: 30px;
   font-size: 30px;
   font-weight: 100;
-  margin: 59px 0 20px 0;
+  margin: 65px 0 20px 11px;
+  text-align: left;
 }
 .cards{
   display: flex;
@@ -69,7 +70,10 @@
   position: relative;
   background-repeat: no-repeat;
   }
-
+.restaurants{
+  width: 91%;
+  margin: 0 auto;
+}
 }
 
 

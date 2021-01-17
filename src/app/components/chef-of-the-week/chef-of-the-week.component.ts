@@ -11,12 +11,12 @@ export class ChefOfTheWeekComponent implements OnInit {
   constructor() { }
 
   config: SwiperOptions = {
+    spaceBetween : 0,
+    width: 700
   }
 
   ngOnInit(): void {
-    window.innerWidth > 1160 ? this.config.slidesPerView = 2 : this.config.slidesPerView = 1
-    window.innerWidth > 1160 ? null : this.config.spaceBetween = 15
-    window.innerWidth > 1160 ? null : this.config.width = 235
+    window.innerWidth > 1160 ? this.config.slidesPerView = 3 : this.config.slidesPerView = 1
   }
 
 }

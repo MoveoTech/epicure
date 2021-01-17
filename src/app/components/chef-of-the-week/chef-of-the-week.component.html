@@ -8,7 +8,7 @@
             <p class="description">Chef Yossi Shitrit has been living and breathing his culinary dreams for more than
                 two
                 decades, including
-                running the kitchen in his first restaurant, the fondly-remembered Violet, located in Moshav    Udim.
+                running the kitchen in his first restaurant, the fondly-remembered Violet, located in Moshav Udim.
                 Shitrit's
                 creativity and culinary acumen born of long experience are expressed in the every detail of each and
                 every dish.</p>
@@ -17,17 +17,19 @@
             <p class="chefs-restaurant">Yossi's restaurants :</p>
             <swiper [config]='config'>
                 <div class="card">
-                    <app-card [img_src]="'assets/screen-shot-2019-01-06-at-10-55-45.jpg'" [restaurant]='"Onza"'>
-                    </app-card>
+                    <app-chef-restaurant-card [img_src]="'assets/screen-shot-2019-01-06-at-10-55-45.jpg'"
+                        [restaurant]='"Onza"'>
+                    </app-chef-restaurant-card>
                 </div>
                 <div class="card">
-                    <app-card [img_src]="'assets/screen-shot-2019-01-06-at-10-57-26.jpg'"
+                    <app-chef-restaurant-card [img_src]="'assets/screen-shot-2019-01-06-at-10-57-26.jpg'"
                         [restaurant]='"Kitchen Market"'>
-                    </app-card>
+                    </app-chef-restaurant-card>
                 </div>
                 <div class="card">
-                    <app-card [img_src]="'assets/screen-shot-2019-01-03-at-18-28-50.jpg'" [restaurant]='"Mashya"'>
-                    </app-card>
+                    <app-chef-restaurant-card [img_src]="'assets/screen-shot-2019-01-03-at-18-28-50.jpg'"
+                        [restaurant]='"Mashya"'>
+                    </app-chef-restaurant-card>
                 </div>
             </swiper>
         </div>

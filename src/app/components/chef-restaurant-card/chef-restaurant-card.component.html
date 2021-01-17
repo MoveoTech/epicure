@@ -1,0 +1,8 @@
+<div ngClass.lt-md="mobile" ngClass.gt-sm="desktop">
+    <div class="card" (click)='openDialog()' style="display: inline-block;" *ngIf='restaurant'>
+        <img src={{img_src}} alt="">
+        <div class="details">
+            <p class="restaurant">{{restaurant}}</p>
+            <p *ngIf='chef' class="chef">{{chef}}</p>
+        </div>
+</div>
