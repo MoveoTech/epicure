@@ -100,12 +100,15 @@
 
 .mobile .details {
   text-align: center;
+  width: 110px;
+  margin: 0 auto;
+  line-height: 1;
 }
 
 .mobile .restaurant {
-  font-size: 27.6px;
-  height: 40px;
-  margin: 25px 0 0 0;
+  font-size: 20px;
+  height: 80px;
+  margin: 10px 0 0 0;
 }
 
 .mobile .chef {

@@ -81,7 +81,7 @@
     
     .title{
         font-size: 16px;
-        font-weight: 500;
+        font-weight: 300;
         margin: 28px 0 20px 0;
     }
     
@@ -99,6 +99,7 @@
     
     img{
         background-color: #fafafa;
+        height: 128px;
     }
     
     .icons{
@@ -112,7 +113,7 @@
     .downloads{
         display: flex;
         align-items: center;
-        margin: 40px 0 0 0;
+        margin: 6px 0 0 0;
     }
     .download{
         height: 37px;
