@@ -9,8 +9,6 @@
       justify-content: center;
       align-items: center;
       
-    
-      
       @keyframes fadein {
         from { opacity: 0; }
         to   { opacity: 1; }
@@ -23,7 +21,7 @@
         -o-animation: fadein 2s; 
         animation: fadein 2s;
         height: 222px;
-        width: 60%;
+        width: 54.5%;
         background-color: rgba(255, 255, 255, 0.88);
         display: flex;
         flex-direction: column;
