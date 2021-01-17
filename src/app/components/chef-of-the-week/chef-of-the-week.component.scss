@@ -5,9 +5,10 @@
 }
 
 .chef-week{
-  height: 37px;
   font-size: 30px;
   font-weight: 100;
+  margin-bottom: 53px;
+  letter-spacing: 2px;
 }
 
 .content{
@@ -18,9 +19,10 @@
 }
 
 .description{
-    width: 47%;
+    width: 50%;
     height: 292px;
     font-size: 25px;
+    letter-spacing: 1.08px;
     font-weight: 100;
     margin-top: 0;
     text-align: left;
@@ -60,11 +62,14 @@
 }
 
 .pic{
-  background: url('../../../assets/untitled-1.jpg');
-  width: 338px;
+  background: url('../../../assets/group-15.jpg');
+  height: 338px;
+  width: 38.4%;
+  margin: 0 auto;
   position: relative;
-  
+  background-repeat: no-repeat;
   }
+
 }
 
 
