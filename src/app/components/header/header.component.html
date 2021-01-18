@@ -6,15 +6,17 @@
         <div class="title-logo">
             <img src="assets/logo.jpg" srcset="assets/logo@2x.jpg 2x,assets/logo@3x.jpg 3x" class="Logo">
             <span class="epicure" fxHide.lt-md>EPICURE</span>
+            <span class="Restaurants" fxHide.lt-md>Restaurants</span>
+            <span class="Chefs" fxHide.lt-md>Chefs</span>
         </div>
-        <span class="Restaurants" fxHide.lt-md>Restaurants</span>
-        <span class="Chefs" fxHide.lt-md>Chefs</span>
-        <input fxHide.fxLayout.lt-md class="Search-Field" id="search" name="search" type="text"
-            placeholder="Search for restaurants cuisine, chef">
         <div class="icons">
-            <img src="assets/search-icon.svg" alt="search-icon" fxHide.gt-md>
-            <img src="assets/user-icon.svg" class="User-icon">
-            <img src="assets/bag-icon.svg" class="Bag-icon">
+            <input fxHide.fxLayout.lt-md class="Search-Field" id="search" name="search" type="text"
+                placeholder="Search for restaurants cuisine, chef">
+            <div class="icon-pics">
+                <img src="assets/user-icon.svg" class="User-icon">
+                <img src="assets/search-icon.svg" alt="search-icon" class="solo-search-icon" fxHide.gt-md>
+                <img src="assets/bag-icon.svg" class="Bag-icon">
+            </div>
         </div>
     </div>
 
