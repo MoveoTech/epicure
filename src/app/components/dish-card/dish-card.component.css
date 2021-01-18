@@ -101,14 +101,21 @@
   font-size: 27.6px;
   height: 40px;
   margin: 25px 0 0 0;
+  margin: 0 auto;
+  margin-top: 11px;
+  width: 50%;
+  margin-bottom: 30px;
+  line-height: 1;
 }
 
 .mobile .chef {
   font-size: 17.3px;
-  font-weight: 100;
+  font-weight: 300;
   padding: 0px 7px;
   height: 70px;
   margin: 0 0 0 0;
+  line-height: 1.3;
+  letter-spacing: 1px;
 }
 
 .mobile .line {
@@ -126,7 +133,6 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  margin-top: 20px;
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
@@ -149,5 +155,12 @@
       -ms-flex-align: center;
           align-items: center;
   font-size: 25px;
+}
+
+@media only screen and (max-width: 375px) {
+  .mobile .chef {
+    width: 85%;
+    margin: 0 auto;
+  }
 }
 /*# sourceMappingURL=dish-card.component.css.map */

@@ -90,14 +90,21 @@
 .restaurant{
     font-size: 27.6px;
     height: 40px;
-    margin:25px 0 0 0 ;
+    margin: 25px 0 0 0;
+    margin: 0 auto;
+    margin-top: 11px;
+    width: 50%;
+    margin-bottom: 30px;
+    line-height: 1;
 }
 .chef{
     font-size: 17.3px;
-    font-weight: 100;
+    font-weight: 300;
     padding: 0px 7px;
     height: 70px;
     margin:0 0 0 0;
+    line-height: 1.3;
+    letter-spacing: 1px;
 }
 
 .line{
@@ -111,7 +118,6 @@
     display: flex;
     flex-direction: column;
     @extend %mobileBackgroundColor;
-    margin-top: 20px;
    justify-content: flex-end;
    height: 110px;
 
@@ -126,6 +132,13 @@
     justify-content: center;
     align-items: center;
     font-size: 25px;
+}
+
+@media only screen and(max-width : 375px) {
+    .chef{
+        width: 85%;
+        margin: 0 auto;
+    }
 }
 
 }

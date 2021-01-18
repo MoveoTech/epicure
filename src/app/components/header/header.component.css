@@ -14,6 +14,18 @@
   font-weight: 100;
 }
 
+.mobile .wrapper .icon-pics {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
 .desktop .wrapper {
   max-width: 1440px;
   height: 62px;
@@ -156,7 +168,8 @@
 }
 
 .mobile .wrapper {
-  width: 100%;
+  width: 90%;
+  margin: 0 auto;
   height: 45px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -169,7 +182,6 @@
 }
 
 .mobile .wrapper .icons {
-  width: 30%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -179,6 +191,10 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  width: 6%;
 }
 
 .mobile .wrapper .icons img {
@@ -186,9 +202,28 @@
   width: 18px;
 }
 
-.mobile .Logo {
+.mobile .wrapper .burger {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+.mobile .wrapper .icon-pics {
+  width: 100%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.mobile .wrapper .Logo {
   height: 33px;
-  margin: 8px 0px 0 90px;
+}
+
+.mobile .wrapper .title-logo {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  text-align: center;
 }
 
 .mobile .epicure {
@@ -221,22 +256,31 @@
      object-fit: contain;
 }
 
-@media only screen and (min-width: 960px) {
-  .solo-search-icon {
-    display: none;
-  }
-}
-
 @media only screen and (max-width: 1400px) {
-  .icon-pics {
+  .desktop .wrapper .icon-pics {
     width: 20%;
     margin-left: 35px;
   }
 }
 
 @media only screen and (max-width: 1250px) {
-  .title-logo {
-    width: 33% !important;
+  .desktop .wrapper .title-logo {
+    width: 33%;
+  }
+  .desktop .wrapper input {
+    margin: 0 !important;
+  }
+  .desktop .wrapper .icons {
+    width: 52%;
+  }
+}
+
+@media only screen and (min-width: 960px) and (max-width: 1249px) {
+  .desktop .wrapper .solo-search-icon {
+    display: none;
+  }
+  .desktop .wrapper .title-logo {
+    width: 37%;
   }
 }
 /*# sourceMappingURL=header.component.css.map */

@@ -13,10 +13,10 @@
     
     .title{
       font-size: 30px;
-      margin-top: 11px;
       font-weight: 300;
       letter-spacing: 2.14px;
       text-align: center;
+      margin: 15px 0 0px 0px;
     }
     
     .icons{
@@ -24,7 +24,7 @@
         margin-top: 34px;
         @extend %flex-row;
         justify-content: space-around;
-
+        margin-bottom: 24px;
     }
     
     .icons-title{
@@ -74,9 +74,6 @@
 
         img{
             height: 35px;
-        }
-        .icon-name{
-
         }
     }
     

@@ -101,31 +101,50 @@
     // margin: 7px 4px 5px 15px;
   }
 
+
 }
+
+
+
 
   .mobile{
     .wrapper{
-      width: 100%;
+      width: 90%;
+      margin: 0 auto;
       height: 45px;
       display: flex;
       justify-content: space-around;
       align-items: center;
       .icons{
-        width: 30%;
         display: flex;
         align-items: center;
         justify-content: space-between;
+        flex-grow: 1;
+        width: 6%;
         img{
           height: 18px;
           width: 18px;
         }
       }
+      .burger{
+        flex-grow: 1;
+      }
+
+      .icon-pics{
+        width: 100%;
+        @extend %flex-row;
+        justify-content: space-between;
+      }
+      .Logo {
+          height: 33px;
+          // margin: 8px 0px 0 90px; 
+        }
+        .title-logo{
+          flex-grow: 1;
+          text-align: center;
+        }
   }
   
-  .Logo {
-      height: 33px;
-      margin: 8px 0px 0 90px; 
-    }
   
   .epicure {
       height: 32px;
@@ -163,23 +182,38 @@
     }
   
   }
+.desktop{
+  .wrapper{
+    @media only screen and (max-width: 1400px) {
+      .icon-pics{
+        width: 20%;
+        margin-left: 35px;
+      }
+    }
+  
+    @media only screen and (max-width: 1250px) {
+      .title-logo{
+        width: 33% ;
+      }
+      input{
+        margin: 0 !important;
+      }
+      .icons{
+        width: 52%;
+      }
+    }
+  
+    @media only screen and (min-width: 960px) and(max-width : 1249px) {
+      .solo-search-icon{
+        display: none;
+      }
+      .title-logo{
+        width: 37%;
+      }
+    }
+  
+  }
+}
 
   
-  @media only screen and (min-width: 960px) {
-    .solo-search-icon{
-      display: none;
-    }
-  }
-
-  @media only screen and (max-width: 1400px) {
-    .icon-pics{
-      width: 20%;
-      margin-left: 35px;
-    }
-  }
-
-  @media only screen and (max-width: 1250px) {
-    .title-logo{
-      width: 33% !important;
-    }
-  }
+  

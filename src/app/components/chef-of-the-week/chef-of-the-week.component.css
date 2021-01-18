@@ -1,6 +1,8 @@
 .desktop .wrapper {
-  margin-top: 100px;
   text-align: center;
+  width: 78%;
+  margin: 0 auto;
+  margin-top: 100px;
 }
 
 .desktop .chef-week {
@@ -28,7 +30,6 @@
   font-weight: 100;
   margin-top: 0;
   text-align: left;
-  margin-right: 10px;
   line-height: 1.2;
 }
 
@@ -82,6 +83,7 @@
   background: url("../../../assets/group-15.jpg");
   height: 338px;
   width: 38.4%;
+  min-width: 433px;
   margin: 0 auto;
   position: relative;
   background-repeat: no-repeat;
@@ -92,8 +94,20 @@
   margin: 0 auto;
 }
 
+@media only screen and (max-width: 1400px) {
+  .desktop .wrapper {
+    width: 90%;
+  }
+}
+
+@media only screen and (max-width: 1050px) {
+  .desktop .wrapper {
+    width: 95%;
+  }
+}
+
 .mobile .wrapper {
-  margin-top: 50px;
+  margin-top: 70px;
   text-align: center;
 }
 
