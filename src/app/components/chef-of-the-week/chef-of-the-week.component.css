@@ -1,12 +1,15 @@
 .desktop .wrapper {
-  margin-top: 100px;
   text-align: center;
+  width: 78%;
+  margin: 0 auto;
+  margin-top: 100px;
 }
 
 .desktop .chef-week {
-  height: 37px;
   font-size: 30px;
   font-weight: 100;
+  margin-bottom: 53px;
+  letter-spacing: 2px;
 }
 
 .desktop .content {
@@ -20,13 +23,13 @@
 }
 
 .desktop .description {
-  width: 47%;
+  width: 50%;
   height: 292px;
   font-size: 25px;
+  letter-spacing: 1.08px;
   font-weight: 100;
   margin-top: 0;
-  text-align: left;
-  margin-right: 10px;
+  text-align: justify;
   line-height: 1.2;
 }
 
@@ -53,7 +56,8 @@
   height: 30px;
   font-size: 30px;
   font-weight: 100;
-  margin: 59px 0 20px 0;
+  margin: 65px 0 20px 8px;
+  text-align: left;
 }
 
 .desktop .cards {
@@ -76,13 +80,34 @@
 }
 
 .desktop .pic {
-  background: url("../../../assets/untitled-1.jpg");
-  width: 338px;
+  background: url("../../../assets/group-15.jpg");
+  height: 338px;
+  width: 38.4%;
+  min-width: 433px;
+  margin: 0 auto;
   position: relative;
+  background-repeat: no-repeat;
+}
+
+.desktop .restaurants {
+  width: 91%;
+  margin: 0 auto;
+}
+
+@media only screen and (max-width: 1400px) {
+  .desktop .wrapper {
+    width: 90%;
+  }
+}
+
+@media only screen and (max-width: 1050px) {
+  .desktop .wrapper {
+    width: 95%;
+  }
 }
 
 .mobile .wrapper {
-  margin-top: 100px;
+  margin-top: 70px;
   text-align: center;
 }
 
@@ -121,11 +146,18 @@
 }
 
 .mobile .description {
-  width: 80%;
-  height: 180px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 90%;
+  height: 160px;
   font-size: 13.5px;
   font-weight: 300;
   margin-top: 20px;
+  letter-spacing: 1.04px;
   text-align: center;
   margin-right: 10px;
   line-height: 1.2;
@@ -152,9 +184,12 @@
 
 .mobile .chefs-restaurant {
   height: 30px;
-  font-size: 30px;
+  font-size: 17px;
   font-weight: 100;
-  margin: 59px 0 20px 0;
+  text-align: left;
+  width: 92%;
+  margin: 2px auto;
+  margin-left: 14px;
 }
 
 .mobile .cards {
@@ -182,5 +217,12 @@
           flex-direction: column;
   margin: 0 0 0 15px;
   width: 80%;
+}
+
+@media only screen and (max-width: 960px) and (min-width: 540px) {
+  .mobile .description {
+    width: 60%;
+    margin: 0 auto;
+  }
 }
 /*# sourceMappingURL=chef-of-the-week.component.css.map */

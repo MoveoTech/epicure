@@ -1,4 +1,4 @@
-.mobile .icon {
+.desktop .icon, .mobile .icon {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -14,7 +14,7 @@
           justify-content: center;
 }
 
-.mobile .icons {
+.desktop .icons, .mobile .icons {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -46,21 +46,19 @@
 }
 
 .desktop .title {
-  height: 35px;
-  margin: 0 0 24px;
   font-size: 30px;
-  font-weight: 100;
+  font-weight: 300;
+  letter-spacing: 2.14px;
   text-align: center;
+  margin: 15px 0 0px 0px;
 }
 
 .desktop .icons {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  width: 100%;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  width: 35%;
+  margin-top: 34px;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin-bottom: 24px;
 }
 
 .desktop .icons-title {
@@ -73,11 +71,17 @@
 }
 
 .desktop .icon {
-  margin: 0 104px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 110px;
 }
 
 .desktop .icon-name {
-  margin: 30px 34px 0 53px;
+  font-size: 25.2px;
+  font-weight: 100;
+  letter-spacing: 1.94px;
+  margin: 0;
 }
 
 .mobile .wrapper {
@@ -108,15 +112,17 @@
 
 .mobile .icons {
   width: 100%;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
 }
 
 .mobile .icons img {
   height: 35px;
 }
 
-.mobile .icons .icon-name {
-  margin: 16px 0 0 0;
+.mobile .icon img {
+  height: 37px !important;
+  width: 37px !important;
 }
 /*# sourceMappingURL=icon-meaning.component.css.map */

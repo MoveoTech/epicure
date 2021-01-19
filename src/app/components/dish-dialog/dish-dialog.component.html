@@ -1,14 +1,14 @@
 <div ngClass.lt-md="mobile" ngClass.gt-sm="desktop">
 
     <div class="wrapper">
-        <img class="img" src={{data.img_src}} alt="">
+        <img class="img" src={{data.img_src}} alt="background-img">
         <div class="content">
             <div class="head">
-                <div class="title" mat-dialog-title>{{data.dish_name}}</div>
+                <div class="title" mat-dialog-title> {{data.dish_name}}</div>
                 <div class="description" mat-dialog-content>{{data.description}}</div>
                 <div class="price">
                     <div class="line"></div>
-                    <p style=" font-size: 24.9px; font-weight: 100;">{{data.price}}₪</p>
+                    <p style=" font-size: 24.9px; font-weight: 400;">₪{{data.price}}</p>
                     <div class="line"></div>
                 </div>
             </div>

@@ -1,7 +1,7 @@
 @import '../../../assets/base.styles.scss';
 .desktop{
   .wrapper{
-    width: 85%;
+    max-width: 1440px;
     height: 62px;
     display: flex;
     justify-content: space-around;
@@ -11,6 +11,8 @@
     .title-logo{
       display: flex;
       align-items: center;
+      width: 26%;
+      justify-content: space-between;
     }
 
     .icons{
@@ -22,97 +24,129 @@
 
 .Logo {
     height: 33px;
-    margin: 0 15px 0 0;
-    
+    // margin: 0 15px 0 0;
   }
 
 .epicure {
     font-size: 27px;
-    font-weight: 300;
-    letter-spacing: 1.25px;
+    font-weight: 100;
 }
 
 .Restaurants {
   @extend %lightFont;
-    height: 21px;
-    margin: 7px 28px 6px 0px;
+    // margin: 7px 28px 6px 31px;
     font-size: 18px;
-   ;
+    letter-spacing : 1.92px;
+    margin-left: 20px;
   }
 
   .Chefs {
-    height: 21px;
-    margin: 7px 292px 6px 0;
+    // margin: 7px 292px 6px 0;
     font-size: 18px;
     @extend %lightFont;
   }
 
   input[type="text"] {
     min-width: 362px;
+    max-width: 415px;
     height: 34px;
-    margin: 0;
-    padding: 7px 13px 5px 16px;
-    object-fit: contain;
+    margin-left: 10%;
+    padding: 3px 0 0 6px;
+    letter-spacing: 0.29px;
+    font-size: 18px;
     border-radius: 4px;
     border: solid 0.5px gray;
     background-color: rgba(255, 255, 255, 0.11);
+    width: 100%;
   }
 
   input::placeholder{
-    width: 301px;
+    // width: 301px;
     height: 21px;
-    margin: 0 63px 1px 0;
     opacity: 0.8;
-    font-size: 18px;
+    font-size: 17px;
     @extend %lightFont;
   }
 
   input#search{
     background: url('../../../assets/search-icon.svg');
       background-size:22px 22px;
-      background-position: 97%;
+      background-position: 96%;
       background-repeat: no-repeat;
       text-indent: 20px;
-  }
+    }
   input#search:focus {
     background-image:none;
     text-indent: 0;
     }
-  
+  .icons{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 40%;
+  }
+  .icon-pics{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 14%;
+  }
   .User-icon {
     height: 23px;
-    margin: 7px 28px 4px;
-    object-fit: contain;
+    // margin: 7px 28px 4px;
   }
 
   .Bag-icon {
     height: 22px;
-    margin: 7px 0 5px 0px;
-    object-fit: contain;
+    // margin: 7px 4px 5px 15px;
   }
+.solo-search-icon{
+  display: none;
+}
 
 }
 
+
+
+
   .mobile{
     .wrapper{
-      width: 100%;
-      height: 53px;
-      padding: 0 20px;
+      width: 90%;
+      margin: 0 auto;
+      height: 45px;
       display: flex;
       justify-content: space-around;
       align-items: center;
       .icons{
-        width: 30%;
         display: flex;
         align-items: center;
         justify-content: space-between;
+        flex-grow: 1;
+        width: 6%;
+        img{
+          height: 18px;
+          width: 18px;
+        }
       }
+      .burger{
+        flex-grow: 1;
+      }
+
+      .icon-pics{
+        width: 100%;
+        @extend %flex-row;
+        justify-content: space-between;
+      }
+      .Logo {
+          height: 33px;
+          // margin: 8px 0px 0 90px; 
+        }
+        .title-logo{
+          flex-grow: 1;
+          text-align: center;
+        }
   }
   
-  .Logo {
-      height: 33px;
-      margin: 0 0 1px 0;
-    }
   
   .epicure {
       height: 32px;
@@ -150,3 +184,38 @@
     }
   
   }
+.desktop{
+  .wrapper{
+    @media only screen and (max-width: 1400px) {
+      .icon-pics{
+        width: 20%;
+        margin-left: 35px;
+      }
+    }
+  
+    @media only screen and (max-width: 1250px) {
+      .title-logo{
+        width: 33% ;
+      }
+      input{
+        margin: 0 !important;
+      }
+      .icons{
+        width: 52%;
+      }
+    }
+  
+    @media only screen and (min-width: 960px) and(max-width : 1249px) {
+      .solo-search-icon{
+        display: none;
+      }
+      .title-logo{
+        width: 37%;
+      }
+    }
+  
+  }
+}
+
+  
+  

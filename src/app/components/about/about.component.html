@@ -1,31 +1,34 @@
 <div ngClass.lt-md="mobile" ngClass.gt-sm="desktop">
-
     <div class="wrapper">
         <div class="content">
             <p class="title">ABOUT US :</p>
-            <p class="about">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In a lacus vel justo fermentum
-                bibendum
-                non
-                eu ipsum. Cras porta malesuada eros, eget blandit
-                turpis suscipit at. Vestibulum sed massa in magna sodales porta. Vivamus elit urna,
-                dignissim a vestibulum. <br><br>
+            <div class="description">
+                <p class="about">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In a lacus vel justo fermentum
+                    bibendum
+                    non
+                    eu ipsum. Cras porta malesuada eros, eget blandit
+                    turpis suscipit at. Vestibulum sed massa in magna sodales porta. Vivamus elit urna,
+                    dignissim a vestibulum. <br><br>
 
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. In a lacus vel justo fermentum bibendum no
-                eu ipsum. Cras porta malesuada eros.
-            </p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. In a lacus vel justo fermentum bibendum no
+                    eu ipsum. Cras porta malesuada eros.
+                </p>
+                <img src="assets/about-logo.jpg" class="logo" alt="" fxHide.lt-md>
+            </div>
         </div>
         <div class="icons">
-            <div class="icon">
+            <div class="icon" fxHide.gt-sm>
                 <img src="assets/about-logo.jpg" alt="">
             </div>
             <div class="downloads">
                 <div class="download">
                     <img src="assets/shape.svg" alt="">
-                    <p style="margin: 0;"> Download on the <br> App Store</p>
+                    <p style="margin: 0; text-align: center; font-size: 11.8px; font-weight: 500;"> Download on the <br>
+                        App Store</p>
                 </div>
                 <div class="download">
                     <img src="assets/path.svg" alt="">
-                    <p style="margin: 0;">
+                    <p style="margin: 0; text-align: center; font-size: 11.8px; font-weight: 500;">
                         Get it on <br> Google Play
                     </p>
                 </div>

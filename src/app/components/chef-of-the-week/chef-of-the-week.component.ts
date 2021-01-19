@@ -11,12 +11,48 @@ export class ChefOfTheWeekComponent implements OnInit {
   constructor() { }
 
   config: SwiperOptions = {
+    spaceBetween: 0,
+    // width: 700
+  }
+
+  resizeCarouselle() {
+    if (window.innerWidth > 960) {
+      this.config.slidesPerView = 3
+      this.config.width = 700
+    }
+    if (window.innerWidth < 960) {
+      this.config.width = 800
+      this.config.slidesPerView = 3
+    }
+    if (window.innerWidth < 860) {
+      this.config.width = 500
+      this.config.slidesPerView = 2
+    }
+    if (window.innerWidth < 700) {
+      this.config.width = 300
+      this.config.slidesPerView = 1
+      console.log('called')
+    }
   }
 
   ngOnInit(): void {
-    window.innerWidth > 1160 ? this.config.slidesPerView = 2 : this.config.slidesPerView = 1
-    window.innerWidth > 1160 ? null : this.config.spaceBetween = 15
-    window.innerWidth > 1160 ? null : this.config.width = 235
+    window.innerWidth < 960 ? this.config.slidesPerView = 2 : this.config.slidesPerView = 3
+    if (window.innerWidth > 960) {
+      this.config.width = 700
+    }
+    if (window.innerWidth < 960) {
+      this.config.width = 800
+      this.config.slidesPerView = 3
+    }
+    if (window.innerWidth < 860) {
+      this.config.width = 600
+      this.config.slidesPerView = 2
+    }
+    if (window.innerWidth < 700) {
+      this.config.width = 300
+      this.config.slidesPerView = 1
+    }
+    window.addEventListener('resize', () => this.resizeCarouselle())
   }
 
 }

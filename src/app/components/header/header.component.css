@@ -14,8 +14,20 @@
   font-weight: 100;
 }
 
+.mobile .wrapper .icon-pics {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
 .desktop .wrapper {
-  width: 85%;
+  max-width: 1440px;
   height: 62px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -36,6 +48,10 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  width: 26%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .desktop .wrapper .icons {
@@ -49,75 +65,65 @@
 
 .desktop .Logo {
   height: 33px;
-  margin: 0 15px 0 0;
 }
 
 .desktop .epicure {
   font-size: 27px;
-  font-weight: 300;
-  letter-spacing: 1.25px;
+  font-weight: 100;
 }
 
 .desktop .Restaurants {
-  height: 21px;
-  margin: 7px 28px 6px 0px;
   font-size: 18px;
+  letter-spacing: 1.92px;
+  margin-left: 20px;
 }
 
 .desktop .Chefs {
-  height: 21px;
-  margin: 7px 292px 6px 0;
   font-size: 18px;
 }
 
 .desktop input[type="text"] {
   min-width: 362px;
+  max-width: 415px;
   height: 34px;
-  margin: 0;
-  padding: 7px 13px 5px 16px;
-  -o-object-fit: contain;
-     object-fit: contain;
+  margin-left: 10%;
+  padding: 3px 0 0 6px;
+  letter-spacing: 0.29px;
+  font-size: 18px;
   border-radius: 4px;
   border: solid 0.5px gray;
   background-color: rgba(255, 255, 255, 0.11);
+  width: 100%;
 }
 
 .desktop input::-webkit-input-placeholder {
-  width: 301px;
   height: 21px;
-  margin: 0 63px 1px 0;
   opacity: 0.8;
-  font-size: 18px;
+  font-size: 17px;
 }
 
 .desktop input:-ms-input-placeholder {
-  width: 301px;
   height: 21px;
-  margin: 0 63px 1px 0;
   opacity: 0.8;
-  font-size: 18px;
+  font-size: 17px;
 }
 
 .desktop input::-ms-input-placeholder {
-  width: 301px;
   height: 21px;
-  margin: 0 63px 1px 0;
   opacity: 0.8;
-  font-size: 18px;
+  font-size: 17px;
 }
 
 .desktop input::placeholder {
-  width: 301px;
   height: 21px;
-  margin: 0 63px 1px 0;
   opacity: 0.8;
-  font-size: 18px;
+  font-size: 17px;
 }
 
 .desktop input#search {
   background: url("../../../assets/search-icon.svg");
   background-size: 22px 22px;
-  background-position: 97%;
+  background-position: 96%;
   background-repeat: no-repeat;
   text-indent: 20px;
 }
@@ -127,24 +133,48 @@
   text-indent: 0;
 }
 
+.desktop .icons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 40%;
+}
+
+.desktop .icon-pics {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 14%;
+}
+
 .desktop .User-icon {
   height: 23px;
-  margin: 7px 28px 4px;
-  -o-object-fit: contain;
-     object-fit: contain;
 }
 
 .desktop .Bag-icon {
   height: 22px;
-  margin: 7px 0 5px 0px;
-  -o-object-fit: contain;
-     object-fit: contain;
+}
+
+.desktop .solo-search-icon {
+  display: none;
 }
 
 .mobile .wrapper {
-  width: 100%;
-  height: 53px;
-  padding: 0 20px;
+  width: 90%;
+  margin: 0 auto;
+  height: 45px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -156,7 +186,6 @@
 }
 
 .mobile .wrapper .icons {
-  width: 30%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -166,11 +195,39 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  width: 6%;
 }
 
-.mobile .Logo {
+.mobile .wrapper .icons img {
+  height: 18px;
+  width: 18px;
+}
+
+.mobile .wrapper .burger {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+.mobile .wrapper .icon-pics {
+  width: 100%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.mobile .wrapper .Logo {
   height: 33px;
-  margin: 0 0 1px 0;
+}
+
+.mobile .wrapper .title-logo {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  text-align: center;
 }
 
 .mobile .epicure {
@@ -201,5 +258,33 @@
   margin: 7px 0 5px 0px;
   -o-object-fit: contain;
      object-fit: contain;
+}
+
+@media only screen and (max-width: 1400px) {
+  .desktop .wrapper .icon-pics {
+    width: 20%;
+    margin-left: 35px;
+  }
+}
+
+@media only screen and (max-width: 1250px) {
+  .desktop .wrapper .title-logo {
+    width: 33%;
+  }
+  .desktop .wrapper input {
+    margin: 0 !important;
+  }
+  .desktop .wrapper .icons {
+    width: 52%;
+  }
+}
+
+@media only screen and (min-width: 960px) and (max-width: 1249px) {
+  .desktop .wrapper .solo-search-icon {
+    display: none;
+  }
+  .desktop .wrapper .title-logo {
+    width: 37%;
+  }
 }
 /*# sourceMappingURL=header.component.css.map */

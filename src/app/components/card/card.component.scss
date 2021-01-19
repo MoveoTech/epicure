@@ -6,25 +6,23 @@
         background-color: #f9f4ea;
     }
     
-    .card:hover{
-        cursor: pointer;
-      }
-      
     .details{
         background-color: #f9f4ea;
         text-align: center;
+        margin: 25px 0 0 0;
     }
     
     .restaurant{
         font-size: 40px;
-        height: 47px;
-        margin:25px 0 0 0 ;
+        letter-spacing: 2.67px;
+        line-height: 1.2;
+        margin: 0 0 6px 0;
     }
     .chef{
       font-size: 25px;
       font-weight: 100;
-      height: 70px;
-      margin:30px 0 0 0;
+      height: 35px;
+      letter-spacing: 1.6px;
     }
     
     .line{
@@ -55,33 +53,33 @@
 
 .mobile{
     .card{
-    width: 100%;
     @extend %mobileBackgroundColor;
     img{
         width: 100%;
+        height: 224px;
+        object-fit: cover;
     }
 }
-
-.card:hover{
-    cursor: pointer;
-  }
   
 .details{
     @extend %mobileBackgroundColor;
     text-align: center;
+    height: 110px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
 }
 
 .restaurant{
     font-size: 27.6px;
-    height: 40px;
-    margin:25px 0 0 0 ;
 }
 .chef{
     font-size: 17.3px;
     font-weight: 100;
-    padding: 0px 7px;
-  height: 70px;
-  margin:30px 0 0 0;
+    font-size: 20px;
+    font-weight: 100;
+    letter-spacing: 1.33px;
+    line-height: 4px;
 }
 
 .line{
