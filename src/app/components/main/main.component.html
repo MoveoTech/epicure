@@ -1,5 +1,5 @@
 <div ngClass.lt-md="mobile" ngClass.gt-sm="desktop">
-    <div class="content">
+    <div  class="content">
         <div class="nav-buttons" fxHide.gt-sm>
             <div class="button">Chefs</div>
             <div class="button">Restaurants</div>
@@ -21,34 +21,32 @@
             </div>
         </swiper>
         <p class="all-restaurants" fxHide.lt-md>All Restaurants <img src="assets/all-restaurants-arrows.svg"></p>
-        <p class="signature-dish">SIGNATURE DISH OF :</p>
-        <swiper [config]='config'>
+        <div class="signature-dish">SIGNATURE DISH OF :</div>
+        <swiper [config]='dishConfig'>
             <div class="card">
                 <p class="title">Tiger Lilly</p>
-                <app-card [restaurant]="'Pad Ki Mao'"
-                    [chef]="'Shrimps, Glass Noodles, Kemiri Nuts, Shallots,Lemon Grass, Magic Chili Brown Coconut'"
+                <app-dish-card [restaurant]="'Pad Ki Mao'"
+                    [chef]="'Shrimps, Glass Noodles, Kemiri Nuts, Shallots, Lemon Grass, Magic Chili & Brown Coconut'"
                     [img_src]='"../../../assets/rectangle1.jpg"' [icon]='"assets/group-2.svg"' [price]="'88'">
-                </app-card>
+                </app-dish-card>
             </div>
             <div class="card">
                 <p class="title">Kab Kem</p>
-                <app-card [restaurant]='"Garbanzo Frito"' [img_src]='"../../../assets/rectangle2.jpg"'
-                    [chef]='"Polenta fingers, veal cheek, magic chili cured lemon cream, yellow laksa"' [price]="'88'">
-                </app-card>
+                <app-dish-card style="white-space: pre-line;" [restaurant]='"Garbanzo Frito"'
+                    [img_src]='"../../../assets/rectangle2.jpg"' [chef]='spaceDescription' [price]="'88'">
+                </app-dish-card>
             </div>
             <div class="card">
                 <p class="title">Popina</p>
-                <app-card [restaurant]='"Smoked Pizza"'
-                    [chef]="'Basil dough, cashew butter, demi-glace, bison & radish'"
+                <app-dish-card [restaurant]='"Smoked Pizza"'
+                    [chef]="'Basil Dough, Cashew Butter, Demi-Glace, Bison & Radish'"
                     [img_src]='"../../../assets/rectangle.jpg"' [price]="'88'" [icon]='"assets/group-7-copy.svg"'>
-                </app-card>
+                </app-dish-card>
             </div>
         </swiper>
     </div>
     <app-icon-meaning></app-icon-meaning>
-    <div class="content">
         <app-chef-of-the-week></app-chef-of-the-week>
-    </div>
     <app-about></app-about>
     <app-footer></app-footer>
 </div>

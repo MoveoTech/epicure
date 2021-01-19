@@ -19,11 +19,13 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { SwiperModule } from 'ngx-swiper-wrapper';
 import { SWIPER_CONFIG } from 'ngx-swiper-wrapper';
 import { SwiperConfigInterface } from 'ngx-swiper-wrapper';
+import { DishCardComponent } from './components/dish-card/dish-card.component';
+import { ChefRestaurantCardComponent } from './components/chef-restaurant-card/chef-restaurant-card.component';
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   direction: 'horizontal',
   slidesPerView: 'auto',
-  navigation: true,
+  navigation: false,
   keyboard: true
 };
 
@@ -39,6 +41,8 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     AboutComponent,
     FooterComponent,
     DishDialogComponent,
+    DishCardComponent,
+    ChefRestaurantCardComponent,
   ],
   imports: [
     BrowserModule,

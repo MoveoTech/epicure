@@ -1,4 +1,12 @@
+
 .desktop{
+  @media only screen and (max-width: 1439px) {
+    .wrapper{
+     background-size: auto !important;
+    }
+  }
+  
+
     .wrapper{
       width: 100%;
       height: 696px;
@@ -8,9 +16,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      
-    
-      
+   
       @keyframes fadein {
         from { opacity: 0; }
         to   { opacity: 1; }
@@ -23,7 +29,8 @@
         -o-animation: fadein 2s; 
         animation: fadein 2s;
         height: 222px;
-        width: 60%;
+        width: 54.5%;
+        max-width: 781px;
         background-color: rgba(255, 255, 255, 0.88);
         display: flex;
         flex-direction: column;
@@ -31,40 +38,35 @@
         align-items: center;
         }
     
-        .description{
-            width: 437px;
-        height: 73px;
-        margin: 0 36px 18px 38px;
+      .description{
+        width: 60%;
         font-size: 35px;
-        font-weight: 100;
-        font-stretch: normal;
-        font-style: normal;
+        letter-spacing: 1.07px;
+        min-width: 500px;
+        font-weight: 300;
+        height: 73px;
         text-align: center;
         line-height: 1;
         }
         input[type="text"] { 
         width: 511px;
         height: 48px;
-        margin: 18px 0 0;
         object-fit: contain;
         border-radius: 4px;
+        padding: 7px 18px 0 0px;
         background-color: rgba(255, 255, 255, 0);
         border: solid 0.6px gray;
         text-align: center;
+        font-size: 18px;
         }
     
     
         input::placeholder{
-        width: 367px;
-        height: 26px;
-        margin: 2px 0 3px 20px;
         opacity: 0.53;
         font-size: 22px;
-        font-weight: 100;
-        font-stretch: normal;
-        font-style: normal;
-        line-height: normal;
-        letter-spacing: 1.57px;
+        font-weight: 600;
+        letter-spacing: 1.87px;
+        font-family: HelveticaNeueLight;
         text-align: center;
         color: black;
         }
@@ -89,7 +91,7 @@
         width: 100%;
         box-sizing: border-box;
         height: 270px;
-        background: url('../../../assets/hero-picture.jpg') no-repeat;
+        background: url('/assets/screen-shot-2019-01-06-at-10-56-44.jpg') no-repeat;
         background-size: cover;
         display: flex;
         justify-content: center;
@@ -108,6 +110,7 @@
           animation: fadein 2s;
           height: 125px;
           width: 90%;
+          max-width: 380px;
           background-color: rgba(255, 255, 255, 0.88);
           display: flex;
           flex-direction: column;
@@ -116,14 +119,17 @@
           }
       
           .description{
-          width: 80%;
+          width: 70%;
           font-size: 16px;
-          font-weight: 100;
-          margin: 0%;
+          line-height: 1.2;
+          letter-spacing: 1px;
+          font-weight: 300;
           text-align: center;
+          margin-bottom: 11px;
           }
+
           input[type="text"] { 
-          height: 48px;
+          height: 33px;
           width: 270px;
           border-radius: 4px;
           background-color: rgba(255, 255, 255, 0);
@@ -133,7 +139,7 @@
       
           input#search{
           background: url('../../../assets/search-icon.svg');
-              background-size:13px 13px;
+              background-size:15px 15px;
               background-position: 4.1%;
               background-repeat: no-repeat;
               text-indent: 20px;
@@ -145,3 +151,4 @@
       
       }
 }
+

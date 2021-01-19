@@ -1,0 +1,166 @@
+.mobile .card, .mobile .details, .mobile .priceContent {
+  background-color: #f7e0b2;
+}
+
+.desktop .card {
+  width: 360px;
+  background-color: #f9f4ea;
+}
+
+.desktop .card:hover {
+  cursor: pointer;
+}
+
+.desktop .details {
+  background-color: #f9f4ea;
+  text-align: center;
+  margin: 25px 0 0 0;
+}
+
+.desktop .restaurant {
+  font-size: 40px;
+  letter-spacing: 2.67px;
+  width: 230px;
+  font-weight: 400;
+  padding: 0 9px 0 0;
+  line-height: 1.1;
+  margin: 0 0 6px 0;
+  margin: 0 auto;
+  margin-top: -9px;
+}
+
+.desktop .chef {
+  font-size: 24px;
+  font-weight: 100;
+  width: 290px;
+  height: 140px;
+  letter-spacing: 1.6px;
+  line-height: 1.2;
+  margin: 0 auto;
+  margin-top: 17px;
+}
+
+.desktop .line {
+  width: 112px;
+  height: 1px;
+  border: solid 0.5px #979797;
+  margin: 0px 10px;
+}
+
+.desktop .priceContent {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: #f9f4ea;
+  height: 98px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.desktop .priceContent .price-number {
+  font-size: 24.9px;
+  font-weight: 100;
+  letter-spacing: 1.66px;
+}
+
+.desktop .price {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 6px;
+}
+
+.mobile .card {
+  width: 100%;
+}
+
+.mobile .card img {
+  width: 100%;
+}
+
+.mobile .card:hover {
+  cursor: pointer;
+}
+
+.mobile .details {
+  text-align: center;
+}
+
+.mobile .restaurant {
+  font-size: 27.6px;
+  height: 40px;
+  margin: 25px 0 0 0;
+  margin: 0 auto;
+  margin-top: 11px;
+  width: 50%;
+  margin-bottom: 30px;
+  line-height: 1;
+}
+
+.mobile .chef {
+  font-size: 17.3px;
+  font-weight: 300;
+  padding: 0px 7px;
+  height: 70px;
+  margin: 0 0 0 0;
+  line-height: 1.3;
+  letter-spacing: 1px;
+}
+
+.mobile .line {
+  width: 76px;
+  height: 1px;
+  border: solid 0.5px #979797;
+  margin: 0px 10px;
+}
+
+.mobile .priceContent {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  height: 110px;
+}
+
+.mobile .priceContent img {
+  margin: 0;
+  padding: 20px 0px 11px 0px;
+}
+
+.mobile .price {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 25px;
+}
+
+@media only screen and (max-width: 375px) {
+  .mobile .chef {
+    width: 85%;
+    margin: 0 auto;
+  }
+}
+/*# sourceMappingURL=dish-card.component.css.map */

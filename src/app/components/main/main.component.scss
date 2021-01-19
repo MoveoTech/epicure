@@ -9,8 +9,8 @@
   }
   .content{
       text-align: center;
-      margin: 0 160px;
-      width: 80%;
+      width: 78%;
+      margin: 0 auto;
     }
 
   app-card{
@@ -23,25 +23,32 @@
   
   .popular-rest{
     font-size: 30px;
-     font-weight: 100;
-      margin: 140px 0 42px 0;
+    margin: 0 0 42px 0;
+    line-height: 1.53;
+    height: 40px;
+    letter-spacing: 1.05px;
+    font-weight: 300;
+    margin-top: 140px;
   }
 
   .all-restaurants{
-    height: 35px;
-    font-size: 30px;
-    margin-top: 31px;
-    text-align: right;
+       font-size: 30px;
+       text-align: right;
+       letter-spacing: 2.3px;
+       margin: 33px 10px 0 0;
+       line-height: 1;
   }
   
   .signature-dish{
     width: 100%;
     height: 30px;
     font-size: 30px;
-    font-weight: 100;
-    margin-top: 100px;
+    font-weight: 300;
     margin-bottom: 42px;
     text-align: center;
+    margin-top: 90px;
+    letter-spacing: 1.25px;
+    line-height: 1.3;
   }
   
   .card{
@@ -50,7 +57,12 @@
   }
   
   .title{
-   @include baseTitle(35px)
+   margin-bottom: 23px;
+   letter-spacing: 1.77px;
+   height: 28px;
+   font-size: 30px;
+   font-weight: 300;
+   margin-top: 12px;
   }
   
   app-icon-meaning{
@@ -69,7 +81,8 @@
   }
   .content{
       text-align: center;
-
+      max-width: 600px;
+      margin: 0 auto;
       .nav-buttons{
         width: 100%;
         @extend %flex-row;
@@ -77,17 +90,22 @@
         height: 125px;
         .button{
           @extend %flex-row;
-          font-size: 13px;
-          padding: 15px;
+          font-size: 16px;
+          padding: 15px;      
+          font-weight: 500;
           margin: 0 10px;
           background-color: rgba(232, 196, 122, 0.8);
           height: 43px;
+          letter-spacing: 0.93px;
         }
       }
 
       .popular-rest{
         margin: 51px 0 13px 0;
-        font-size: 15px;
+        font-size: 14px;
+        font-weight: 300;
+        line-height: 1.57;
+        letter-spacing: 0.93px;
       }
     }
   
@@ -110,9 +128,11 @@
   .signature-dish{
     height: 17px;
     font-size: 14px;
-    margin-top: 100px;
-    margin-bottom: 42px;
+    margin-top: 96px;
+    margin-bottom: 13px;
     text-align: center;
+    font-weight: 300;
+    letter-spacing: 1.1px;
   }
   
   .card{
@@ -123,11 +143,14 @@
   }
   
   .title{
-    margin-bottom: 23px;
-    margin-right: 5%;
-    height: 35px;
     font-size: 16px;
     font-weight: 500;
+   
+  }
+  @media only screen and(max-width:375px) {
+    .title{
+      width: 130% ;
+    }
   }
   
   app-icon-meaning{

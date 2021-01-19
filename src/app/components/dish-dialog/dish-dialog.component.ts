@@ -5,7 +5,8 @@ interface dialogData {
   img_src: string,
   dish_name: string,
   description: string,
-  price: number
+  price: number,
+  icon : string
 }
 
 @Component({
@@ -23,10 +24,12 @@ export class DishDialogComponent implements OnInit {
   quantity: number = 1
 
   increment() {
+
     this.quantity += 1
   }
   decrement() {
-    this.quantity -= 1
+    if (this.quantity > 1) this.quantity -= 1
+
   }
 
   ngOnInit(): void {
