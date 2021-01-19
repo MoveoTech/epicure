@@ -18,6 +18,7 @@ export class ChefOfTheWeekComponent implements OnInit {
   resizeCarouselle() {
     if (window.innerWidth > 960) {
       this.config.slidesPerView = 3
+      this.config.width = 700
     }
     if (window.innerWidth < 960) {
       this.config.width = 800

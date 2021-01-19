@@ -56,7 +56,7 @@
   height: 30px;
   font-size: 30px;
   font-weight: 100;
-  margin: 65px 0 20px 11px;
+  margin: 65px 0 20px 8px;
   text-align: left;
 }
 
@@ -184,11 +184,12 @@
 
 .mobile .chefs-restaurant {
   height: 30px;
-  font-size: 14px;
+  font-size: 17px;
   font-weight: 100;
   text-align: left;
   width: 92%;
-  margin: 0 auto;
+  margin: 2px auto;
+  margin-left: 14px;
 }
 
 .mobile .cards {
