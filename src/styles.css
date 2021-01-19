@@ -22,6 +22,9 @@ body { margin: 0; font-family: HelveticaNeue, Roboto, sans-serif; }
       align-items: center;
       justify-content: center;
  }
+ .mat-dialog-container{
+            height: 900px !important;
+ }
 
  .mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle{
       border-color: black;

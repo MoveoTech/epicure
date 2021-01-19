@@ -24,7 +24,8 @@ export class DishCardComponent implements OnInit {
         img_src: this.img_src,
         dish_name: this.restaurant,
         description: this.chef,
-        price: this.price
+        price: this.price,
+        icon: this.icon
       },
       height: "1080px"
     })

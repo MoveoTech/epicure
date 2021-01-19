@@ -24,10 +24,6 @@
   background-color: #f9f4ea;
 }
 
-.desktop .card:hover {
-  cursor: pointer;
-}
-
 .desktop .details {
   background-color: #f9f4ea;
   text-align: center;
@@ -92,10 +88,6 @@
 
 .mobile .card img {
   width: 100%;
-}
-
-.mobile .card:hover {
-  cursor: pointer;
 }
 
 .mobile .details {

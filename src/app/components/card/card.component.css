@@ -7,10 +7,6 @@
   background-color: #f9f4ea;
 }
 
-.desktop .card:hover {
-  cursor: pointer;
-}
-
 .desktop .details {
   background-color: #f9f4ea;
   text-align: center;
@@ -70,10 +66,6 @@
   height: 224px;
   -o-object-fit: cover;
      object-fit: cover;
-}
-
-.mobile .card:hover {
-  cursor: pointer;
 }
 
 .mobile .details {

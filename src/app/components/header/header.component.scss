@@ -51,7 +51,7 @@
     max-width: 415px;
     height: 34px;
     margin-left: 10%;
-    padding: 3px 0 0 0px;
+    padding: 3px 0 0 6px;
     letter-spacing: 0.29px;
     font-size: 18px;
     border-radius: 4px;
@@ -64,7 +64,7 @@
     // width: 301px;
     height: 21px;
     opacity: 0.8;
-    font-size: 18px;
+    font-size: 17px;
     @extend %lightFont;
   }
 
@@ -100,7 +100,9 @@
     height: 22px;
     // margin: 7px 4px 5px 15px;
   }
-
+.solo-search-icon{
+  display: none;
+}
 
 }
 

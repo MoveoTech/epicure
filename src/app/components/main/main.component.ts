@@ -18,39 +18,51 @@ export class MainComponent implements OnInit {
 
   constructor() { }
 
-  spaceDescription = `Polenta fingers, veal cheek,
- magic chili cured lemon cream, yellow laksa`
+  spaceDescription = `Polenta Fingers, Veal Cheek, Magic Chili, Cured Lemon Cream & Yellow Laksa`
 
-  test() {
+  resizeCarouselle() {
+
     if (window.innerWidth > 430) {
       this.config.width = null
       this.config.slidesPerView = 1
       this.dishConfig.slidesPerView = 1
       this.dishConfig.width = null;
     }
+
     window.innerWidth > 1360 ? this.config.slidesPerView = 3 : this.config.slidesPerView = 2;
     window.innerWidth > 1360 ? this.config.spaceBetween = -5 : this.config.spaceBetween = 0;
     window.innerWidth > 1360 ? this.dishConfig.slidesPerView = 3 : this.dishConfig.slidesPerView = 2;
-    if (window.innerWidth <= 430) {
+    if (window.innerWidth >= 560 && window.innerWidth < 960) {
+      this.config.width = 555
+    }
+    if (window.innerWidth <= 560) {
       this.config.width = 210
       this.config.slidesPerView = 1
       this.dishConfig.slidesPerView = 1
       this.dishConfig.width = 260;
     }
+    if (window.innerWidth > 560 && window.innerWidth < 960) {
+      this.dishConfig.width = 555
+    }
+
+
   }
 
   ngOnInit(): void {
-    console.log(this.config)
+    if (window.innerWidth > 560 && window.innerWidth < 960) {
+      this.dishConfig.width = 555
+      this.config.width = 555
+    }
     window.innerWidth > 1360 ? this.config.slidesPerView = 3 : this.config.slidesPerView = 2;
     window.innerWidth > 1360 ? this.config.spaceBetween = -5 : this.config.spaceBetween = 0;
     window.innerWidth > 1360 ? this.dishConfig.slidesPerView = 3 : this.dishConfig.slidesPerView = 2;
-    if (window.innerWidth <= 430) {
+    if (window.innerWidth <= 560) {
       this.config.width = 210
       this.config.slidesPerView = 1
       this.dishConfig.slidesPerView = 1
       this.dishConfig.width = 260;
     }
-    window.addEventListener('resize', () => this.test())
+    window.addEventListener('resize', () => this.resizeCarouselle())
   }
 
 }

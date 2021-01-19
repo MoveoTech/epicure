@@ -4,7 +4,7 @@
             <p class="description">Epicure works with the top chef restaurants in Tel Aviv</p>
             <form [formGroup]='restForm'>
                 <input matInput class="Search-Field" type="text" id="search" name="search"
-                    placeholder="Search for restaurant cuisine, chef" [matAutocomplete]="autoGroup"
+                    placeholder="Search for restaurant, cuisine & chef" [matAutocomplete]="autoGroup"
                     formControlName="restaurant">
                 <mat-autocomplete #autoGroup="matAutocomplete">
                     <mat-optgroup *ngFor="let group of restOptions | async" [label]="group.option">

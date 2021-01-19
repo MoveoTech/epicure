@@ -1,4 +1,4 @@
-<div #div (resize)='test()' ngClass.lt-md="mobile" ngClass.gt-sm="desktop">
+<div ngClass.lt-md="mobile" ngClass.gt-sm="desktop">
     <div  class="content">
         <div class="nav-buttons" fxHide.gt-sm>
             <div class="button">Chefs</div>
@@ -26,7 +26,7 @@
             <div class="card">
                 <p class="title">Tiger Lilly</p>
                 <app-dish-card [restaurant]="'Pad Ki Mao'"
-                    [chef]="'Shrimps, Glass Noodles, Kemiri Nuts, Shallots, Lemon Grass, Magic Chili Brown Coconut'"
+                    [chef]="'Shrimps, Glass Noodles, Kemiri Nuts, Shallots, Lemon Grass, Magic Chili & Brown Coconut'"
                     [img_src]='"../../../assets/rectangle1.jpg"' [icon]='"assets/group-2.svg"' [price]="'88'">
                 </app-dish-card>
             </div>
@@ -39,7 +39,7 @@
             <div class="card">
                 <p class="title">Popina</p>
                 <app-dish-card [restaurant]='"Smoked Pizza"'
-                    [chef]="'Basil dough, cashew butter, demi-glace, bison & radish'"
+                    [chef]="'Basil Dough, Cashew Butter, Demi-glace, Bison & Radish'"
                     [img_src]='"../../../assets/rectangle.jpg"' [price]="'88'" [icon]='"assets/group-7-copy.svg"'>
                 </app-dish-card>
             </div>

@@ -6,10 +6,6 @@
         background-color: #f9f4ea;
     }
     
-    .card:hover{
-        cursor: pointer;
-      }
-      
     .details{
         background-color: #f9f4ea;
         text-align: center;
@@ -64,10 +60,6 @@
         object-fit: cover;
     }
 }
-
-.card:hover{
-    cursor: pointer;
-  }
   
 .details{
     @extend %mobileBackgroundColor;
