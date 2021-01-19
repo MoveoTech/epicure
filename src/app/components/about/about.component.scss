@@ -36,7 +36,8 @@
         .icon{
             height: 129px;
             position: absolute;
-            right: 15%;        }
+            right: 15%;      
+        }
     }
     
     .downloads{
@@ -120,7 +121,9 @@
         margin: 20px 8px;
         font-size: 9.2px;
         text-align: center;
-
+        p{
+            margin: 0;
+        }
         img{
             height: 22px;
         }
