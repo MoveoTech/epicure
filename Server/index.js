@@ -12,12 +12,11 @@ app.get('/', (req, res) => {
     res.send('Welcome Home')
 });
 
-app.use('/users', require('./routes/users'));
 
 const PORT = process.env.PORT || 1000;
 
 
-mongoose.connect('mongodb://localhost/test', { useNewUrlParser: true, useUnifiedTopology: true , useCreateIndex : true})
+mongoose.connect('mongodb://localhost/epicure', { useNewUrlParser: true, useUnifiedTopology: true , useCreateIndex : true})
     .then(result => {
         console.log('DB Connected')
         app.listen(PORT, () => console.log(`App running on port ${PORT}`))
