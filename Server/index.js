@@ -29,4 +29,5 @@ mongoose.connect('mongodb://localhost/epicure', { useNewUrlParser: true, useUnif
     // why need to import the other model
     // exec()?
     // populate few items 
+    // why returning array on chef of the week
 

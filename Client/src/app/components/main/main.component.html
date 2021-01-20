@@ -15,24 +15,10 @@
         <p class="all-restaurants" fxHide.lt-md>All Restaurants <img src="assets/all-restaurants-arrows.svg"></p>
         <div class="signature-dish">SIGNATURE DISH OF :</div>
         <swiper [config]='dishConfig'>
-            <div class="card">
-                <p class="title">Tiger Lilly</p>
-                <app-dish-card [restaurant]="'Pad Ki Mao'"
-                    [chef]="'Shrimps, Glass Noodles, Kemiri Nuts, Shallots, Lemon Grass, Magic Chili & Brown Coconut'"
-                    [img_src]='"../../../assets/rectangle1.jpg"' [icon]='"assets/group-2.svg"' [price]="'88'">
-                </app-dish-card>
-            </div>
-            <div class="card">
-                <p class="title">Kab Kem</p>
-                <app-dish-card style="white-space: pre-line;" [restaurant]='"Garbanzo Frito"'
-                    [img_src]='"../../../assets/rectangle2.jpg"' [chef]='spaceDescription' [price]="'98'">
-                </app-dish-card>
-            </div>
-            <div class="card">
-                <p class="title">Popina</p>
-                <app-dish-card [restaurant]='"Smoked Pizza"'
-                    [chef]="'Basil Dough, Cashew Butter, Demi-Glace, Bison & Radish'"
-                    [img_src]='"../../../assets/rectangle.jpg"' [price]="'65'" [icon]='"assets/group-7-copy.svg"'>
+            <div class="card" *ngFor='let dish of dishesService.dishes'>
+                <p class="title">{{dish.restaurant.name}}</p>
+                <app-dish-card [dish_name]="dish.dish_name" [description]="dish.description"
+                    [img_src]='"assets/"+dish.img_src' [icon]='"assets/"+dish.icon' [price]="'88'">
                 </app-dish-card>
             </div>
         </swiper>

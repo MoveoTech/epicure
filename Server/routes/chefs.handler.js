@@ -7,7 +7,7 @@ const getWeeklychef = () => {
 };
 
 const getAllChefs = () => {
-    return Chef.find().populate('restaurants', 'name')
+    return Chef.find().populate('restaurants')
 }
 
 module.exports = { getWeeklychef, getAllChefs };

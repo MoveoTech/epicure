@@ -9,8 +9,8 @@ import { DishDialogComponent } from '../dish-dialog/dish-dialog.component';
 })
 export class DishCardComponent implements OnInit {
   @Input() img_src: string
-  @Input() restaurant: string
-  @Input() chef: string
+  @Input() dish_name: string
+  @Input() description: string
   @Input() icon: string
   @Input() price: string
   constructor(private dialog: MatDialog) { }
@@ -22,8 +22,8 @@ export class DishCardComponent implements OnInit {
     this.dialog.open(DishDialogComponent, {
       data: {
         img_src: this.img_src,
-        dish_name: this.restaurant,
-        description: this.chef,
+        dish_name: this.dish_name,
+        description: this.description,
         price: this.price,
         icon: this.icon
       },

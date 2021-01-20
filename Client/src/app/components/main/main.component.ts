@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Dish } from 'src/app/interfaces/dish.interface';
+import { Restaurant } from 'src/app/interfaces/restaurant.interfece';
+import { DishesService } from 'src/app/services/dishes.service';
 import { RestaurantsService } from 'src/app/services/restaurants.service';
 import { SwiperOptions } from 'swiper';
 
@@ -17,9 +20,7 @@ export class MainComponent implements OnInit {
     // width : 530
   }
 
-  constructor(public restaurantsService: RestaurantsService) { }
-
-  spaceDescription = `Polenta Fingers, Veal Cheek, Magic Chili, Cured Lemon Cream & Yellow Laksa`
+  constructor(public restaurantsService: RestaurantsService, public dishesService: DishesService) { }
 
   resizeCarouselle() {
 
@@ -44,22 +45,25 @@ export class MainComponent implements OnInit {
     if (window.innerWidth > 560 && window.innerWidth < 960) {
       this.dishConfig.width = 555
     }
-  }
+  };
 
   ngOnInit(): void {
-    this.resizeCarouselle()
+    window.addEventListener('resize', () => this.resizeCarouselle());
+    this.resizeCarouselle();
+
     this.restaurantsService.getRestaurants()
       .subscribe(
-        (res: any) => this.restaurantsService.restaurants = res,
+        (res: Restaurant[]) => this.restaurantsService.restaurants = res,
         (err) => console.log(err)
-      )
-    window.addEventListener('resize', () => this.resizeCarouselle())
-  }
+      );
+    this.dishesService.getSignatureDishes().subscribe((res: Dish[]) => this.dishesService.dishes = res)
 
+  }
 }
 
 
 
+// Might use in case theres an error at styling
 
 // if (window.innerWidth > 560 && window.innerWidth < 960) {
 //   this.dishConfig.width = 555

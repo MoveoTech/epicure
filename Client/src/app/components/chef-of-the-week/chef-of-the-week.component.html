@@ -3,32 +3,15 @@
         <p class="chef-week">CHEF OF THE WEEK :</p>
         <div class="content">
             <div class="pic">
-                <div class="name" fxHide.gt-sm>Yossi Shitrit</div>
+                <div class="name" fxHide.gt-sm>{{chefService.weeklyChef[0]?.name}}</div>
             </div>
-            <p class="description">Chef Yossi Shitrit has been living and breathing his culinary dreams for more than
-                two
-                decades, including
-                running the kitchen in his first restaurant, the fondly-remembered Violet, located in Moshav Udim.
-                Shitrit's
-                creativity and culinary acumen born of long experience are expressed in the every detail of each and
-                every dish.</p>
+            <p class="description">{{chefService.weeklyChef[0]?.description}}</p>
         </div>
         <div class="restaurants">
-            <p class="chefs-restaurant">Yossi's restaurants :</p>
+            <p class="chefs-restaurant">{{chefService.weeklyChef[0]?.name}} restaurants :</p>
             <swiper [config]='config'>
-                <div class="card">
-                    <app-chef-restaurant-card [img_src]="'assets/screen-shot-2019-01-06-at-10-55-45.jpg'"
-                        [restaurant]='"Onza"'>
-                    </app-chef-restaurant-card>
-                </div>
-                <div class="card">
-                    <app-chef-restaurant-card [img_src]="'assets/screen-shot-2019-01-06-at-10-57-26.jpg'"
-                        [restaurant]='"Kitchen Market"'>
-                    </app-chef-restaurant-card>
-                </div>
-                <div class="card">
-                    <app-chef-restaurant-card [img_src]="'assets/screen-shot-2019-01-03-at-18-28-50.jpg'"
-                        [restaurant]='"Mashya"'>
+                <div class="card" *ngFor='let restaurant of chefService.weeklyChef[0]?.restaurants'>
+                    <app-chef-restaurant-card [img_src]="'assets/'+restaurant.img_src" [restaurant]='restaurant.name'>
                     </app-chef-restaurant-card>
                 </div>
             </swiper>

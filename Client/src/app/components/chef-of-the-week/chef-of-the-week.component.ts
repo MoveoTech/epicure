@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Chef } from 'src/app/interfaces/chef.interface';
+import { ChefsService } from 'src/app/services/chefs.service';
 import { SwiperOptions } from 'swiper';
 
 @Component({
@@ -8,11 +10,10 @@ import { SwiperOptions } from 'swiper';
 })
 export class ChefOfTheWeekComponent implements OnInit {
 
-  constructor() { }
+  constructor(public chefService: ChefsService) { }
 
   config: SwiperOptions = {
     spaceBetween: 0,
-    // width: 700
   }
 
   resizeCarouselle() {
@@ -31,28 +32,34 @@ export class ChefOfTheWeekComponent implements OnInit {
     if (window.innerWidth < 700) {
       this.config.width = 300
       this.config.slidesPerView = 1
-      console.log('called')
     }
   }
 
   ngOnInit(): void {
-    window.innerWidth < 960 ? this.config.slidesPerView = 2 : this.config.slidesPerView = 3
-    if (window.innerWidth > 960) {
-      this.config.width = 700
-    }
-    if (window.innerWidth < 960) {
-      this.config.width = 800
-      this.config.slidesPerView = 3
-    }
-    if (window.innerWidth < 860) {
-      this.config.width = 600
-      this.config.slidesPerView = 2
-    }
-    if (window.innerWidth < 700) {
-      this.config.width = 300
-      this.config.slidesPerView = 1
-    }
-    window.addEventListener('resize', () => this.resizeCarouselle())
+    window.addEventListener('resize', () => this.resizeCarouselle());
+    this.resizeCarouselle();
+    this.chefService.getWeeklyChef().subscribe(
+      (res: Chef[]) => this.chefService.weeklyChef = res,
+      err => console.log(err)
+    )
   }
 
 }
+// Might use in case theres an error at styling
+
+// window.innerWidth < 960 ? this.config.slidesPerView = 2 : this.config.slidesPerView = 3
+//     if (window.innerWidth > 960) {
+//       this.config.width = 700
+//     }
+//     if (window.innerWidth < 960) {
+//       this.config.width = 800
+//       this.config.slidesPerView = 3
+//     }
+//     if (window.innerWidth < 860) {
+//       this.config.width = 600
+//       this.config.slidesPerView = 2
+//     }
+//     if (window.innerWidth < 700) {
+//       this.config.width = 300
+//       this.config.slidesPerView = 1
+//     }
