@@ -14,7 +14,9 @@ const chefSchema = new Schema({
         type: Boolean,
         required: true,
 
-    }
+    },
+    restaurants: [{ type: mongoose.Types.ObjectId, ref: 'restaurant' }]
 })
 
 const Chef = mongoose.model('chef', chefSchema)
+module.exports = Chef

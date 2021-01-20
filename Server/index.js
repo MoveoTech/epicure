@@ -5,16 +5,16 @@ const morgan = require('morgan');
 const cors = require('cors');
 
 app.use(express.json());
-app.use(cors())
+app.use(cors());
 app.use(morgan('dev'));
 
 app.get('/', (req, res) => {
     res.send('Welcome Home')
 });
 
-app.use('/restaurants', require('./routes/restaurants'))
-app.use('/dishes', require('./routes/dishes'))
-
+app.use('/restaurants', require('./routes/restaurants'));
+app.use('/dishes', require('./routes/dishes'));
+app.use('/chefs', require('./routes/chefs'))
 const PORT = process.env.PORT || 1000;
 
 
@@ -27,4 +27,6 @@ mongoose.connect('mongodb://localhost/epicure', { useNewUrlParser: true, useUnif
 
 
     // why need to import the other model
+    // exec()?
+    // populate few items 
 
