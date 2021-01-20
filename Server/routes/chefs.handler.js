@@ -3,7 +3,16 @@ const Chef = require('../models/chef');
 const Restaurants = require('../models/restaurant');
 
 const getWeeklychef = () => {
-    return Chef.find({ weekly: true }).populate('restaurants').exec()
+    return Chef.find({ weekly: true })
+        .populate([
+            {
+                path: 'restaurants', model: Restaurants,
+                populate: {
+                    path: 'chef', model: Chef,
+                    select: 'name'
+                }
+            }
+        ]).exec()
 };
 
 const getAllChefs = () => {

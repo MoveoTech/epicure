@@ -15,7 +15,13 @@ const chefSchema = new Schema({
         required: true,
 
     },
-    restaurants: [{ type: mongoose.Types.ObjectId, ref: 'restaurant' }]
+    restaurants: [
+        {
+            type: mongoose.Types.ObjectId,
+            ref: 'restaurant'
+        }
+    ],
+    img_src: { type: String }
 })
 
 const Chef = mongoose.model('chef', chefSchema);

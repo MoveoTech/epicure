@@ -7,6 +7,7 @@
         </div>
         <div *ngIf='price' class="priceContent">
             <img *ngIf='icon !== "assets/undefined"' style="margin:10px 0 0px 0;" src={{icon}} alt="">
+            <img *ngIf='icon === "assets/undefined"' style="margin:10px 0 0px 0;" src='' alt="">
             <div class="price">
                 <div class="line"></div>
                 <p class="price-number">₪{{price}}</p>
