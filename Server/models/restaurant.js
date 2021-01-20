@@ -7,7 +7,8 @@ const restaurantSchema = new Schema({
         required: true
     },
     chef: {
-        type: String,
+        type: mongoose.Types.ObjectId,
+        ref: 'chef',
         required: true
     }
 });

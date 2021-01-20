@@ -1,7 +1,10 @@
 const Restaurant = require('../models/restaurant');
+const Chef = require('../models/chef');
 
 const getAllRetaurants = () => {
-    return 
-}
+    return Restaurant.find().populate('chef', 'name')
+};
 
-module.exports = {}
+
+
+module.exports = { getAllRetaurants };

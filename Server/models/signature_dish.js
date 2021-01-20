@@ -7,7 +7,8 @@ const signatureDishSchema = new Schema({
         required: true
     },
     restaurant: {
-        type: String,
+        type: mongoose.Types.ObjectId,
+        ref : 'restaurant',
         required: true
     },
     description: {
