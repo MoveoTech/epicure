@@ -5,5 +5,6 @@ export interface Chef {
     restaurants: Restaurant[],
     name: string,
     description: string,
-    weekly: boolean
+    weekly: boolean,
+    img_src : string
 }

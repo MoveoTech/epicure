@@ -5,6 +5,7 @@
 .desktop .card {
   width: 360px;
   background-color: #f9f4ea;
+  display: inline-block;
 }
 
 .desktop .details {
@@ -59,6 +60,15 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.desktop .price p {
+  font-size: 24.9px;
+  font-weight: 100;
+}
+
+.mobile .card {
+  display: inline-block;
 }
 
 .mobile .card img {

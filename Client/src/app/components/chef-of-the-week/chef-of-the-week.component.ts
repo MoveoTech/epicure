@@ -39,7 +39,7 @@ export class ChefOfTheWeekComponent implements OnInit {
     window.addEventListener('resize', () => this.resizeCarouselle());
     this.resizeCarouselle();
     this.chefService.getWeeklyChef().subscribe(
-      (res: Chef[]) => this.chefService.weeklyChef = res,
+      (res: Chef) => this.chefService.weeklyChef = res,
       err => console.log(err)
     )
   }

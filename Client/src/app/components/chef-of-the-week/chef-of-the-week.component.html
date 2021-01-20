@@ -3,14 +3,15 @@
         <p class="chef-week">CHEF OF THE WEEK :</p>
         <div class="content">
             <div class="pic">
-                <div class="name" fxHide.gt-sm>{{chefService.weeklyChef[0]?.name}}</div>
+                <img [src]='"assets/"+chefService.weeklyChef.img_src' alt="" fxHide.lt-md>
+                <div class="name" fxHide.gt-sm>{{chefService.weeklyChef?.name}}</div>
             </div>
-            <p class="description">{{chefService.weeklyChef[0]?.description}}</p>
+            <p class="description">{{chefService.weeklyChef?.description}}</p>
         </div>
         <div class="restaurants">
-            <p class="chefs-restaurant">{{chefService.weeklyChef[0]?.name}} restaurants :</p>
+            <p class="chefs-restaurant">{{chefService.weeklyChef?.name}} restaurants :</p>
             <swiper [config]='config'>
-                <div class="card" *ngFor='let restaurant of chefService.weeklyChef[0]?.restaurants'>
+                <div class="card" *ngFor='let restaurant of chefService.weeklyChef?.restaurants'>
                     <app-chef-restaurant-card [img_src]="'assets/'+restaurant.img_src" [restaurant]='restaurant.name'>
                     </app-chef-restaurant-card>
                 </div>
