@@ -10,6 +10,9 @@ const restaurantSchema = new Schema({
         type: mongoose.Types.ObjectId,
         ref: 'chef',
         required: true
+    },
+    img_src: {
+        type: String
     }
 });
 
