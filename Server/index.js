@@ -16,9 +16,8 @@ app.use('/restaurants', require('./routes/controls/restaurants'));
 app.use('/dishes', require('./routes/controls/dishes'));
 app.use('/chefs', require('./routes/controls/chefs'));
 
-//  ----- Admin Middlewares -----
-app.use('/add-admin', require('./admin/routes/add_admin'));
-app.use('/login', require('./admin/routes/login'));
+//  ----- Admin Middleware -----
+app.use('/admin', require('./admin/routes/controls/admin_navigator'));
 
 const PORT = process.env.PORT || 1000;
 
@@ -28,11 +27,6 @@ mongoose.connect('mongodb://localhost/epicure', { useNewUrlParser: true, useUnif
         app.listen(PORT, () => console.log(`App running on port ${PORT}`))
     })
     .catch(err => console.log(err));
-
-
-    // why need to import the other model
-    // exec()?
-
 
 
     // admin page 

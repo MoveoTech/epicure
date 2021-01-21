@@ -4,11 +4,12 @@ const Schema = mongoose.Schema;
 const signatureDishSchema = new Schema({
     dish_name: {
         type: String,
-        required: true
+        required: true,
+        unique: true
     },
     restaurant: {
         type: mongoose.Types.ObjectId,
-        ref : 'restaurant',
+        ref: 'restaurant',
         required: true
     },
     description: {
@@ -21,6 +22,14 @@ const signatureDishSchema = new Schema({
     },
     icon: {
         type: String
+    },
+    img_src: {
+        type: String,
+        required: true
+    },
+    deleted: {
+        type: Boolean,
+        default: false
     }
 });
 
