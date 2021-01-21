@@ -4,6 +4,7 @@
     .card{
         width: 360px;
         background-color: #f9f4ea;
+        display: inline-block;
     }
     
     .card:hover{
@@ -71,6 +72,7 @@
 
 .mobile{
     .card{
+    display: inline-block;
     width: 100%;
     @extend %mobileBackgroundColor;
     img{

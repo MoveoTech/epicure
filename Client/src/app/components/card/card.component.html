@@ -1,5 +1,5 @@
 <div ngClass.lt-md="mobile" ngClass.gt-sm="desktop">
-    <div class="card" style="display: inline-block;" *ngIf='restaurant'>
+    <div class="card" *ngIf='restaurant'>
         <img src={{img_src}} alt="">
         <div class="details">
             <p class="restaurant">{{restaurant}}</p>
@@ -9,7 +9,7 @@
             <img src={{icon}} alt="">
             <div class="price">
                 <div class="line"></div>
-                <p style=" font-size: 24.9px; font-weight: 100;">{{price}}₪</p>
+                <p>{{price}}₪</p>
                 <div class="line"></div>
             </div>
         </div>

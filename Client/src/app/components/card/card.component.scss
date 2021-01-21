@@ -4,6 +4,7 @@
     .card{
         width: 360px;
         background-color: #f9f4ea;
+        display: inline-block;
     }
     
     .details{
@@ -44,6 +45,10 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        p{
+            font-size: 24.9px; 
+            font-weight: 100;
+        }
     }
     
 }
@@ -53,6 +58,7 @@
 
 .mobile{
     .card{
+        display: inline-block;
     @extend %mobileBackgroundColor;
     img{
         width: 100%;

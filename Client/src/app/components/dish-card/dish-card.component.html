@@ -1,12 +1,13 @@
 <div ngClass.lt-md="mobile" ngClass.gt-sm="desktop">
-    <div class="card" (click)='openDialog()' style="display: inline-block;" *ngIf='restaurant'>
+    <div class="card" (click)='openDialog()' *ngIf='dish_name'>
         <img src={{img_src}} alt="">
         <div class="details">
-            <p class="restaurant">{{restaurant}}</p>
-            <p *ngIf='chef' class="chef">{{chef}}</p>
+            <p class="restaurant">{{dish_name}}</p>
+            <p *ngIf='description' class="chef">{{description}}</p>
         </div>
         <div *ngIf='price' class="priceContent">
-            <img style="margin:10px 0 0px 0;" src={{icon}} alt="">
+            <img *ngIf='icon !== "assets/undefined"' style="margin:10px 0 0px 0;" src={{icon}} alt="">
+            <img *ngIf='icon === "assets/undefined"' style="margin:10px 0 0px 0;" src='' alt="">
             <div class="price">
                 <div class="line"></div>
                 <p class="price-number">₪{{price}}</p>
@@ -14,5 +15,5 @@
             </div>
         </div>
     </div>
-    <img *ngIf='!restaurant' src={{img_src}} alt="">
+    <img *ngIf='!dish_name' src={{img_src}} alt="">
 </div>

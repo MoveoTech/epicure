@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Dish } from 'src/app/interfaces/dish.interface';
+import { Restaurant } from 'src/app/interfaces/restaurant.interfece';
+import { DishesService } from 'src/app/services/dishes.service';
+import { RestaurantsService } from 'src/app/services/restaurants.service';
 import { SwiperOptions } from 'swiper';
 
 @Component({
@@ -16,9 +20,7 @@ export class MainComponent implements OnInit {
     // width : 530
   }
 
-  constructor() { }
-
-  spaceDescription = `Polenta Fingers, Veal Cheek, Magic Chili, Cured Lemon Cream & Yellow Laksa`
+  constructor(public restaurantsService: RestaurantsService, public dishesService: DishesService) { }
 
   resizeCarouselle() {
 
@@ -28,7 +30,6 @@ export class MainComponent implements OnInit {
       this.dishConfig.slidesPerView = 1
       this.dishConfig.width = null;
     }
-
     window.innerWidth > 1360 ? this.config.slidesPerView = 3 : this.config.slidesPerView = 2;
     window.innerWidth > 1360 ? this.config.spaceBetween = -5 : this.config.spaceBetween = 0;
     window.innerWidth > 1360 ? this.dishConfig.slidesPerView = 3 : this.dishConfig.slidesPerView = 2;
@@ -44,25 +45,36 @@ export class MainComponent implements OnInit {
     if (window.innerWidth > 560 && window.innerWidth < 960) {
       this.dishConfig.width = 555
     }
-
-
-  }
+  };
 
   ngOnInit(): void {
-    if (window.innerWidth > 560 && window.innerWidth < 960) {
-      this.dishConfig.width = 555
-      this.config.width = 555
-    }
-    window.innerWidth > 1360 ? this.config.slidesPerView = 3 : this.config.slidesPerView = 2;
-    window.innerWidth > 1360 ? this.config.spaceBetween = -5 : this.config.spaceBetween = 0;
-    window.innerWidth > 1360 ? this.dishConfig.slidesPerView = 3 : this.dishConfig.slidesPerView = 2;
-    if (window.innerWidth <= 560) {
-      this.config.width = 210
-      this.config.slidesPerView = 1
-      this.dishConfig.slidesPerView = 1
-      this.dishConfig.width = 260;
-    }
-    window.addEventListener('resize', () => this.resizeCarouselle())
-  }
+    window.addEventListener('resize', () => this.resizeCarouselle());
+    this.resizeCarouselle();
 
+    this.restaurantsService.getRestaurants()
+      .subscribe(
+        (res: Restaurant[]) => this.restaurantsService.restaurants = res,
+        (err) => console.log(err)
+      );
+    this.dishesService.getSignatureDishes().subscribe((res: Dish[]) => this.dishesService.dishes = res)
+
+  }
 }
+
+
+
+// Might use in case theres an error at styling
+
+// if (window.innerWidth > 560 && window.innerWidth < 960) {
+//   this.dishConfig.width = 555
+//   this.config.width = 555
+// }
+// window.innerWidth > 1360 ? this.config.slidesPerView = 3 : this.config.slidesPerView = 2;
+// window.innerWidth > 1360 ? this.config.spaceBetween = -5 : this.config.spaceBetween = 0;
+// window.innerWidth > 1360 ? this.dishConfig.slidesPerView = 3 : this.dishConfig.slidesPerView = 2;
+// if (window.innerWidth <= 560) {
+//   this.config.width = 210
+//   this.config.slidesPerView = 1
+//   this.dishConfig.slidesPerView = 1
+//   this.dishConfig.width = 260;
+// }
