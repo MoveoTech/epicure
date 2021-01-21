@@ -2,7 +2,7 @@ const Chef = require('../../models/chef');
 const Restaurants = require('../../models/restaurant');
 
 const getWeeklychef = () => {
-    return Chef.findOne({ weekly: true })
+    return Chef.findOne({ weekly: true , deleted : false })
         .populate([
             {
                 path: 'restaurants', model: Restaurants,
@@ -15,7 +15,7 @@ const getWeeklychef = () => {
 };
 
 const getAllChefs = () => {
-    return Chef.find().populate('restaurants')
+    return Chef.find({deleted : false}).populate('restaurants')
 }
 
 module.exports = { getWeeklychef, getAllChefs };

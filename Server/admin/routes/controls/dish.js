@@ -15,7 +15,7 @@ router.post('/add', verifyUser, (req, res) => {
 });
 
 // ------ Edit Dish -------
-router.post('/edit', verifyUser, (req, res) => {
+router.put('/edit', verifyUser, (req, res) => {
     const { dish_name, restaurant, description, dish_price, img_src, icon, _id } = req.body;
     if (!dish_name || !restaurant || !description || !dish_price || !img_src || !_id) {
         res.json({ error: true, msg: "missing info..." }).status(404)

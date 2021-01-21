@@ -21,7 +21,11 @@ const chefSchema = new Schema({
             ref: 'restaurant'
         }
     ],
-    img_src: { type: String }
+    img_src: { type: String },
+    deleted: {
+        type: Boolean,
+        default: false
+    }
 })
 
 const Chef = mongoose.model('chef', chefSchema);

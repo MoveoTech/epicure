@@ -5,7 +5,6 @@ const signatureDishSchema = new Schema({
     dish_name: {
         type: String,
         required: true,
-        unique: true
     },
     restaurant: {
         type: mongoose.Types.ObjectId,

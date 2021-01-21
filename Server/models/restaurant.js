@@ -13,6 +13,10 @@ const restaurantSchema = new Schema({
     },
     img_src: {
         type: String
+    },
+    deleted: {
+        type: Boolean,
+        default: false
     }
 });
 
