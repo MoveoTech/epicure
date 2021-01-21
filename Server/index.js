@@ -11,12 +11,16 @@ app.use(morgan('dev'));
 app.get('/', (req, res) => {
     res.send('Welcome Home')
 });
+//  ---- Middlewares ----
+app.use('/restaurants', require('./routes/controls/restaurants'));
+app.use('/dishes', require('./routes/controls/dishes'));
+app.use('/chefs', require('./routes/controls/chefs'));
 
-app.use('/restaurants', require('./routes/restaurants'));
-app.use('/dishes', require('./routes/dishes'));
-app.use('/chefs', require('./routes/chefs'))
+//  ----- Admin Middlewares -----
+app.use('/add-admin', require('./admin/routes/add_admin'));
+app.use('/login', require('./admin/routes/login'));
+
 const PORT = process.env.PORT || 1000;
-
 
 mongoose.connect('mongodb://localhost/epicure', { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true })
     .then(result => {
@@ -28,6 +32,9 @@ mongoose.connect('mongodb://localhost/epicure', { useNewUrlParser: true, useUnif
 
     // why need to import the other model
     // exec()?
-    // populate few items 
-    // why returning array on chef of the week
 
+
+
+    // admin page 
+    // edit /delete / update /gate all collections from db
+    // simple client side 

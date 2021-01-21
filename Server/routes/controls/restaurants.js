@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { getAllRetaurants } = require('./restaurants.handler')
+const { getAllRetaurants } = require('../handlers/restaurants.handler')
 
 router.get('/', (req, res) => {
     getAllRetaurants()

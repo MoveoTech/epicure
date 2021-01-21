@@ -1,4 +1,4 @@
-const { getAllSignatureDishes } = require('./dishes.handler')
+const { getAllSignatureDishes } = require('../handlers/dishes.handler')
 
 const router = require('express').Router()
 
