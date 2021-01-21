@@ -21,7 +21,9 @@ import { SWIPER_CONFIG } from 'ngx-swiper-wrapper';
 import { SwiperConfigInterface } from 'ngx-swiper-wrapper';
 import { DishCardComponent } from './components/dish-card/dish-card.component';
 import { ChefRestaurantCardComponent } from './components/chef-restaurant-card/chef-restaurant-card.component';
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule } from '@angular/common/http';
+import { AdminLoginComponent } from './components/admin-login/admin-login.component';
+import { AdminMainComponent } from './components/admin-main/admin-main.component'
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   direction: 'horizontal',
@@ -44,6 +46,8 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     DishDialogComponent,
     DishCardComponent,
     ChefRestaurantCardComponent,
+    AdminLoginComponent,
+    AdminMainComponent,
   ],
   imports: [
     BrowserModule,
