@@ -12,7 +12,7 @@ const chefSchema = new Schema({
     },
     weekly: {
         type: Boolean,
-        required: true,
+        default: false
 
     },
     restaurants: [
