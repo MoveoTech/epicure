@@ -1,6 +1,7 @@
 <div class="wrapper">
     <h2 mat-dialog-title>Add : {{selectedCategory}}</h2>
     <div class="form">
+
         <mat-form-field appearance="fill">
             <mat-label>Pick Category</mat-label>
             <mat-select (valueChange)='changeCategory($event)'>
@@ -9,11 +10,20 @@
                 </mat-option>
             </mat-select>
         </mat-form-field>
+
         <form *ngIf='selectedCategory' [formGroup]='addForm'>
-            <mat-form-field *ngIf='selectedCategory==="Restaurants"'>
+            <mat-form-field *ngIf='selectedCategory==="Restaurants" || selectedCategory==="Chefs"'>
                 <mat-label>Name</mat-label>
                 <input matInput formControlName='name' placeholder="Yummi Yum">
                 <mat-error *ngIf="addForm.controls.name.hasError('required')">
+                    Name is <strong>required</strong>
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field *ngIf='selectedCategory==="Dishes"'>
+                <mat-label>Name</mat-label>
+                <input matInput formControlName='dish_name' placeholder="Yummi Yum">
+                <mat-error *ngIf="addForm.controls.dish_name.hasError('required')">
                     Name is <strong>required</strong>
                 </mat-error>
             </mat-form-field>
@@ -27,20 +37,40 @@
                 </mat-select>
             </mat-form-field>
 
-            <mat-form-field *ngIf='selectedCategory==="Restaurants"'>
+            <mat-form-field appearance="fill" *ngIf='selectedCategory==="Dishes"'>
+                <mat-label>Pick Restaurant</mat-label>
+                <mat-select formControlName='restaurant'>
+                    <mat-option *ngFor="let restaurant of restaurantsService.restaurants" [value]="restaurant._id">
+                        {{restaurant.name}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <mat-form-field>
                 <mat-label>Description</mat-label>
                 <textarea formControlName='description' matInput placeholder="Ex. This is so..."></textarea>
             </mat-form-field>
 
-            <mat-form-field *ngIf='selectedCategory==="Restaurants"'>
+            <mat-form-field *ngIf='selectedCategory ==="Dishes"'>
+                <mat-label>Dish Price</mat-label>
+                <input min="0" type="number" matInput formControlName='dish_price' placeholder="120">
+                <mat-error *ngIf="addForm.controls.dish_price.hasError('required')">
+                    Price is <strong>required</strong>
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field>
                 <mat-label>Image source</mat-label>
                 <input matInput formControlName='img_src' placeholder="something.jpg">
                 <mat-error *ngIf="addForm.controls.img_src.hasError('required')">
                     Image source is <strong>required</strong>
                 </mat-error>
             </mat-form-field>
+
+
         </form>
     </div>
+
     <button mat-dialog-close mat-raised-button color='warn'>Close</button>
     <button (click)='add()' mat-dialog-close mat-raised-button color='primary'>Add</button>
 </div>

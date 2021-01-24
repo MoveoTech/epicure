@@ -23,4 +23,10 @@ export class DishesService {
     })
   }
 
+  addDish(body) {
+    return this.http.post(`${environment.BASE_URL}/admin/dish/add`, body, {
+      headers: { 'Authorization': localStorage.access_token },
+    })
+  }
+
 }
