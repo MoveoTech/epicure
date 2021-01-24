@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AACA,ACGA,QDHQ,CCGK;EAAC,OAAO,EAAE,IAAI;EAAG,WAAW,EAAE,MAAM;EAAE,cAAc,EAAE,MAAM;EAAE,eAAe,EAAE,MAAM;CAAI;;ADHtG,AAAA,QAAQ,CAAA;EAEJ,UAAU,EAAE,MAAM;CACrB;;AACD,AAAA,MAAM,CAAA;EACF,MAAM,EAAE,SAAS;EACjB,KAAK,EAAE,GAAG;CAOb;;AATD,AAGI,MAHE,CAGF,KAAK,CAAA;EACD,KAAK,EAAE,IAAI;CAId;;AARL,AAKQ,MALF,CAGF,KAAK,CAED,EAAE,CAAA;EACE,KAAK,EAAE,GAAG;CACb",
+    "sources": [
+        "admin-main.component.scss",
+        "../../../assets/base.styles.scss"
+    ],
+    "names": [],
+    "file": "admin-main.component.css"
+}

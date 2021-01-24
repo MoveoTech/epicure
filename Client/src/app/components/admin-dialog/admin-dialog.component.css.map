@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AACA,ACGA,QDHQ,CCGK;EAAC,OAAO,EAAE,IAAI;EAAG,WAAW,EAAE,MAAM;EAAE,cAAc,EAAE,MAAM;EAAE,eAAe,EAAE,MAAM;CAAI",
+    "sources": [
+        "admin-dialog.component.scss",
+        "../../../assets/base.styles.scss"
+    ],
+    "names": [],
+    "file": "admin-dialog.component.css"
+}

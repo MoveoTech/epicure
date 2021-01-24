@@ -1,0 +1,4 @@
+@import '../../../assets/base.styles.scss';
+.wrapper{
+    @extend %flex-column;
+}
