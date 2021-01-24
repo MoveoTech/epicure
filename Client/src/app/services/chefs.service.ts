@@ -11,7 +11,7 @@ export class ChefsService {
   constructor(private http: HttpClient) { }
 
   weeklyChef: Chef
-
+  chefs: Chef[]
   getAllChefs() {
     return this.http.get(`${environment.BASE_URL}/chefs`)
   }

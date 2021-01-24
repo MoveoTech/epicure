@@ -27,5 +27,11 @@ export class RestaurantsService {
     })
   }
 
+  addRestaurant(body) {
+    return this.http.post(`${environment.BASE_URL}/admin/restaurants/add`, body, {
+      headers: { 'Authorization': localStorage.access_token },
+    })
+  }
+
 
 }

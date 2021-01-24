@@ -3,5 +3,9 @@
     @extend %flex-column;
     min-width: 600px;
     margin: 0 auto;
+    height: 100%;
+    form{
+        @extend %flex-column    
+    }
     
 }

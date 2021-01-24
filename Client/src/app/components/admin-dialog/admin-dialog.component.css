@@ -1,4 +1,4 @@
-.wrapper {
+.wrapper, .wrapper form {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -17,5 +17,6 @@
 .wrapper {
   min-width: 600px;
   margin: 0 auto;
+  height: 100%;
 }
 /*# sourceMappingURL=admin-dialog.component.css.map */
