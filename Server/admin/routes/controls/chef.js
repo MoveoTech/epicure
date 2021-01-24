@@ -27,6 +27,7 @@ router.put('/edit', verifyUser, (req, res) => {
 
 router.delete('/delete', verifyUser, (req, res) => {
     const { _id } = req.body
+    console.log(req.body)
     if (!_id) {
         res.json({ error: true, msg: "Missing some info..." }).status(404)
         return;

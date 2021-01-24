@@ -20,4 +20,11 @@ export class ChefsService {
     return this.http.get(`${environment.BASE_URL}/chefs/weekly`)
   }
 
+  deleteChef(_id) {
+    return this.http.request('delete', `${environment.BASE_URL}/admin/chef/delete`, {
+      headers: { 'Authorization': localStorage.access_token },
+      body: { _id }
+    })
+  }
+
 }

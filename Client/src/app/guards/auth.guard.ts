@@ -18,7 +18,7 @@ export class AuthGuard implements CanActivate {
     }
     this.userService.verifyLogged().subscribe(
       (res: any) => {
-        if (res.id) return true
+        if (!res.error) return true
         else {
           this.r.navigateByUrl('')
           return false

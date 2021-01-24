@@ -16,5 +16,16 @@ export class RestaurantsService {
     return this.http.get(`${environment.BASE_URL}/restaurants`)
   }
 
+  getAllRestaurants() {
+    return this.http.get(`${environment.BASE_URL}/restaurants?limit=0`)
+  }
+
+  deleteRestaurant(_id) {
+    return this.http.request('delete', `${environment.BASE_URL}/admin/restaurants/delete`, {
+      headers: { 'Authorization': localStorage.access_token },
+      body: { _id }
+    })
+  }
+
 
 }

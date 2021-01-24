@@ -16,4 +16,11 @@ export class DishesService {
     return this.http.get(`${environment.BASE_URL}/dishes/signature`)
   }
 
+  deleteDish(_id) {
+    return this.http.request('delete', `${environment.BASE_URL}/admin/dish/delete`, {
+      headers: { 'Authorization': localStorage.access_token },
+      body: { _id }
+    })
+  }
+
 }
