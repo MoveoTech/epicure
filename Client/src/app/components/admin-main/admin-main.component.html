@@ -5,9 +5,10 @@
         <mat-tab label="Restaurants">Restaurants</mat-tab>
         <mat-tab label="Dishes">Dishes</mat-tab>
     </mat-tab-group>
+    <br>
+    <button mat-raised-button color='primary' (click)='openDialog()'>Add</button>
 </div>
 <div class="table">
-
     <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
         <!--- Note that these columns can be defined in any order.

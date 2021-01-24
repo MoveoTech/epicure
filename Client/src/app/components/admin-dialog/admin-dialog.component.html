@@ -1,4 +1,17 @@
 <div class="wrapper">
-    <h1 mat-dialog-title>Dialog with elements {{data.operation}}</h1>
-    <button mat-raised-button color='primary'>{{data.operation}}</button>
+    <h2 mat-dialog-title>Add : </h2>
+    <div class="form">
+        <mat-form-field appearance="fill">
+            <mat-label>Pick Category</mat-label>
+            <mat-select (valueChange)='changeCategory($event)'>
+                <mat-option *ngFor="let option of options" [value]="option">
+                    {{option}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+        <form [formGroup]='addForm'>
+            
+        </form>
+    </div>
+    <button mat-dialog-close mat-raised-button color='primary'>close</button>
 </div>

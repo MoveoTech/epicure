@@ -19,6 +19,8 @@ export class AdminMainComponent implements OnInit {
   ) { }
 
   selectedCategory: string = 'chefs' //starting category
+  displayedColumns: string[] = ['actions', 'position', 'name', 'restaurants', 'image', 'description',];
+  dataSource = []
 
   ngOnInit(): void {
     this.chefService.getAllChefs().subscribe(
@@ -29,6 +31,10 @@ export class AdminMainComponent implements OnInit {
       err => console.log(err)
     )
   };
+
+  openDialog() {
+    this.dialog.open(AdminDialogComponent)
+  }
 
   delete(id, name) {
     //Delete Chef
@@ -85,7 +91,6 @@ export class AdminMainComponent implements OnInit {
     }
   };
 
-  displayedColumns: string[] = ['actions', 'position', 'name', 'restaurants', 'image', 'description',];
-  dataSource = []
+
 }
 

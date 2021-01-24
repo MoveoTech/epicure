@@ -1,9 +1,5 @@
-import { Component, Inject, OnInit } from '@angular/core';
-import { MAT_DIALOG_DATA } from '@angular/material/dialog';
-
-interface dialogData {
-  operation: string
-}
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-admin-dialog',
@@ -11,10 +7,20 @@ interface dialogData {
   styleUrls: ['./admin-dialog.component.css']
 })
 export class AdminDialogComponent implements OnInit {
+  selectedCategory: string;
+  options = ['Restaurants', 'Dishes', 'Chefs'];
+  addForm: FormGroup
 
-  constructor(@Inject(MAT_DIALOG_DATA) public data: dialogData) { }
+  constructor(private fb: FormBuilder) { }
 
   ngOnInit(): void {
+
+  }
+  changeCategory(value) {
+    this.selectedCategory = value
+    if(value='Restaurants'){
+      
+    }
   }
 
 }

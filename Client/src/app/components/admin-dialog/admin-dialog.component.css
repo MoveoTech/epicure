@@ -13,4 +13,9 @@
       -ms-flex-pack: center;
           justify-content: center;
 }
+
+.wrapper {
+  min-width: 600px;
+  margin: 0 auto;
+}
 /*# sourceMappingURL=admin-dialog.component.css.map */

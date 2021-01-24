@@ -1,4 +1,7 @@
 @import '../../../assets/base.styles.scss';
 .wrapper{
     @extend %flex-column;
+    min-width: 600px;
+    margin: 0 auto;
+    
 }
