@@ -6,7 +6,7 @@ import { MainComponent } from './components/main/main.component';
 import { AuthGuard } from './guards/auth.guard';
 
 const routes: Routes = [
-  { path: '', component: MainComponent },
+  { path: '', component: MainComponent, pathMatch: 'full' },
   { path: 'admin', component: AdminMainComponent, canActivate: [AuthGuard] },
   { path: 'admin/login', component: AdminLoginComponent },
   { path: '**', redirectTo: '' },
