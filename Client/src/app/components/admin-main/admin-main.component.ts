@@ -33,7 +33,7 @@ export class AdminMainComponent implements OnInit {
   };
 
   openDialog() {
-    this.dialog.open(AdminDialogComponent)
+    this.dialog.open(AdminDialogComponent).afterClosed().subscribe(() => this.changeCategory())
   }
 
   delete(id, name) {
@@ -63,8 +63,10 @@ export class AdminMainComponent implements OnInit {
     }
   }
 
-  changeCategory(e) {
-    this.selectedCategory = e.tab.textLabel.toLowerCase()
+  changeCategory(e?) {
+    if (e) {
+      this.selectedCategory = e.tab.textLabel.toLowerCase()
+    }
     if (this.selectedCategory === 'restaurants') {
       this.restaurantService.getAllRestaurants().subscribe(
         (res: any) => {
@@ -75,6 +77,7 @@ export class AdminMainComponent implements OnInit {
       )
     }
     else if (this.selectedCategory === 'chefs') {
+      console.log('called')
       this.ngOnInit()
       this.displayedColumns = this.displayedColumns.filter(column => column !== 'price' && column !== 'description' && column !== 'restaurants')
       this.displayedColumns.push('restaurants', 'description')

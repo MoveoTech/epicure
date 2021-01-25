@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Chef } from 'src/app/interfaces/chef.interface';
 import { Restaurant } from 'src/app/interfaces/restaurant.interfece';
 import { ChefsService } from 'src/app/services/chefs.service';
@@ -15,7 +15,7 @@ export class AdminDialogComponent implements OnInit {
   selectedCategory: string;
   options = ['Restaurants', 'Dishes', 'Chefs'];
   addForm: FormGroup;
-
+  restaurants: FormArray
   constructor(
     private fb: FormBuilder,
     public chefService: ChefsService,
@@ -28,13 +28,15 @@ export class AdminDialogComponent implements OnInit {
       (res: Chef[]) => this.chefService.chefs = res,
       err => console.log(err)
     )
-    this.restaurantsService.getAllRestaurants().subscribe((res: Restaurant[]) => this.restaurantsService.restaurants = res)
+    this.restaurantsService.getAllRestaurants().subscribe(
+      (res: Restaurant[]) => this.restaurantsService.restaurants = res,
+      err => console.log(err)
+    )
   };
 
   changeCategory(value) {
     this.selectedCategory = value
     if (this.selectedCategory === 'Restaurants') {
-      console.log('called res')
       this.addForm = this.fb.group({
         name: ['', Validators.required],
         chef: ['', Validators.required],
@@ -43,11 +45,11 @@ export class AdminDialogComponent implements OnInit {
       })
     }
     else if (this.selectedCategory === 'Chefs') {
+      this.restaurants = new FormArray([])
       this.addForm = this.fb.group({
         name: ['', Validators.required],
         description: ['', Validators.required],
         img_src: ['', Validators.required],
-        restaurants: [['test 1 ', 'test 2'], Validators.required]
       })
     }
     else if (this.selectedCategory === 'Dishes') {
@@ -62,8 +64,11 @@ export class AdminDialogComponent implements OnInit {
     }
   };
 
+  addRestaurants() {
+    this.restaurants.push(new FormControl(''))
+  }
+
   add() {
-    console.log(this.addForm.value)
     if (this.selectedCategory === 'Restaurants') {
       this.restaurantsService.addRestaurant(this.addForm.value).subscribe(
         res => console.log(res),
@@ -74,6 +79,12 @@ export class AdminDialogComponent implements OnInit {
       this.dishService.addDish(this.addForm.value).subscribe(
         res => console.log(res),
         err => console.log(err)
+      )
+    }
+    else if (this.selectedCategory === 'Chefs') {
+      this.chefService.addChef({ ...this.addForm.value, restaurants: this.restaurants.value }).subscribe(
+        res => console.log(res),
+        err => console.log(err),
       )
     }
   }

@@ -67,10 +67,24 @@
                 </mat-error>
             </mat-form-field>
 
+            <div class="restaurants" *ngIf='selectedCategory==="Chefs"'>
+                <mat-form-field appearance="fill" *ngFor="let control of restaurants.controls; index as i">
+                    <mat-label>Pick Restaurant</mat-label>
+                    <mat-select [formControl]='restaurants.controls[i]'>
+                        <mat-option *ngFor="let restaurant of restaurantsService.restaurants" [value]="restaurant._id">
+                            {{restaurant.name}}
+                        </mat-option>
+                    </mat-select>
+                    <br>
+                </mat-form-field>
+                <br>
+                <button (click)='addRestaurants()' mat-raised-button color='accent'>Add Restaurant</button>
+            </div>
 
         </form>
     </div>
 
     <button mat-dialog-close mat-raised-button color='warn'>Close</button>
-    <button (click)='add()' mat-dialog-close mat-raised-button color='primary'>Add</button>
+    <button *ngIf='addForm' [disabled]='addForm.invalid || restaurants?.controls.length === 0' (click)='add()'
+        mat-dialog-close mat-raised-button color='primary'>Add</button>
 </div>

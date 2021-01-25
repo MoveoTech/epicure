@@ -1,4 +1,4 @@
-.wrapper, .wrapper form {
+.wrapper, .wrapper form, .wrapper .restaurants {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -18,5 +18,13 @@
   min-width: 600px;
   margin: 0 auto;
   height: 100%;
+}
+
+.wrapper form input {
+  margin: 20px 0 0 0;
+}
+
+.wrapper button {
+  margin-top: 20px;
 }
 /*# sourceMappingURL=admin-dialog.component.css.map */
