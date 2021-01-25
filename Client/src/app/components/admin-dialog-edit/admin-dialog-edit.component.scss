@@ -11,16 +11,15 @@
             margin : 20px 0 0 0 ;
         }  
     }
-    mat-form-field{
-        margin-top: 20px;
-    }
-    
     .restaurants{
         @extend %flex-column;
     }
-    button{
+    mat-form-field{
         margin-top: 20px;
-    }   
+    }
+    button{
+       margin: 20px 20px 0 0;
+    }  
 }
 
 // Mobile

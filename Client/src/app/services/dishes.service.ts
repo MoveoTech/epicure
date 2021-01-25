@@ -28,5 +28,10 @@ export class DishesService {
       headers: { 'Authorization': localStorage.access_token },
     })
   }
+  editDish(body) {
+    return this.http.put(`${environment.BASE_URL}/admin/dish/edit`, body, {
+      headers: { 'Authorization': localStorage.access_token },
+    })
+  }
 
 }

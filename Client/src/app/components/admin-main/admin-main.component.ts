@@ -3,6 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { ChefsService } from 'src/app/services/chefs.service';
 import { DishesService } from 'src/app/services/dishes.service';
 import { RestaurantsService } from 'src/app/services/restaurants.service';
+import { AdminDialogEditComponent } from '../admin-dialog-edit/admin-dialog-edit.component';
 import { AdminDialogComponent } from '../admin-dialog/admin-dialog.component';
 
 @Component({
@@ -25,7 +26,6 @@ export class AdminMainComponent implements OnInit {
   ngOnInit(): void {
     this.chefService.getAllChefs().subscribe(
       (res: any) => {
-        console.log(res)
         this.dataSource = res
       },
       err => console.log(err)
@@ -34,6 +34,15 @@ export class AdminMainComponent implements OnInit {
 
   openDialog() {
     this.dialog.open(AdminDialogComponent).afterClosed().subscribe(() => this.changeCategory())
+  }
+
+  openEditDialog(item) {
+    this.dialog.open(AdminDialogEditComponent, {
+      data: {
+        item,
+        selectedCategory: this.selectedCategory,
+      }
+    }).afterClosed().subscribe(() => this.changeCategory())
   }
 
   delete(id, name) {
@@ -72,14 +81,13 @@ export class AdminMainComponent implements OnInit {
         (res: any) => {
           console.log(res)
           this.dataSource = res
-          this.displayedColumns = this.displayedColumns.filter(column => column !== 'price' && column !== 'restaurants' && column !== 'description')
+          this.displayedColumns = this.displayedColumns.filter(column => column !== 'price' && column !== 'restaurants' && column !== 'description' && column !== 'restaurant')
         }
       )
     }
     else if (this.selectedCategory === 'chefs') {
-      console.log('called')
       this.ngOnInit()
-      this.displayedColumns = this.displayedColumns.filter(column => column !== 'price' && column !== 'description' && column !== 'restaurants')
+      this.displayedColumns = this.displayedColumns.filter(column => column !== 'price' && column !== 'description' && column !== 'restaurants' && column !== 'restaurant')
       this.displayedColumns.push('restaurants', 'description')
     }
     else if (this.selectedCategory === 'dishes') {
@@ -87,8 +95,8 @@ export class AdminMainComponent implements OnInit {
         (res: any) => {
           console.log(res)
           this.dataSource = res
-          this.displayedColumns = this.displayedColumns.filter(column => column !== 'price' && column !== 'description' && column !== 'restaurants')
-          this.displayedColumns.push('price', 'description')
+          this.displayedColumns = this.displayedColumns.filter(column => column !== 'price' && column !== 'description' && column !== 'restaurants' && column !== 'restaurant')
+          this.displayedColumns.push('restaurant', 'price', 'description')
         }
       )
     }

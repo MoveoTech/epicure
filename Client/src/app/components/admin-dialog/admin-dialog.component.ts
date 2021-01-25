@@ -40,7 +40,6 @@ export class AdminDialogComponent implements OnInit {
       this.addForm = this.fb.group({
         name: ['', Validators.required],
         chef: ['', Validators.required],
-        description: ['', Validators.required],
         img_src: ['', Validators.required]
       })
     }
@@ -66,6 +65,10 @@ export class AdminDialogComponent implements OnInit {
 
   addRestaurants() {
     this.restaurants.push(new FormControl(''))
+  }
+
+  removeRestaurant(index: number) {
+    this.restaurants.removeAt(index);
   }
 
   add() {

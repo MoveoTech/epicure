@@ -26,6 +26,12 @@ export class ChefsService {
     })
   }
 
+  editChef(body) {
+    return this.http.put(`${environment.BASE_URL}/admin/chef/edit`, body, {
+      headers: { 'Authorization': localStorage.access_token },
+    })
+  }
+
   deleteChef(_id) {
     return this.http.request('delete', `${environment.BASE_URL}/admin/chef/delete`, {
       headers: { 'Authorization': localStorage.access_token },

@@ -32,6 +32,11 @@ export class RestaurantsService {
       headers: { 'Authorization': localStorage.access_token },
     })
   }
+  editRestaurant(body) {
+    return this.http.put(`${environment.BASE_URL}/admin/restaurants/edit`, body, {
+      headers: { 'Authorization': localStorage.access_token },
+    })
+  }
 
 
 }

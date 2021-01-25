@@ -24,7 +24,8 @@ import { ChefRestaurantCardComponent } from './components/chef-restaurant-card/c
 import { HttpClientModule } from '@angular/common/http';
 import { AdminLoginComponent } from './components/admin-login/admin-login.component';
 import { AdminMainComponent } from './components/admin-main/admin-main.component';
-import { AdminDialogComponent } from './components/admin-dialog/admin-dialog.component'
+import { AdminDialogComponent } from './components/admin-dialog/admin-dialog.component';
+import { AdminDialogEditComponent } from './components/admin-dialog-edit/admin-dialog-edit.component'
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   direction: 'horizontal',
@@ -50,6 +51,7 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     AdminLoginComponent,
     AdminMainComponent,
     AdminDialogComponent,
+    AdminDialogEditComponent,
   ],
   imports: [
     BrowserModule,
