@@ -45,7 +45,7 @@ export class AdminDialogEditComponent implements OnInit {
         _id: [this.data.item._id],
         name: [this.data.item.name, Validators.required],
         description: [this.data.item.description, Validators.required],
-        img_src: [this.data.item.img_src, Validators.required]
+        img_src: [this.data.item.img_src]
       })
       this.restaurantsService.getAllRestaurants().subscribe(
         (res: any) => this.restaurantsService.restaurants = res,

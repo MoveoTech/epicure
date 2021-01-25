@@ -72,6 +72,10 @@ export class AdminMainComponent implements OnInit {
     }
   }
 
+  filterCategories(): string[] {
+    return this.displayedColumns.filter(column => column !== 'price' && column !== 'description' && column !== 'restaurants' && column !== 'restaurant' && column !== 'chef')
+  }
+
   changeCategory(e?) {
     if (e) {
       this.selectedCategory = e.tab.textLabel.toLowerCase()
@@ -79,15 +83,15 @@ export class AdminMainComponent implements OnInit {
     if (this.selectedCategory === 'restaurants') {
       this.restaurantService.getAllRestaurants().subscribe(
         (res: any) => {
-          console.log(res)
           this.dataSource = res
-          this.displayedColumns = this.displayedColumns.filter(column => column !== 'price' && column !== 'restaurants' && column !== 'description' && column !== 'restaurant')
+          this.displayedColumns = this.filterCategories()
+          this.displayedColumns.push('chef')
         }
       )
     }
     else if (this.selectedCategory === 'chefs') {
       this.ngOnInit()
-      this.displayedColumns = this.displayedColumns.filter(column => column !== 'price' && column !== 'description' && column !== 'restaurants' && column !== 'restaurant')
+      this.displayedColumns = this.filterCategories()
       this.displayedColumns.push('restaurants', 'description')
     }
     else if (this.selectedCategory === 'dishes') {
@@ -95,7 +99,7 @@ export class AdminMainComponent implements OnInit {
         (res: any) => {
           console.log(res)
           this.dataSource = res
-          this.displayedColumns = this.displayedColumns.filter(column => column !== 'price' && column !== 'description' && column !== 'restaurants' && column !== 'restaurant')
+          this.displayedColumns = this.filterCategories()
           this.displayedColumns.push('restaurant', 'price', 'description')
         }
       )

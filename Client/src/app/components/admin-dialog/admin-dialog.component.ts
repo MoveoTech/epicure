@@ -48,7 +48,7 @@ export class AdminDialogComponent implements OnInit {
       this.addForm = this.fb.group({
         name: ['', Validators.required],
         description: ['', Validators.required],
-        img_src: ['', Validators.required],
+        img_src: ['', ],
       })
     }
     else if (this.selectedCategory === 'Dishes') {

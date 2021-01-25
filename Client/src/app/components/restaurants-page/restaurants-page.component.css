@@ -1,0 +1,27 @@
+.wrapper .restaurants {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.wrapper {
+  margin: 0 auto;
+  max-width: 1440px;
+}
+
+.wrapper .restaurants {
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.wrapper .restaurants .card {
+  margin: 20px;
+  height: 339px;
+}
+/*# sourceMappingURL=restaurants-page.component.css.map */

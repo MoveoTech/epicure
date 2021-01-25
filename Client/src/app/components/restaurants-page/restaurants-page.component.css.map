@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AACA,ACKA,QDLQ,CAGJ,YAAY,CCEN;EAAC,OAAO,EAAE,IAAI;EAAG,WAAW,EAAE,MAAM;EAAE,eAAe,EAAE,MAAM;CAAI;;ADL3E,AAAA,QAAQ,CAAA;EACJ,MAAM,EAAE,MAAM;EACd,SAAS,EAAE,MAAM;CASpB;;AAXD,AAGI,QAHI,CAGJ,YAAY,CAAA;EAER,SAAS,EAAE,IAAI;CAKlB;;AAVL,AAMQ,QANA,CAGJ,YAAY,CAGR,KAAK,CAAA;EACD,MAAM,EAAE,IAAI;EACR,MAAM,EAAE,KAAK;CACpB",
+    "sources": [
+        "restaurants-page.component.scss",
+        "../../../assets/base.styles.scss"
+    ],
+    "names": [],
+    "file": "restaurants-page.component.css"
+}

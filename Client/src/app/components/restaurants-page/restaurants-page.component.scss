@@ -1,0 +1,13 @@
+@import '../../../assets/base.styles.scss';
+.wrapper{
+    margin: 0 auto;
+    max-width: 1440px;
+    .restaurants{
+        @extend %flex-row;
+        flex-wrap: wrap;
+        .card{
+            margin: 20px;
+                height: 339px;
+        }
+    }
+}

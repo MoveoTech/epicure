@@ -1,0 +1,9 @@
+<div class="wrapper">
+    <div class="restaurants">
+        <div class="card" *ngFor='let restaurant of restaurantsService.restaurantsForRestPage'>
+            <app-card [restaurant]="restaurant.name" [chef]="restaurant.chef.name"
+                [img_src]='"assets/" + restaurant.img_src'>
+            </app-card>
+        </div>
+    </div>
+</div>

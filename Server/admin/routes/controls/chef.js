@@ -5,7 +5,7 @@ const { addChef, editChef, deleteChef } = require('../handlers/chef.handler');
 // ----- Add Chef -------
 router.post('/add', verifyUser, (req, res) => {
     const { name, description, restaurants, img_src } = req.body;
-    if (!name || !description || !restaurants || !img_src) {
+    if (!name || !description || !restaurants) {
         res.json({ error: true, msg: "Missing some info..." }).status(404);
         return;
     }
@@ -16,7 +16,7 @@ router.post('/add', verifyUser, (req, res) => {
 
 router.put('/edit', verifyUser, (req, res) => {
     const { _id, name, description, restaurants, img_src } = req.body
-    if (!name || !description || !restaurants || !img_src || !_id) {
+    if (!name || !description || !restaurants || !_id) {
         res.json({ error: true, msg: "Missing some info..." }).status(404);
         return;
     }
