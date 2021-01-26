@@ -30,7 +30,7 @@ export class AdminLoginComponent implements OnInit {
           return
         }
         localStorage.access_token = res.access_token
-        this.r.navigateByUrl('admin')
+        setTimeout(() => { this.r.navigateByUrl('admin') }, 50);
       },
       err => console.log(err)
     )

@@ -1,0 +1,20 @@
+<div class="wrapper">
+    <mat-card>
+        <mat-card-content>
+            <form [formGroup]="mailForm">
+                <h2>Mail Gun Package Test</h2>
+                <mat-form-field>
+                    <input autofocus matInput placeholder="From" formControlName="from" required>
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput placeholder="Subject" formControlName="subject" required>
+                </mat-form-field>
+                <mat-form-field>
+                    <textarea matInput placeholder="Text..." formControlName="body" required></textarea>
+                </mat-form-field>
+            </form>
+            <button (click)='handleSubmit()' [disabled]='mailForm.invalid' mat-raised-button color="primary">Send
+                Mail!</button>
+        </mat-card-content>
+    </mat-card>
+</div>

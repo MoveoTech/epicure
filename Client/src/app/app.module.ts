@@ -26,7 +26,8 @@ import { AdminLoginComponent } from './components/admin-login/admin-login.compon
 import { AdminMainComponent } from './components/admin-main/admin-main.component';
 import { AdminDialogComponent } from './components/admin-dialog/admin-dialog.component';
 import { AdminDialogEditComponent } from './components/admin-dialog-edit/admin-dialog-edit.component';
-import { RestaurantsPageComponent } from './components/restaurants-page/restaurants-page.component'
+import { RestaurantsPageComponent } from './components/restaurants-page/restaurants-page.component';
+import { MailGunComponent } from './components/mail-gun/mail-gun.component'
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   direction: 'horizontal',
@@ -54,6 +55,7 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     AdminDialogComponent,
     AdminDialogEditComponent,
     RestaurantsPageComponent,
+    MailGunComponent,
   ],
   imports: [
     BrowserModule,
