@@ -1,20 +1,29 @@
 <div class="wrapper">
     <div class="header">
         <ul>
-            <li class="active">All</li>
-            <li>New</li>
-            <li>Most Popular</li>
-            <li>Active Now</li>
+            <li *ngFor='let category of restaurantsCategories; let i = index' [ngClass]="{'active': selectedItem === i}"
+                (click)='selectedCategory = $event.target.innerHTML' (click)='selectedItem = i;'>{{category}}</li>
         </ul>
     </div>
-    <div class="restaurants">
+    <div *ngIf='selectedCategory !== "Most Popular"' class="restaurants">
         <div class="card" *ngFor='let restaurant of restaurantsService.limitRestaurants'>
             <app-card [restaurant]="restaurant.name" [chef]="restaurant.chef.name"
                 [img_src]='"assets/" + restaurant.img_src'>
             </app-card>
         </div>
     </div>
-    <mat-paginator (page)='nextPage($event)' [length]="restaurantsService.allRestaurants.length" [pageSize]="9">
+    <div *ngIf='selectedCategory ==="Most Popular"' class="restaurants">
+        <div class="card" *ngFor='let restaurant of restaurantsService.mostPupularRestaurants'>
+            <app-card [restaurant]="restaurant.name" [chef]="restaurant.chef.name"
+                [img_src]='"assets/" + restaurant.img_src'>
+            </app-card>
+        </div>
+    </div>
+    <mat-paginator *ngIf='selectedCategory !== "Most Popular"' (page)='nextPage($event)'
+        [length]="restaurantsService.allRestaurants.length" [pageSize]="restaurantsService.restaurantLimit">
+    </mat-paginator>
+    <mat-paginator *ngIf='selectedCategory ==="Most Popular"'
+        [length]="restaurantsService.mostPupularRestaurants.length" [pageSize]="restaurantsService.restaurantLimit">
     </mat-paginator>
     <app-footer></app-footer>
 </div>

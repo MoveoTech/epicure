@@ -10,33 +10,41 @@ import { RestaurantsService } from 'src/app/services/restaurants.service';
 export class RestaurantsPageComponent implements OnInit {
 
   constructor(public restaurantsService: RestaurantsService) { }
+  restaurantsCategories = ['All', 'New', 'Most Popular', 'Active Now'];
+  selectedItem: number = 0
+  selectedCategory: string = 'All';
 
   ngOnInit(): void {
-    this.restaurantsService.getAllRestaurants(9).subscribe(
+    this.restaurantsService.getAllRestaurants(this.restaurantsService.restaurantLimit).subscribe(
       (res: Restaurant[]) => this.restaurantsService.limitRestaurants = res,
       err => console.log(err)
     )
     this.restaurantsService.getAllRestaurants().subscribe(
-      (res: Restaurant[]) => this.restaurantsService.allRestaurants = res,
+      (res: Restaurant[]) => {
+        this.restaurantsService.allRestaurants = res
+        this.restaurantsService.mostPupularRestaurants = res.filter(rest => rest.popularity >= 7)
+      },
       err => console.log(err)
     )
-  }
+  };
 
   nextPage(e) {
     if (e.pageIndex === 0) {
-      this.restaurantsService.getAllRestaurants(9, 0).subscribe(
+      this.restaurantsService.getAllRestaurants(this.restaurantsService.restaurantLimit, 0).subscribe(
         (res: Restaurant[]) => this.restaurantsService.limitRestaurants = res,
         err => console.log(err)
       )
     }
     if (e.pageIndex > 0) {
-      const skip = e.pageIndex * 9
-      this.restaurantsService.getAllRestaurants(9, skip).subscribe(
+      const skip = e.pageIndex * this.restaurantsService.restaurantLimit
+      this.restaurantsService.getAllRestaurants(this.restaurantsService.restaurantLimit, skip).subscribe(
         (res: Restaurant[]) => this.restaurantsService.limitRestaurants = res,
         err => console.log(err)
       )
     }
-  }
+  };
+
+
 }
 // ----
 //  mail gun
@@ -44,6 +52,6 @@ export class RestaurantsPageComponent implements OnInit {
 
 // Read about JWT
 
-// service variable for skip / limit
+// service variable for skip / limit √√√√
 
-// ng class for active / etc....
+// ng class for active / etc.... √√√√
