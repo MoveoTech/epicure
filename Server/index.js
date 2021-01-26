@@ -20,7 +20,7 @@ app.use('/chefs', require('./routes/controls/chefs'));
 app.use('/admin', require('./admin/routes/controls/admin_navigator'));
 
 //------MailGun Trial ------
-app.use('/mail', require('./mail_trial'));
+app.use('/mail', require('./mail_gun_trial/mail_trial.controller'));
 
 const PORT = process.env.PORT || 1000;
 
