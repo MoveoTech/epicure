@@ -9,7 +9,7 @@
             </div>
             <p class="popular-rest">THE POPULAR RESTAURANTS IN EPICURE :</p>
             <swiper [config]='config'>
-                <div class="card" *ngFor='let restaurant of restaurantsService.restaurants'>
+                <div class="card" *ngFor='let restaurant of restaurantsService.allRestaurants'>
                     <app-card [restaurant]="restaurant.name" [chef]="restaurant.chef.name"
                         [img_src]='"assets/" + restaurant.img_src'>
                     </app-card>

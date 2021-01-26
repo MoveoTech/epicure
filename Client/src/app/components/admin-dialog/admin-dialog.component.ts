@@ -29,7 +29,7 @@ export class AdminDialogComponent implements OnInit {
       err => console.log(err)
     )
     this.restaurantsService.getAllRestaurants().subscribe(
-      (res: Restaurant[]) => this.restaurantsService.restaurants = res,
+      (res: Restaurant[]) => this.restaurantsService.allRestaurants = res,
       err => console.log(err)
     )
   };

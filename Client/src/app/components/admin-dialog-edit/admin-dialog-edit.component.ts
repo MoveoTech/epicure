@@ -48,7 +48,7 @@ export class AdminDialogEditComponent implements OnInit {
         img_src: [this.data.item.img_src]
       })
       this.restaurantsService.getAllRestaurants().subscribe(
-        (res: any) => this.restaurantsService.restaurants = res,
+        (res: any) => this.restaurantsService.allRestaurants = res,
         err => console.log(err)
       )
     }
@@ -63,7 +63,7 @@ export class AdminDialogEditComponent implements OnInit {
         icon: ['',]
       })
       this.restaurantsService.getAllRestaurants().subscribe(
-        (res: any) => this.restaurantsService.restaurants = res,
+        (res: any) => this.restaurantsService.allRestaurants = res,
         err => console.log(err)
       )
     }

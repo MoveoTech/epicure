@@ -10,15 +10,15 @@ export class RestaurantsService {
 
   constructor(private http: HttpClient) { }
 
-  restaurants: Restaurant[] = []
-  restaurantsForRestPage: Restaurant[] = []
+  allRestaurants: Restaurant[] = []
+  limitRestaurants: Restaurant[] = []
 
   getRestaurants() {
     return this.http.get(`${environment.BASE_URL}/restaurants`)
   }
 
-  getAllRestaurants(limit = 0) {
-    return this.http.get(`${environment.BASE_URL}/restaurants?limit=${limit}`)
+  getAllRestaurants(limit = 0, skip = 0) {
+    return this.http.get(`${environment.BASE_URL}/restaurants?limit=${limit}&skip=${skip}`)
   }
 
   deleteRestaurant(_id) {
