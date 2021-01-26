@@ -57,6 +57,10 @@
   font-weight: 300;
 }
 
+.wrapper .header ul li:hover {
+  cursor: pointer;
+}
+
 .wrapper .restaurants {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;

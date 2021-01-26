@@ -39,6 +39,7 @@
           align-items: center;
   font-family: HelveticaNeue;
   margin: 0 auto;
+  border-bottom: solid 0.2px #979797;
 }
 
 .desktop .wrapper .title-logo {
@@ -176,7 +177,7 @@
 }
 
 .mobile .wrapper {
-  width: 90%;
+  width: 100%;
   margin: 0 auto;
   height: 45px;
   display: -webkit-box;
@@ -187,6 +188,8 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  border-bottom: solid 0.2px #979797;
+  padding: 0 20px 0 20px;
 }
 
 .mobile .wrapper .icons {
@@ -275,7 +278,7 @@
             justify-content: space-between !important;
     width: 100% !important;
     max-width: initial !important;
-    padding: 0 10px 0 10px;
+    padding: 0 20px 0 20px;
   }
   .wrapper .icons {
     -webkit-box-pack: end;
