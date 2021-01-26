@@ -17,6 +17,10 @@ const restaurantSchema = new Schema({
     deleted: {
         type: Boolean,
         default: false
+    },
+    popularity: {
+        type: Number,
+        required: true
     }
 });
 

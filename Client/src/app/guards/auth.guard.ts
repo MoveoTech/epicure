@@ -21,6 +21,7 @@ export class AuthGuard implements CanActivate {
       this.userService.verifyLogged().subscribe(
         (res: any) => {
           if (!res.error) {
+
             resolve(true)
           }
 
@@ -29,7 +30,10 @@ export class AuthGuard implements CanActivate {
             resolve(false)
           }
         },
-        err => { this.r.navigateByUrl('') }
+        err => {
+          this.r.navigateByUrl('')
+          console.log(err)
+        }
       )
     })
 

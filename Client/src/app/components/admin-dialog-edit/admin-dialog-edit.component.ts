@@ -1,6 +1,7 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { Restaurant } from 'src/app/interfaces/restaurant.interfece';
 import { ChefsService } from 'src/app/services/chefs.service';
 import { DishesService } from 'src/app/services/dishes.service';
 import { RestaurantsService } from 'src/app/services/restaurants.service';
@@ -24,15 +25,20 @@ export class AdminDialogEditComponent implements OnInit {
 
   editForm: FormGroup
   restaurants: FormArray
+  popularity: number[] = []
 
   ngOnInit(): void {
 
     if (this.data.selectedCategory === 'restaurants') {
+      for (let i = 1; i <= 10; i++) {
+        this.popularity.push(i)
+      }
       this.editForm = this.fb.group({
         _id: [this.data.item._id],
         name: [this.data.item.name, Validators.required],
         chef: [this.data.item.chef._id, Validators.required],
-        img_src: [this.data.item.img_src, Validators.required]
+        img_src: [this.data.item.img_src, Validators.required],
+        popularity: [this.data.item.popularity, Validators.required]
       })
       this.chefService.getAllChefs().subscribe(
         (res: any) => this.chefService.chefs = res,
@@ -48,7 +54,7 @@ export class AdminDialogEditComponent implements OnInit {
         img_src: [this.data.item.img_src]
       })
       this.restaurantsService.getAllRestaurants().subscribe(
-        (res: any) => this.restaurantsService.allRestaurants = res,
+        (res: { restaurants: Restaurant[] }) => this.restaurantsService.allRestaurants = res.restaurants,
         err => console.log(err)
       )
     }
@@ -63,7 +69,7 @@ export class AdminDialogEditComponent implements OnInit {
         icon: ['',]
       })
       this.restaurantsService.getAllRestaurants().subscribe(
-        (res: any) => this.restaurantsService.allRestaurants = res,
+        (res: { restaurants: Restaurant[] }) => this.restaurantsService.allRestaurants = res.restaurants,
         err => console.log(err)
       )
     }

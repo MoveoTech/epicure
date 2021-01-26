@@ -20,10 +20,10 @@
         </div>
     </div>
     <mat-paginator *ngIf='selectedCategory !== "Most Popular"' (page)='nextPage($event)'
-        [length]="restaurantsService.allRestaurants.length" [pageSize]="restaurantsService.restaurantLimit">
+        [length]="restaurantsService.restaurantPaginationCount" [pageSize]="restaurantsService.restaurantLimit">
     </mat-paginator>
-    <mat-paginator *ngIf='selectedCategory ==="Most Popular"'
-        [length]="restaurantsService.mostPupularRestaurants.length" [pageSize]="restaurantsService.restaurantLimit">
+    <mat-paginator *ngIf='selectedCategory ==="Most Popular"' [length]="restaurantsService.restaurantPaginationCount"
+        [pageSize]="restaurantsService.restaurantLimit">
     </mat-paginator>
     <app-footer></app-footer>
 </div>

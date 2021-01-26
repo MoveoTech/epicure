@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { Restaurant } from 'src/app/interfaces/restaurant.interfece';
 import { ChefsService } from 'src/app/services/chefs.service';
 import { DishesService } from 'src/app/services/dishes.service';
 import { RestaurantsService } from 'src/app/services/restaurants.service';
@@ -60,7 +61,8 @@ export class AdminMainComponent implements OnInit {
       else if (this.selectedCategory === 'restaurants') {
         this.restaurantService.deleteRestaurant(id).subscribe(res => {
           console.log(res)
-          this.restaurantService.getAllRestaurants().subscribe((res: any) => this.dataSource = res)
+          this.restaurantService.getAllRestaurants().
+            subscribe((res: { restaurants: Restaurant[] }) => this.dataSource = res.restaurants)
         })
       }
       else if (this.selectedCategory === 'dishes') {
@@ -73,7 +75,11 @@ export class AdminMainComponent implements OnInit {
   }
 
   filterCategories(): string[] {
-    return this.displayedColumns.filter(column => column !== 'price' && column !== 'description' && column !== 'restaurants' && column !== 'restaurant' && column !== 'chef')
+    return this.displayedColumns.filter(column =>
+      column !== 'price' && column !== 'description'
+      && column !== 'restaurants' && column !== 'restaurant'
+      && column !== 'chef' && column !== 'popularity'
+    )
   }
 
   changeCategory(e?) {
@@ -82,10 +88,10 @@ export class AdminMainComponent implements OnInit {
     }
     if (this.selectedCategory === 'restaurants') {
       this.restaurantService.getAllRestaurants().subscribe(
-        (res: any) => {
-          this.dataSource = res
+        (res: { restaurants: Restaurant[] }) => {
+          this.dataSource = res.restaurants
           this.displayedColumns = this.filterCategories()
-          this.displayedColumns.push('chef')
+          this.displayedColumns.push('chef', 'popularity')
         }
       )
     }

@@ -16,30 +16,40 @@ export class RestaurantsPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.restaurantsService.getAllRestaurants(this.restaurantsService.restaurantLimit).subscribe(
-      (res: Restaurant[]) => this.restaurantsService.limitRestaurants = res,
-      err => console.log(err)
-    )
-    this.restaurantsService.getAllRestaurants().subscribe(
-      (res: Restaurant[]) => {
-        this.restaurantsService.allRestaurants = res
-        this.restaurantsService.mostPupularRestaurants = res.filter(rest => rest.popularity >= 7)
+      (res: { restaurants: Restaurant[], count: number }) => {
+        this.restaurantsService.limitRestaurants = res.restaurants
+        this.restaurantsService.restaurantPaginationCount = res.count
       },
       err => console.log(err)
     )
   };
 
+  getMostPopular() {
+    this.restaurantsService.getAllRestaurants(undefined, undefined, this.restaurantsService.popularityRate)
+      .subscribe((res: { restaurants: Restaurant[], count: number }) => {
+        this.restaurantsService.mostPupularRestaurants = res.restaurants
+        this.restaurantsService.restaurantPaginationCount = res.count
+      })
+  }
+
 
   nextPage(e) {
     if (e.pageIndex === 0) {
       this.restaurantsService.getAllRestaurants(this.restaurantsService.restaurantLimit, 0).subscribe(
-        (res: Restaurant[]) => this.restaurantsService.limitRestaurants = res,
+        (res: { restaurants: Restaurant[], count: number }) => {
+          this.restaurantsService.limitRestaurants = res.restaurants
+          this.restaurantsService.restaurantPaginationCount = res.count
+        },
         err => console.log(err)
       )
     }
     if (e.pageIndex > 0) {
       const skip = e.pageIndex * this.restaurantsService.restaurantLimit
       this.restaurantsService.getAllRestaurants(this.restaurantsService.restaurantLimit, skip).subscribe(
-        (res: Restaurant[]) => this.restaurantsService.limitRestaurants = res,
+        (res: { restaurants: Restaurant[], count: number }) => {
+          this.restaurantsService.limitRestaurants = res.restaurants
+          this.restaurantsService.restaurantPaginationCount = res.count
+        },
         err => console.log(err)
       )
     }
@@ -50,19 +60,16 @@ export class RestaurantsPageComponent implements OnInit {
     this.selectedItem = i
     if (this.selectedCategory === 'All') {
       this.restaurantsService.getAllRestaurants(this.restaurantsService.restaurantLimit).subscribe(
-        (res: Restaurant[]) => this.restaurantsService.limitRestaurants = res,
+        (res: { restaurants: Restaurant[], count: number }) => {
+          this.restaurantsService.limitRestaurants = res.restaurants
+          this.restaurantsService.restaurantPaginationCount = res.count
+        },
         err => console.log(err)
-      ) 
+      )
+    }
+    else if (this.selectedCategory === 'Most Popular') {
+      this.getMostPopular()
     }
   }
 
 }
-    // ----
-    //  mail gun
-    // form with 1 fiels - user can write comments - once he send - ill recive an email
-
-// Read about JWT
-
-// service variable for skip / limit √√√√
-
-// ng class for active / etc.... √√√√

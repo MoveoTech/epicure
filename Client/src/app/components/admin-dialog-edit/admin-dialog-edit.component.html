@@ -46,6 +46,15 @@
                 </mat-error>
             </mat-form-field>
 
+            <mat-form-field appearance="fill" *ngIf='data.selectedCategory==="restaurants"'>
+                <mat-label>Popularity</mat-label>
+                <mat-select formControlName='popularity'>
+                    <mat-option *ngFor="let num of popularity ; let i = index" [value]="num">
+                        {{num}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+
             <mat-form-field>
                 <mat-label>Image source</mat-label>
                 <input matInput formControlName='img_src' placeholder="something.jpg">
@@ -61,7 +70,8 @@
                         <mat-icon>delete</mat-icon>
                     </button>
                     <mat-select [formControl]='restaurants.controls[i]'>
-                        <mat-option *ngFor="let restaurant of restaurantsService.allRestaurants" [value]="restaurant._id">
+                        <mat-option *ngFor="let restaurant of restaurantsService.allRestaurants"
+                            [value]="restaurant._id">
                             {{restaurant.name}}
                         </mat-option>
                     </mat-select>

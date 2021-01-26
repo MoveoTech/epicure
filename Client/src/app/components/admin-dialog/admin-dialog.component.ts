@@ -14,6 +14,7 @@ import { RestaurantsService } from 'src/app/services/restaurants.service';
 export class AdminDialogComponent implements OnInit {
   selectedCategory: string;
   options = ['Restaurants', 'Dishes', 'Chefs'];
+  popularity: number[] = []
   addForm: FormGroup;
   restaurants: FormArray
   constructor(
@@ -24,12 +25,15 @@ export class AdminDialogComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    for (let i = 1; i <= 10; i++) {
+      this.popularity.push(i)
+    }
     this.chefService.getAllChefs().subscribe(
       (res: Chef[]) => this.chefService.chefs = res,
       err => console.log(err)
     )
     this.restaurantsService.getAllRestaurants().subscribe(
-      (res: Restaurant[]) => this.restaurantsService.allRestaurants = res,
+      (res: { restaurants: Restaurant[] }) => this.restaurantsService.allRestaurants = res.restaurants,
       err => console.log(err)
     )
   };
@@ -40,7 +44,8 @@ export class AdminDialogComponent implements OnInit {
       this.addForm = this.fb.group({
         name: ['', Validators.required],
         chef: ['', Validators.required],
-        img_src: ['', Validators.required]
+        img_src: ['', Validators.required],
+        popularity: [1, Validators.required]
       })
     }
     else if (this.selectedCategory === 'Chefs') {
@@ -48,7 +53,7 @@ export class AdminDialogComponent implements OnInit {
       this.addForm = this.fb.group({
         name: ['', Validators.required],
         description: ['', Validators.required],
-        img_src: ['', ],
+        img_src: ['',],
       })
     }
     else if (this.selectedCategory === 'Dishes') {

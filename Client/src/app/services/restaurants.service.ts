@@ -13,14 +13,16 @@ export class RestaurantsService {
   allRestaurants: Restaurant[] = [];
   limitRestaurants: Restaurant[] = [];
   restaurantLimit: number = 9;
-  mostPupularRestaurants: Restaurant[]
+  mostPupularRestaurants: Restaurant[] = []
+  popularityRate: number = 7
+  restaurantPaginationCount: number
 
   getRestaurants() {
     return this.http.get(`${environment.BASE_URL}/restaurants`)
   };
 
-  getAllRestaurants(limit = 0, skip = 0) {
-    return this.http.get(`${environment.BASE_URL}/restaurants?limit=${limit}&skip=${skip}`)
+  getAllRestaurants(limit = 0, skip = 0, popularity = 0) {
+    return this.http.get(`${environment.BASE_URL}/restaurants?limit=${limit}&skip=${skip}&popularity=${popularity}`)
   };
 
   deleteRestaurant(_id) {
@@ -41,6 +43,6 @@ export class RestaurantsService {
     })
   };
 
- 
+
 
 }

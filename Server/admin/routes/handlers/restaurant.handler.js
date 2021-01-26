@@ -1,14 +1,14 @@
 const Restaurant = require('../../../models/restaurant');
 
 
-const addRestaurant = (name, chef, img_src) => {
-    return new Restaurant({ name, chef, img_src }).save()
+const addRestaurant = (name, chef, img_src, popularity) => {
+    return new Restaurant({ name, chef, img_src, popularity }).save()
 }
 
-const editRestaurant = (_id, name, chef, img_src) => {
+const editRestaurant = (_id, name, chef, img_src, popularity) => {
     return Restaurant.findOneAndUpdate(
         { _id },
-        { name, chef, img_src },
+        { name, chef, img_src, popularity },
         { new: true }
     );
     // {new : true -> returns the updated object}

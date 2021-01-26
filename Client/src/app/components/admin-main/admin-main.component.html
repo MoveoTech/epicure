@@ -46,6 +46,11 @@
             <td mat-cell *matCellDef="let element" style="text-align: center;">{{element.restaurant.name}}</td>
         </ng-container>
 
+        <ng-container matColumnDef="popularity">
+            <th mat-header-cell *matHeaderCellDef style="text-align: center;"> Popularity</th>
+            <td mat-cell *matCellDef="let element" style="text-align: center;">{{element.popularity}}</td>
+        </ng-container>
+
         <ng-container matColumnDef="description">
             <th mat-header-cell *matHeaderCellDef> Description </th>
             <td mat-cell *matCellDef="let element" class="description"> {{element.description}} </td>

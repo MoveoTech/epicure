@@ -1,11 +1,15 @@
 const router = require('express').Router();
-const { getAllRetaurants } = require('../handlers/restaurants.handler')
+const { getAllRetaurants, countAllRestaurants } = require('../handlers/restaurants.handler')
 
 router.get('/', (req, res) => {
-    const { limit, skip } = req.query
-    getAllRetaurants(limit, skip)
-        .then(result => res.send(result))
+    const { limit, skip, popularity } = req.query
+    getAllRetaurants(limit, skip, popularity)
+        .then(restaurants => {
+            countAllRestaurants(popularity)
+                .then(count => res.json({ count, restaurants }))
+        })
         .catch(err => res.send(err))
+
 })
 
 
