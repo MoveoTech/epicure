@@ -15,7 +15,7 @@ export class UserService {
 
   verifyLogged() {
     return this.http.get(`${environment.BASE_URL}/admin/verify`, {
-      headers: { 'Authorization': localStorage.access_token }
+      headers: environment.loaclStorageHeader
     })
   }
 

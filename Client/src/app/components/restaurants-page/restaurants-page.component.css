@@ -1,3 +1,19 @@
+.wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
 .wrapper .restaurants {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -13,6 +29,27 @@
 .wrapper {
   margin: 0 auto;
   max-width: 1440px;
+}
+
+.wrapper .header {
+  width: 40%;
+  margin: 0 auto;
+}
+
+.wrapper .header ul {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.wrapper .header ul li {
+  font-size: 19px;
+  font-weight: 300;
 }
 
 .wrapper .restaurants {

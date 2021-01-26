@@ -18,19 +18,19 @@ export class DishesService {
 
   deleteDish(_id) {
     return this.http.request('delete', `${environment.BASE_URL}/admin/dish/delete`, {
-      headers: { 'Authorization': localStorage.access_token },
+      headers: environment.loaclStorageHeader,
       body: { _id }
     })
   }
 
   addDish(body) {
     return this.http.post(`${environment.BASE_URL}/admin/dish/add`, body, {
-      headers: { 'Authorization': localStorage.access_token },
+      headers: environment.loaclStorageHeader,
     })
   }
   editDish(body) {
     return this.http.put(`${environment.BASE_URL}/admin/dish/edit`, body, {
-      headers: { 'Authorization': localStorage.access_token },
+      headers: environment.loaclStorageHeader,
     })
   }
 

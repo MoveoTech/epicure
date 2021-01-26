@@ -2,6 +2,21 @@
 .wrapper{
     margin: 0 auto;
     max-width: 1440px;
+    @extend %flex-column;
+    .header{
+        width: 40%;
+        margin: 0 auto;
+        ul{
+            list-style: none;
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            li{
+                font-size: 19px;
+                font-weight: 300;
+            }
+        }
+    }
     .restaurants{
         @extend %flex-row;
         flex-wrap: wrap;

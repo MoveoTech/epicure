@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Restaurant } from 'src/app/interfaces/restaurant.interfece';
 import { RestaurantsService } from 'src/app/services/restaurants.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-restaurants-page',

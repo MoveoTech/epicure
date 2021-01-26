@@ -23,19 +23,19 @@ export class RestaurantsService {
 
   deleteRestaurant(_id) {
     return this.http.request('delete', `${environment.BASE_URL}/admin/restaurants/delete`, {
-      headers: { 'Authorization': localStorage.access_token },
+      headers: environment.loaclStorageHeader,
       body: { _id }
     })
   }
 
   addRestaurant(body) {
     return this.http.post(`${environment.BASE_URL}/admin/restaurants/add`, body, {
-      headers: { 'Authorization': localStorage.access_token },
+      headers: environment.loaclStorageHeader,
     })
   }
   editRestaurant(body) {
     return this.http.put(`${environment.BASE_URL}/admin/restaurants/edit`, body, {
-      headers: { 'Authorization': localStorage.access_token },
+      headers: environment.loaclStorageHeader,
     })
   }
 

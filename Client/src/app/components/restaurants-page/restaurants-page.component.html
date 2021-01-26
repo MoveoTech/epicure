@@ -1,4 +1,12 @@
 <div class="wrapper">
+    <div class="header">
+        <ul>
+            <li>All</li>
+            <li>New</li>
+            <li>Most Popular</li>
+            <li>Active Now</li>
+        </ul>
+    </div>
     <div class="restaurants">
         <div class="card" *ngFor='let restaurant of restaurantsService.restaurantsForRestPage'>
             <app-card [restaurant]="restaurant.name" [chef]="restaurant.chef.name"
