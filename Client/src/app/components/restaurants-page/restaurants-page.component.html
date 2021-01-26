@@ -2,7 +2,7 @@
     <div class="header">
         <ul>
             <li *ngFor='let category of restaurantsCategories; let i = index' [ngClass]="{'active': selectedItem === i}"
-                (click)='selectedCategory = $event.target.innerHTML' (click)='selectedItem = i;'>{{category}}</li>
+                (click)='changeCategory($event , i)'>{{category}}</li>
         </ul>
     </div>
     <div *ngIf='selectedCategory !== "Most Popular"' class="restaurants">

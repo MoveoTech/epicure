@@ -28,6 +28,7 @@ export class RestaurantsPageComponent implements OnInit {
     )
   };
 
+
   nextPage(e) {
     if (e.pageIndex === 0) {
       this.restaurantsService.getAllRestaurants(this.restaurantsService.restaurantLimit, 0).subscribe(
@@ -44,11 +45,21 @@ export class RestaurantsPageComponent implements OnInit {
     }
   };
 
+  changeCategory(e, i) {
+    this.selectedCategory = e.target.innerHTML
+    this.selectedItem = i
+    if (this.selectedCategory === 'All') {
+      this.restaurantsService.getAllRestaurants(this.restaurantsService.restaurantLimit).subscribe(
+        (res: Restaurant[]) => this.restaurantsService.limitRestaurants = res,
+        err => console.log(err)
+      ) 
+    }
+  }
 
 }
-// ----
-//  mail gun
-// form with 1 fiels - user can write comments - once he send - ill recive an email
+    // ----
+    //  mail gun
+    // form with 1 fiels - user can write comments - once he send - ill recive an email
 
 // Read about JWT
 
