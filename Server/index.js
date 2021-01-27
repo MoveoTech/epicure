@@ -19,6 +19,9 @@ app.use('/chefs', require('./routes/controls/chefs'));
 //  ----- Admin Middleware -----
 app.use('/admin', require('./admin/routes/controls/admin_navigator'));
 
+//------MailGun Trial ------
+app.use('/mail', require('./mail_gun_trial/mail_trial.controller'));
+
 const PORT = process.env.PORT || 1000;
 
 mongoose.connect('mongodb://localhost/epicure', { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true })
@@ -27,8 +30,3 @@ mongoose.connect('mongodb://localhost/epicure', { useNewUrlParser: true, useUnif
         app.listen(PORT, () => console.log(`App running on port ${PORT}`))
     })
     .catch(err => console.log(err));
-
-
-    // admin page 
-    // edit /delete / update /gate all collections from db
-    // simple client side 

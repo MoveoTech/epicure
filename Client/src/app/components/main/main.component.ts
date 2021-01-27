@@ -51,9 +51,9 @@ export class MainComponent implements OnInit {
     window.addEventListener('resize', () => this.resizeCarouselle());
     this.resizeCarouselle();
 
-    this.restaurantsService.getRestaurants()
+    this.restaurantsService.getAllRestaurants()
       .subscribe(
-        (res: Restaurant[]) => this.restaurantsService.restaurants = res,
+        (res: { restaurants: Restaurant[] }) => this.restaurantsService.allRestaurants = res.restaurants,
         (err) => console.log(err)
       );
     this.dishesService.getSignatureDishes().subscribe((res: Dish[]) => this.dishesService.dishes = res)

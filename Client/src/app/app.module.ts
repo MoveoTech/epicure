@@ -23,7 +23,11 @@ import { DishCardComponent } from './components/dish-card/dish-card.component';
 import { ChefRestaurantCardComponent } from './components/chef-restaurant-card/chef-restaurant-card.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AdminLoginComponent } from './components/admin-login/admin-login.component';
-import { AdminMainComponent } from './components/admin-main/admin-main.component'
+import { AdminMainComponent } from './components/admin-main/admin-main.component';
+import { AdminDialogComponent } from './components/admin-dialog/admin-dialog.component';
+import { AdminDialogEditComponent } from './components/admin-dialog-edit/admin-dialog-edit.component';
+import { RestaurantsPageComponent } from './components/restaurants-page/restaurants-page.component';
+import { MailGunComponent } from './components/mail-gun/mail-gun.component'
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   direction: 'horizontal',
@@ -48,6 +52,10 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     ChefRestaurantCardComponent,
     AdminLoginComponent,
     AdminMainComponent,
+    AdminDialogComponent,
+    AdminDialogEditComponent,
+    RestaurantsPageComponent,
+    MailGunComponent,
   ],
   imports: [
     BrowserModule,

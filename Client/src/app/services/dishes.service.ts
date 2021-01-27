@@ -16,4 +16,22 @@ export class DishesService {
     return this.http.get(`${environment.BASE_URL}/dishes/signature`)
   }
 
+  deleteDish(_id) {
+    return this.http.request('delete', `${environment.BASE_URL}/admin/dish/delete`, {
+      headers: environment.loaclStorageHeader,
+      body: { _id }
+    })
+  }
+
+  addDish(body) {
+    return this.http.post(`${environment.BASE_URL}/admin/dish/add`, body, {
+      headers: environment.loaclStorageHeader,
+    })
+  }
+  editDish(body) {
+    return this.http.put(`${environment.BASE_URL}/admin/dish/edit`, body, {
+      headers: environment.loaclStorageHeader,
+    })
+  }
+
 }

@@ -67,6 +67,11 @@
   font-weight: 100;
 }
 
+.desktop img {
+  height: 213px;
+  width: 100%;
+}
+
 .mobile .card {
   display: inline-block;
 }

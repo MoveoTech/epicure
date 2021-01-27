@@ -1,0 +1,29 @@
+<div class="wrapper">
+    <div class="header">
+        <ul>
+            <li *ngFor='let category of restaurantsCategories; let i = index' [ngClass]="{'active': selectedItem === i}"
+                (click)='changeCategory($event , i)'>{{category}}</li>
+        </ul>
+    </div>
+    <div *ngIf='selectedCategory !== "Most Popular"' class="restaurants">
+        <div class="card" *ngFor='let restaurant of restaurantsService.limitRestaurants'>
+            <app-card [restaurant]="restaurant.name" [chef]="restaurant.chef.name"
+                [img_src]='"assets/" + restaurant.img_src'>
+            </app-card>
+        </div>
+    </div>
+    <div *ngIf='selectedCategory ==="Most Popular"' class="restaurants">
+        <div class="card" *ngFor='let restaurant of restaurantsService.mostPupularRestaurants'>
+            <app-card [restaurant]="restaurant.name" [chef]="restaurant.chef.name"
+                [img_src]='"assets/" + restaurant.img_src'>
+            </app-card>
+        </div>
+    </div>
+    <mat-paginator *ngIf='selectedCategory !== "Most Popular"' (page)='nextPage($event)'
+        [length]="restaurantsService.restaurantPaginationCount" [pageSize]="restaurantsService.restaurantLimit">
+    </mat-paginator>
+    <mat-paginator *ngIf='selectedCategory ==="Most Popular"' [length]="restaurantsService.restaurantPaginationCount"
+        [pageSize]="restaurantsService.restaurantLimit">
+    </mat-paginator>
+    <app-footer></app-footer>
+</div>

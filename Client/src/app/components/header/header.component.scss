@@ -8,11 +8,15 @@
     align-items: center;
     font-family: HelveticaNeue;
     margin: 0 auto;
+    border-bottom: solid 0.2px #979797;
     .title-logo{
       display: flex;
       align-items: center;
       width: 26%;
       justify-content: space-between;
+    }
+    .title-logo:hover{
+      cursor: pointer;
     }
 
     .icons{
@@ -24,7 +28,6 @@
 
 .Logo {
     height: 33px;
-    // margin: 0 15px 0 0;
   }
 
 .epicure {
@@ -34,14 +37,12 @@
 
 .Restaurants {
   @extend %lightFont;
-    // margin: 7px 28px 6px 31px;
     font-size: 18px;
     letter-spacing : 1.92px;
     margin-left: 20px;
   }
 
   .Chefs {
-    // margin: 7px 292px 6px 0;
     font-size: 18px;
     @extend %lightFont;
   }
@@ -93,12 +94,10 @@
   }
   .User-icon {
     height: 23px;
-    // margin: 7px 28px 4px;
   }
 
   .Bag-icon {
     height: 22px;
-    // margin: 7px 4px 5px 15px;
   }
 .solo-search-icon{
   display: none;
@@ -108,15 +107,16 @@
 
 
 
-
   .mobile{
     .wrapper{
-      width: 90%;
+      width: 100%;
       margin: 0 auto;
       height: 45px;
       display: flex;
       justify-content: space-around;
       align-items: center;
+      border-bottom: solid 0.2px #979797;
+      padding: 0 20px 0 20px;
       .icons{
         display: flex;
         align-items: center;
@@ -139,11 +139,13 @@
       }
       .Logo {
           height: 33px;
-          // margin: 8px 0px 0 90px; 
         }
         .title-logo{
           flex-grow: 1;
           text-align: center;
+        }
+        .title-logo:hover{
+          cursor: pointer;
         }
   }
   
@@ -170,8 +172,6 @@
       @extend %lightFont;
     }
   
-  
-  
     input{
       display: none;
     }
@@ -184,6 +184,22 @@
     }
   
   }
+
+  @media only screen and (min-width : 1441px) {
+    .wrapper{
+      justify-content: space-between !important;
+      width: 100% !important;
+      max-width: initial !important;
+      padding: 0 20px 0 20px;
+      .icons{
+        justify-content: flex-end;
+        .icon-pics{
+          margin-left: 20px;
+        }
+      }
+    }
+  }
+
 .desktop{
   .wrapper{
     @media only screen and (max-width: 1400px) {

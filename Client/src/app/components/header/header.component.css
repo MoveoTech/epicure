@@ -39,6 +39,7 @@
           align-items: center;
   font-family: HelveticaNeue;
   margin: 0 auto;
+  border-bottom: solid 0.2px #979797;
 }
 
 .desktop .wrapper .title-logo {
@@ -52,6 +53,10 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+}
+
+.desktop .wrapper .title-logo:hover {
+  cursor: pointer;
 }
 
 .desktop .wrapper .icons {
@@ -172,7 +177,7 @@
 }
 
 .mobile .wrapper {
-  width: 90%;
+  width: 100%;
   margin: 0 auto;
   height: 45px;
   display: -webkit-box;
@@ -183,6 +188,8 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  border-bottom: solid 0.2px #979797;
+  padding: 0 20px 0 20px;
 }
 
 .mobile .wrapper .icons {
@@ -230,6 +237,10 @@
   text-align: center;
 }
 
+.mobile .wrapper .title-logo:hover {
+  cursor: pointer;
+}
+
 .mobile .epicure {
   height: 32px;
   margin: 6px 31px 1px 15px;
@@ -258,6 +269,25 @@
   margin: 7px 0 5px 0px;
   -o-object-fit: contain;
      object-fit: contain;
+}
+
+@media only screen and (min-width: 1441px) {
+  .wrapper {
+    -webkit-box-pack: justify !important;
+        -ms-flex-pack: justify !important;
+            justify-content: space-between !important;
+    width: 100% !important;
+    max-width: initial !important;
+    padding: 0 20px 0 20px;
+  }
+  .wrapper .icons {
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+  }
+  .wrapper .icons .icon-pics {
+    margin-left: 20px;
+  }
 }
 
 @media only screen and (max-width: 1400px) {

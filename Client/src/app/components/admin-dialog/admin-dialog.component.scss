@@ -1,0 +1,31 @@
+@import '../../../assets/base.styles.scss';
+.wrapper{
+    @extend %flex-column;
+    min-width: 600px;
+    margin: 0 auto;
+    margin-top: 20px;
+    padding: 20px 0;
+    form{
+        @extend %flex-column;
+        input{
+            margin : 20px 0 0 0 ;
+        }  
+    }
+    mat-form-field{
+        margin-top: 20px;
+    }
+    
+    .restaurants{
+        @extend %flex-column;
+    }
+    button{
+        margin-top: 20px;
+    }   
+}
+
+// Mobile
+@media only screen and (max-width: 900px) {
+    .wrapper{
+        min-width: auto;
+    }
+}

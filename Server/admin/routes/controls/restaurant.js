@@ -4,24 +4,24 @@ const { addRestaurant, editRestaurant, deleteRestaurant } = require('../handlers
 
 // ----- Add Restaurant -------
 router.post('/add', verifyUser, (req, res) => {
-    const { name, chef, img_src } = req.body
-    if (!name || !chef || !img_src) {
+    const { name, chef, img_src, popularity } = req.body
+    if (!name || !chef || !img_src || popularity) {
         res.json({ error: true, msg: "Missing some info..." }).status(404);
         return;
     }
-    addRestaurant(name, chef, img_src)
+    addRestaurant(name, chef, img_src, popularity)
         .then(result => res.send(result))
         .catch(err => res.send(err))
 });
 
 // ---- Edit Restaurant -------
 router.put('/edit', verifyUser, (req, res) => {
-    const { _id, name, chef, img_src } = req.body
+    const { _id, name, chef, img_src, popularity } = req.body
     if (!_id || !name || !chef || !img_src) {
         res.json({ error: true, msg: "Missing some info..." }).status(404);
         return;
     }
-    editRestaurant(_id, name, chef, img_src)
+    editRestaurant(_id, name, chef, img_src, popularity)
         .then(result => res.send(result))
         .catch(err => res.send(err))
 });
