@@ -8,11 +8,10 @@
             }
         }
     ],
-
     "deploy": {
         "production": {
-            "key": "ssh ubuntu@52.214.238.164",
-            "user": "ubuntu", 
+            "key": "~/.ssh",
+            "user": "ubuntu",
             "host": [
                 " 52.214.238.164"
             ],
@@ -27,4 +26,3 @@
         }
     }
 }
- 
