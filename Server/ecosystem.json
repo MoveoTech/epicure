@@ -10,7 +10,7 @@
     ],
     "deploy": {
         "production": {
-            "key": "~/.ssh",
+            "key": "~/.ssh/id_rsa.pub",
             "user": "ubuntu",
             "host": [
                 " 52.214.238.164"
