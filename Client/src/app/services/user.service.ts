@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 
@@ -15,7 +15,7 @@ export class UserService {
 
   verifyLogged() {
     return this.http.get(`${environment.BASE_URL}/admin/verify`, {
-      headers: environment.loaclStorageHeader
+      headers: { "Authorization": localStorage.access_token }
     })
   }
 

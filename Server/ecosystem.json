@@ -1,0 +1,30 @@
+{
+    "apps": [
+        {
+            "name": "Epicure",
+            "script": "./index.js",
+            "env": {
+                "NODE_ENV": "development"
+            }
+        }
+    ],
+
+    "deploy": {
+        "production": {
+            "key": "ssh ubuntu@52.214.238.164",
+            "user": "ubuntu", 
+            "host": [
+                " 52.214.238.164"
+            ],
+            "ref": "https://github.com/MoveoTech/epicure/tree/feature/client_side_admin",
+            "repo": "git@github.com:MoveoTech/epicure.git",
+            "path": "/home/ubuntu/epicure",
+            "ssh_options": "StrictHostKeyChecking=no",
+            "post-deploy": "cp ~/.env . && apidoc -i apidoc -o webApidoc && npm install && mkdir -p logs && pm2 startOrRestart ecosystem.json --env {{env}}&& pm2 save",
+            "env": {
+                "NODE_ENV": "production"
+            }
+        }
+    }
+}
+ 
