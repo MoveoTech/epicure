@@ -51,11 +51,15 @@
         flex-direction: column;
         background-color: #f9f4ea;
         height: 98px;
-        justify-content: space-between;
+        justify-content: flex-end;
         .price-number{
             font-size: 24.9px;
             font-weight: 100;
             letter-spacing: 1.66px;
+        }
+        img{
+            height: 35px;
+            margin:10px 0 15px 0;
         }
     }
     .price{
@@ -124,6 +128,7 @@
    height: 110px;
 
    img{
+       height: 60px;
        margin: 0;
        padding: 20px 0px 11px 0px;
 }
