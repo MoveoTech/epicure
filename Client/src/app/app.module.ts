@@ -27,7 +27,9 @@ import { AdminMainComponent } from './components/admin-main/admin-main.component
 import { AdminDialogComponent } from './components/admin-dialog/admin-dialog.component';
 import { AdminDialogEditComponent } from './components/admin-dialog-edit/admin-dialog-edit.component';
 import { RestaurantsPageComponent } from './components/restaurants-page/restaurants-page.component';
-import { MailGunComponent } from './components/mail-gun/mail-gun.component'
+import { MailGunComponent } from './components/mail-gun/mail-gun.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment'
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   direction: 'horizontal',
@@ -65,7 +67,8 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     MaterialModule,
     ReactiveFormsModule,
     SwiperModule,
-    HttpClientModule
+    HttpClientModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [{ provide: SWIPER_CONFIG, useValue: DEFAULT_SWIPER_CONFIG }],
   bootstrap: [AppComponent]
