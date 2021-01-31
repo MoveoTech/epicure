@@ -6,7 +6,7 @@ import { HttpHeaders } from "@angular/common/http";
 
 export const environment = {
   production: false,
-  BASE_URL: 'http://52.214.238.164/api',
+  BASE_URL: 'https://epicure-ron.moveodevelop.com/api',
   loaclStorageHeader: new HttpHeaders()
     .set('Authorization', localStorage.access_token)
 };
