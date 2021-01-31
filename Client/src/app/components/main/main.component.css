@@ -131,6 +131,10 @@
   letter-spacing: 0.93px;
 }
 
+.mobile .content .nav-buttons .button:hover {
+  cursor: pointer;
+}
+
 .mobile .content .popular-rest {
   margin: 51px 0 13px 0;
   font-size: 14px;

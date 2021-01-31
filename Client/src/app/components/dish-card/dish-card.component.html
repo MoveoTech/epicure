@@ -1,12 +1,12 @@
 <div ngClass.lt-md="mobile" ngClass.gt-sm="desktop">
     <div class="card" (click)='openDialog()' *ngIf='dish_name'>
-        <img src={{img_src}} alt="">
+        <img src={{img_src}} alt="restaurant-image">
         <div class="details">
             <p class="restaurant">{{dish_name}}</p>
             <p *ngIf='description' class="chef">{{description}}</p>
         </div>
         <div *ngIf='price' class="priceContent">
-            <img *ngIf='icon !== "assets/undefined"' src={{icon}} alt="">
+            <img *ngIf='icon !== "assets/undefined"' src={{icon}} alt="dish-image">
             <div class="price">
                 <div class="line"></div>
                 <p class="price-number">₪{{price}}</p>
@@ -14,5 +14,5 @@
             </div>
         </div>
     </div>
-    <img *ngIf='!dish_name' src={{img_src}} alt="">
+    <img *ngIf='!dish_name' src={{img_src}} alt="spice-icon">
 </div>

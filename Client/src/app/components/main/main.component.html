@@ -5,7 +5,7 @@
         <div class="content">
             <div class="nav-buttons" fxHide.gt-sm>
                 <div class="button">Chefs</div>
-                <div class="button">Restaurants</div>
+                <div (click)='r.navigateByUrl("restaurants")' class="button">Restaurants</div>
             </div>
             <p class="popular-rest">THE POPULAR RESTAURANTS IN EPICURE :</p>
             <swiper [config]='config'>
