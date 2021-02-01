@@ -6,7 +6,7 @@ interface dialogData {
   dish_name: string,
   description: string,
   price: number,
-  icon : string
+  icon: string
 }
 
 @Component({
@@ -24,7 +24,6 @@ export class DishDialogComponent implements OnInit {
   quantity: number = 1
 
   increment() {
-
     this.quantity += 1
   }
   decrement() {
