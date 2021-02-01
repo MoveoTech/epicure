@@ -1,8 +1,8 @@
 <div class="wrapper">
     <mat-card>
         <mat-card-content>
-            <form [formGroup]="loginForm">
-                <h2>Epicure Admin Log In</h2>
+            <form *ngIf='registered' [formGroup]="loginForm">
+                <h2>Epicure Orders System</h2>
                 <mat-error *ngIf="loginInvalid">
                     The username or password were not recognised
                 </mat-error>
@@ -19,7 +19,34 @@
                     </mat-error>
                 </mat-form-field>
             </form>
-            <button (click)='handleSubmit()' [disabled]='loginForm.invalid' mat-raised-button
+
+            <form *ngIf='!registered' [formGroup]="registerForm">
+                <h2>Epicure Orders System</h2>
+                <mat-error *ngIf="loginInvalid">
+                    The username or password were not recognised
+                </mat-error>
+                <mat-form-field class="full-width-input">
+                    <input autofocus matInput placeholder="First Name" formControlName="fname" required>
+                </mat-form-field>
+                <mat-form-field class="full-width-input">
+                    <input autofocus matInput placeholder="Last Name" formControlName="lname" required>
+                </mat-form-field>
+                <mat-form-field class="full-width-input">
+                    <input autofocus matInput placeholder="Username" formControlName="username" required>
+                    <mat-error>
+                        Please provide a valid username
+                    </mat-error>
+                </mat-form-field>
+                <mat-form-field class="full-width-input">
+                    <input matInput type="password" placeholder="Password" formControlName="password" required>
+                    <mat-error>
+                        Please provide a valid password
+                    </mat-error>
+                </mat-form-field>
+            </form>
+
+            <button (click)='registered = !registered' mat-raised-button>Not Registered? Click Here</button><br>
+            <button (click)='handleSubmit()' [disabled]='registerForm.invalid' mat-raised-button
                 color="primary">Login</button>
         </mat-card-content>
     </mat-card>

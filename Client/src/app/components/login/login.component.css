@@ -32,4 +32,8 @@
 .wrapper mat-form-field {
   display: block;
 }
+
+.wrapper button {
+  margin-top: 20px;
+}
 /*# sourceMappingURL=login.component.css.map */
