@@ -1,15 +1,16 @@
 <div ngClass.lt-md="mobile" ngClass.gt-sm="desktop">
     <div class="wrapper">
-        <p class="chef-week">CHEF OF THE WEEK :</p>
+        <h2 aria-label="שף השבוע" class="chef-week">CHEF OF THE WEEK :</h2>
         <div class="content">
             <div class="pic">
                 <img [src]='"assets/"+chefService.weeklyChef?.img_src' alt="chef-image" fxHide.lt-md>
-                <div class="name" fxHide.gt-sm>{{chefService.weeklyChef?.name}}</div>
+                <div aria-label="שם השף השבועי" class="name" fxHide.gt-sm>{{chefService.weeklyChef?.name}}</div>
             </div>
-            <p class="description">{{chefService.weeklyChef?.description}}</p>
+            <p aria-describedby="description" id="description" class="description">
+                {{chefService.weeklyChef?.description}}</p>
         </div>
         <div class="restaurants">
-            <p class="chefs-restaurant">{{chefService.weeklyChef?.name}} restaurants :</p>
+            <p aria-label="מסעדות השף" class="chefs-restaurant">{{chefService.weeklyChef?.name}} restaurants :</p>
             <swiper [config]='config'>
                 <div class="card" *ngFor='let restaurant of chefService.weeklyChef?.restaurants'>
                     <app-chef-restaurant-card [img_src]="'assets/'+restaurant?.img_src" [restaurant]='restaurant.name'>

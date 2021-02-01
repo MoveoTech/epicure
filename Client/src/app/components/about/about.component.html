@@ -1,9 +1,10 @@
 <div ngClass.lt-md="mobile" ngClass.gt-sm="desktop">
     <div class="wrapper">
         <div class="content">
-            <p class="title">ABOUT US :</p>
+            <h2 aria-label="אודות" class="title">ABOUT US :</h2>
             <div class="description">
-                <p class="about">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In a lacus vel justo fermentum
+                <p aria-describedby="about" id="about" class="about">Lorem ipsum dolor sit amet, consectetur adipiscing
+                    elit. In a lacus vel justo fermentum
                     bibendum
                     non
                     eu ipsum. Cras porta malesuada eros, eget blandit
@@ -23,12 +24,15 @@
             <div class="downloads">
                 <div class="download">
                     <img src="assets/shape.svg" alt="download">
-                    <p style="margin: 0; text-align: center; font-size: 11.8px; font-weight: 500;"> Download on the <br>
+                    <p aria-label="אפשרות הורדה לאייפון"
+                        style="margin: 0; text-align: center; font-size: 11.8px; font-weight: 500;"> Download on the
+                        <br>
                         App Store</p>
                 </div>
                 <div class="download">
                     <img src="assets/path.svg" alt="google">
-                    <p style="margin: 0; text-align: center; font-size: 11.8px; font-weight: 500;">
+                    <p aria-label="אפשרות הורדה לאנדרואיד"
+                        style="margin: 0; text-align: center; font-size: 11.8px; font-weight: 500;">
                         Get it on <br> Google Play
                     </p>
                 </div>

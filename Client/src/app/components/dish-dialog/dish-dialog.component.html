@@ -4,31 +4,36 @@
         <img class="img" src={{data.img_src}} alt="background-img">
         <div class="content">
             <div class="head">
-                <div class="title" mat-dialog-title> {{data.dish_name}}</div>
-                <div class="description" mat-dialog-content>{{data.description}}</div>
+                <div aria-describedby="title" id='title' class="title" mat-dialog-title> {{data.dish_name}}</div>
+                <div aria-describedby="description" id="description" class="description" mat-dialog-content>
+                    {{data.description}}</div>
                 <div class="price">
                     <div class="line"></div>
-                    <p style=" font-size: 24.9px; font-weight: 400;">₪{{data.price}}</p>
+                    <p aria-label="מחיר המנה" style=" font-size: 24.9px; font-weight: 400;">₪{{data.price}}</p>
                     <div class="line"></div>
                 </div>
             </div>
-            <div class="side-dish">
-                <p class="side-title">Choose a side</p>
-                <mat-radio-button class="example-margin" value="after">White Bread</mat-radio-button> <br>
-                <mat-radio-button class="example-margin" value="after">Sticky Rice</mat-radio-button>
+            <div role="radiogroup" class="side-dish">
+                <p aria-label="בחר תוספות בצד" class="side-title">Choose a side</p>
+                <mat-radio-button role="radio" aria-label="לחם לבן" class="example-margin" value="after">White Bread
+                </mat-radio-button> <br>
+                <mat-radio-button role="radio" aria-label="אורז דביק" class="example-margin" value="after">Sticky Rice
+                </mat-radio-button>
             </div>
             <div class="side-dish">
-                <p class="side-title">Changes</p>
-                <mat-checkbox class="example-margin">Without Peanuts</mat-checkbox>
-                <mat-checkbox class="example-margin">Less Spicy</mat-checkbox>
+                <p aria-label="שינויים במנה" class="side-title">Changes</p>
+                <mat-checkbox role="checkbox" aria-label="ללא בוטנים" class="example-margin">Without Peanuts
+                </mat-checkbox>
+                <mat-checkbox role="checkbox" aria-label="לא חריף" class="example-margin">Less Spicy</mat-checkbox>
             </div>
             <p style="margin: 70px 0 0 0;" class="side-title">Quantity</p>
             <div class="quantity">
-                <p (click)='decrement()' class="action">-</p>
+                <p aria-label="החסר כמות כוללת" (click)='decrement()' class="action">-</p>
                 <p>{{quantity}}</p>
-                <img (click)="increment()" class="action" src="assets/plus.svg" alt="+ image">
+                <img aria-label="הוסף לכמות הכוללת" (click)="increment()" class="action" src="assets/plus.svg"
+                    alt="+ image">
             </div>
         </div>
-        <button id="button" mat-button mat-dialog-close>ADD TO BAG </button>
+        <button aria-label="הוספה לסל הקניות" id="button" mat-button mat-dialog-close>ADD TO BAG </button>
     </div>
 </div>

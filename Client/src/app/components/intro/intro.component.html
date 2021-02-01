@@ -1,11 +1,12 @@
 <div ngClass.lt-md="mobile" ngClass.gt-sm="desktop">
     <div class="wrapper">
         <div class="content">
-            <p aria-label="כותרת" aria-describedby="description" id="description" class="description">Epicure works with
+            <p aria-label="אפיקיור עובדים עם המסעדות והשפים המובילים בתל אביב" aria-describedby="descrip" id="descrip"
+                class="description">Epicure works with
                 the top chef
                 restaurants in Tel Aviv</p>
             <form [formGroup]='restForm'>
-                <input aria-label="שדה חיפוש מסעדות ושפים" matInput class="Search-Field" type="text" id="search"
+                <input aria-label="שדה חיפוש מסעדות ושפים" matInput class="Search-Field" type="text" id="search-input"
                     name="search" placeholder="Search for restaurant, cuisine & chef" [matAutocomplete]="autoGroup"
                     formControlName="restaurant">
                 <mat-autocomplete aria-autocomplete="list" #autoGroup="matAutocomplete">

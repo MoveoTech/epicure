@@ -71,14 +71,14 @@
         color: black;
         }
     
-        input#search{
+        input#search-input{
         background: url('../../../assets/search-icon.svg');
             background-size:31px 31px;
             background-position: 4.1%;
             background-repeat: no-repeat;
             text-indent: 20px;
         }
-        input#search:focus {
+        input#search-input:focus {
         background-image:none;
         text-indent: 0;
         }
@@ -137,14 +137,14 @@
           text-align: center;
           }
       
-          input#search{
+          input#search-input{
           background: url('../../../assets/search-icon.svg');
               background-size:15px 15px;
               background-position: 4.1%;
               background-repeat: no-repeat;
               text-indent: 20px;
           }
-          input#search:focus {
+          input#search-input:focus {
           background-image:none;
           text-indent: 0;
           }

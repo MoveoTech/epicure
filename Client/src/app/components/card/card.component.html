@@ -2,14 +2,14 @@
     <div class="card" *ngIf='restaurant'>
         <img src={{img_src}} alt="dish-image">
         <div class="details">
-            <p class="restaurant">{{restaurant}}</p>
-            <p *ngIf='chef' class="chef">{{chef}}</p>
+            <p aria-label="מסעדה" class="restaurant">{{restaurant}}</p>
+            <p aria-label="שף" *ngIf='chef' class="chef">{{chef}}</p>
         </div>
         <div *ngIf='price' class="priceContent">
             <img src={{icon}} alt="restaurant-image">
             <div class="price">
                 <div class="line"></div>
-                <p>{{price}}₪</p>
+                <p aria-label="מחיר">{{price}}₪</p>
                 <div class="line"></div>
             </div>
         </div>

@@ -5,22 +5,24 @@
         <div class="content">
             <div class="nav-buttons" fxHide.gt-sm>
                 <div class="button">Chefs</div>
-                <div (click)='r.navigateByUrl("restaurants")' class="button">Restaurants</div>
+                <div role="button" aria-label="מעבר לעמוד מסעדות" (click)='r.navigateByUrl("restaurants")'
+                    class="button">Restaurants</div>
             </div>
-            <p class="popular-rest">THE POPULAR RESTAURANTS IN EPICURE :</p>
+            <h2 aria-label="המסעדות הפופולאריות שלנו" class="popular-rest">THE POPULAR RESTAURANTS IN EPICURE :</h2>
             <swiper [config]='config'>
                 <div class="card" *ngFor='let restaurant of restaurantsService.allRestaurants'>
-                    <app-card [restaurant]="restaurant.name" [chef]="restaurant.chef.name"
+                    <app-card tabindex="0" [restaurant]="restaurant.name" [chef]="restaurant.chef.name"
                         [img_src]='"assets/" + restaurant.img_src'>
                     </app-card>
                 </div>
             </swiper>
-            <p class="all-restaurants" fxHide.lt-md>All Restaurants <img src="assets/all-restaurants-arrows.svg"></p>
-            <div class="signature-dish">SIGNATURE DISH OF :</div>
+            <h2 aria-label="מעבר לרשימת המסעדות" class="all-restaurants" fxHide.lt-md>All
+                Restaurants <img src="assets/all-restaurants-arrows.svg" alt='All Restaurants'></h2>
+            <div aria-label="מנות הדגל של:" class="signature-dish">SIGNATURE DISH OF :</div>
             <swiper [config]='dishConfig'>
                 <div class="card" *ngFor='let dish of dishesService.dishes'>
                     <p class="title">{{dish.restaurant.name}}</p>
-                    <app-dish-card [dish_name]="dish.dish_name" [description]="dish.description"
+                    <app-dish-card tabindex="0" [dish_name]="dish.dish_name" [description]="dish.description"
                         [img_src]='"assets/"+dish.img_src' [icon]='"assets/"+dish.icon' [price]="'88'">
                     </app-dish-card>
                 </div>

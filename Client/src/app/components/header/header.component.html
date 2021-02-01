@@ -4,14 +4,17 @@
             <img style="margin-top: 11px;" src="assets/group-13.svg">
         </div>
         <div class="title-logo">
-            <img aria-label="מעבר לדף הבית" (click)='r.navigateByUrl("")' src="assets/logo.jpg" class="Logo">
-            <span aria-label="מעבר לדף הבית" (click)='r.navigateByUrl("")' class="epicure" fxHide.lt-md>EPICURE</span>
-            <span aria-label="מעבר לעמוד המסעדות" (click)='r.navigateByUrl("restaurants")' class="Restaurants" fxHide.lt-md>Restaurants</span>
+            <img tabindex="0" aria-label="מעבר לדף הבית" (click)='r.navigateByUrl("")' src="assets/logo.jpg"
+                class="Logo">
+            <span tabindex="0" aria-label="מעבר לדף הבית" (click)='r.navigateByUrl("")' class="epicure"
+                fxHide.lt-md>EPICURE</span>
+            <span tabindex="0" aria-label="מעבר לעמוד המסעדות" (click)='r.navigateByUrl("restaurants")'
+                class="Restaurants" fxHide.lt-md>Restaurants</span>
             <span aria-label="מעבר לעמוד שפים" class="Chefs" fxHide.lt-md>Chefs</span>
         </div>
         <div class="icons">
-            <input aria-label="שדה חיפוש מסעדות" fxHide.fxLayout.lt-md class="Search-Field" id="search" name="search" type="text"
-                placeholder="Search for restaurants, cuisine & chef">
+            <input aria-label="שדה חיפוש מסעדות" fxHide.fxLayout.lt-md class="Search-Field" id="search" name="search"
+                type="text" placeholder="Search for restaurants, cuisine & chef">
             <div class="icon-pics">
                 <img src="assets/search-icon.svg" alt="search-icon" class="solo-search-icon" fxHide.gt-md>
                 <img src="assets/user-icon.svg" alt="user-icon" class="User-icon">

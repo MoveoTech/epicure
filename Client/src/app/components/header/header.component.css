@@ -135,7 +135,6 @@
 
 .desktop input#search:focus {
   background-image: none;
-  text-indent: 0;
 }
 
 .desktop .icons {
