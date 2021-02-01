@@ -81,6 +81,15 @@
         font-weight: 400;
         width: 70%;
         justify-content: space-around;
+        button{
+            background: none;
+            color: inherit;
+            border: none;
+            padding: 0;
+            font: inherit;
+            cursor: pointer;
+            outline: inherit;
+        }
     }
     .action:hover{
         cursor: pointer;

@@ -1,12 +1,15 @@
 <div ngClass.lt-md="mobile" ngClass.gt-sm="desktop">
     <div class="wrapper">
         <div class="content">
-            <p class="description">Epicure works with the top chef restaurants in Tel Aviv</p>
+            <p aria-label="אפיקיור עובדים עם המסעדות והשפים המובילים בתל אביב" aria-describedby="descrip" id="descrip"
+                class="description">Epicure works with
+                the top chef
+                restaurants in Tel Aviv</p>
             <form [formGroup]='restForm'>
-                <input matInput class="Search-Field" type="text" id="search" name="search"
-                    placeholder="Search for restaurant, cuisine & chef" [matAutocomplete]="autoGroup"
+                <input aria-label="שדה חיפוש מסעדות ושפים" matInput class="Search-Field" type="text" id="search-input"
+                    name="search" placeholder="Search for restaurant, cuisine & chef" [matAutocomplete]="autoGroup"
                     formControlName="restaurant">
-                <mat-autocomplete #autoGroup="matAutocomplete">
+                <mat-autocomplete aria-autocomplete="list" #autoGroup="matAutocomplete">
                     <mat-optgroup *ngFor="let group of restOptions | async" [label]="group.option">
                         <mat-option *ngFor="let name of group.names" [value]="name">
                             {{name}}

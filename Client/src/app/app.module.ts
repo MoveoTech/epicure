@@ -29,7 +29,8 @@ import { AdminDialogEditComponent } from './components/admin-dialog-edit/admin-d
 import { RestaurantsPageComponent } from './components/restaurants-page/restaurants-page.component';
 import { MailGunComponent } from './components/mail-gun/mail-gun.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
-import { environment } from '../environments/environment'
+import { environment } from '../environments/environment';
+import { LoginComponent } from './components/login/login.component'
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   direction: 'horizontal',
@@ -58,6 +59,7 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     AdminDialogEditComponent,
     RestaurantsPageComponent,
     MailGunComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'epicure' }),
@@ -68,7 +70,7 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     ReactiveFormsModule,
     SwiperModule,
     HttpClientModule,
-    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production, registrationStrategy: 'registerImmediately' })
   ],
   providers: [{ provide: SWIPER_CONFIG, useValue: DEFAULT_SWIPER_CONFIG }],
   bootstrap: [AppComponent]
