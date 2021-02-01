@@ -58,15 +58,20 @@
           flex-direction: column;
   background-color: #f9f4ea;
   height: 98px;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
 }
 
 .desktop .priceContent .price-number {
   font-size: 24.9px;
   font-weight: 100;
   letter-spacing: 1.66px;
+}
+
+.desktop .priceContent img {
+  height: 35px;
+  margin: 10px 0 15px 0;
 }
 
 .desktop .price {
@@ -142,6 +147,7 @@
 }
 
 .mobile .priceContent img {
+  height: 60px;
   margin: 0;
   padding: 20px 0px 11px 0px;
 }

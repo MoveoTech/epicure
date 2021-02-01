@@ -58,7 +58,7 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     MailGunComponent,
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'Epicure' }),
     AppRoutingModule,
     FlexLayoutModule,
     BrowserAnimationsModule,

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Dish } from 'src/app/interfaces/dish.interface';
 import { Restaurant } from 'src/app/interfaces/restaurant.interfece';
 import { DishesService } from 'src/app/services/dishes.service';
@@ -20,7 +21,7 @@ export class MainComponent implements OnInit {
     // width : 530
   }
 
-  constructor(public restaurantsService: RestaurantsService, public dishesService: DishesService) { }
+  constructor(public restaurantsService: RestaurantsService, public dishesService: DishesService, public r: Router) { }
 
   resizeCarouselle() {
 

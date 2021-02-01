@@ -1,12 +1,12 @@
 <div ngClass.lt-md="mobile" ngClass.gt-sm="desktop">
     <div class="card" *ngIf='restaurant'>
-        <img src={{img_src}} alt="">
+        <img src={{img_src}} alt="dish-image">
         <div class="details">
             <p class="restaurant">{{restaurant}}</p>
             <p *ngIf='chef' class="chef">{{chef}}</p>
         </div>
         <div *ngIf='price' class="priceContent">
-            <img src={{icon}} alt="">
+            <img src={{icon}} alt="restaurant-image">
             <div class="price">
                 <div class="line"></div>
                 <p>{{price}}₪</p>
@@ -14,5 +14,5 @@
             </div>
         </div>
     </div>
-    <img *ngIf='!restaurant' src={{img_src}} alt="">
+    <img *ngIf='!restaurant' src={{img_src}} alt="spice-icon">
 </div>

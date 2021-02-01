@@ -5,7 +5,7 @@ const { addRestaurant, editRestaurant, deleteRestaurant } = require('../handlers
 // ----- Add Restaurant -------
 router.post('/add', verifyUser, (req, res) => {
     const { name, chef, img_src, popularity } = req.body
-    if (!name || !chef || !img_src || popularity) {
+    if (!name || !chef || !img_src || !popularity) {
         res.json({ error: true, msg: "Missing some info..." }).status(404);
         return;
     }
