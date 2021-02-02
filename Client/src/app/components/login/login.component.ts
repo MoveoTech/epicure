@@ -34,7 +34,12 @@ export class LoginComponent implements OnInit {
     if (this.registered) {
       if (this.loginForm.invalid) return
       this.userService.userLogin(this.loginForm.value).subscribe(
-        (res: { _id: string, access_token: string }) => {
+        (res: { _id: string, access_token: string, error: boolean }) => {
+          if (res.error) {
+            this.loginInvalid = true
+            setTimeout(() => this.loginInvalid = false, 2000);
+            return
+          }
           this.router.navigateByUrl('')
           localStorage.access_token = res.access_token
           this.userService.userId = res._id
