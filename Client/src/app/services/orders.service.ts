@@ -10,7 +10,9 @@ export class OrdersService {
   constructor(private http: HttpClient) { }
 
   getUserOrders() {
-    return this.http.get(`${environment.BASE_URL}/orders`)
+    return this.http.get(`${environment.BASE_URL}/orders`, {
+      headers: environment.loaclStorageHeader
+    })
   }
 
   addOrder(body) {
