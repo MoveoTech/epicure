@@ -1,12 +1,15 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { OrdersService } from 'src/app/services/orders.service';
+import { UserService } from 'src/app/services/user.service';
 
 interface dialogData {
   img_src: string,
   dish_name: string,
   description: string,
   price: number,
-  icon: string
+  icon: string,
+  _id: string
 }
 
 @Component({
@@ -19,7 +22,10 @@ interface dialogData {
 
 export class DishDialogComponent implements OnInit {
 
-  constructor(@Inject(MAT_DIALOG_DATA) public data: dialogData) { }
+  constructor(
+    @Inject(MAT_DIALOG_DATA) public data: dialogData,
+    private orderService: OrdersService,
+    private userService: UserService) { }
 
   quantity: number = 1
 
@@ -28,10 +34,17 @@ export class DishDialogComponent implements OnInit {
   }
   decrement() {
     if (this.quantity > 1) this.quantity -= 1
+  }
 
+  addDishToCart() {
+    this.orderService.addOrder({ dish: this.data._id, quantity: this.quantity, user: this.userService.userId })
+      .subscribe(res => console.log(res),
+        err => console.log(err)
+      )
   }
 
   ngOnInit(): void {
+    console.log(this.data)
   }
 
 }
