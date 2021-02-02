@@ -6,10 +6,12 @@ import { HttpHeaders } from "@angular/common/http";
 
 export const environment = {
   production: false,
-  BASE_URL: 'https://epicure-ron.moveodevelop.com/api',
+  BASE_URL: 'http://localhost:1000',
   loaclStorageHeader: new HttpHeaders()
     .set('Authorization', localStorage.access_token)
 };
+
+// https://epicure-ron.moveodevelop.com/api
 
 /*
  * For easier debugging in development mode, you can import the following file
