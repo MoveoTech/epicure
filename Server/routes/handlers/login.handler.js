@@ -9,8 +9,8 @@ const login = async (username, password, res) => {
             return
         } else {
             if (compareSync(password, user[0].password)) {
-                let access_token = jwt.sign({ id: user[0]._id }, "epicure", { expiresIn: "45m" });
-                res.json({ access_token })
+                let access_token = jwt.sign({}, "epicure", { expiresIn: "45m" });
+                res.json({ access_token, _id: user[0]._id })
             } else {
                 res.json({ error: true, msg: "Username or password are incorrect" }).status(403);
             }
@@ -25,7 +25,10 @@ const register = (fname, lname, username, password, res) => {
     const salt = genSaltSync(10);
     const hash = hashSync(password, salt)
     new User({ password: hash, username, fname, lname }).save()
-        .then(user => res.send(user))
+        .then(user => {
+            let access_token = jwt.sign({}, "epicure", { expiresIn: "45m" });
+            res.json({ user, access_token })
+        })
         .catch(err => res.send(err).status(403));
 }
 

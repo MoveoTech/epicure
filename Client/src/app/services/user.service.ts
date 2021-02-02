@@ -8,8 +8,15 @@ import { environment } from 'src/environments/environment';
 export class UserService {
 
   constructor(private http: HttpClient) { }
+  userId: string
+  userRegister(body) {
+    return this.http.post(`${environment.BASE_URL}/user/register`, body)
+  }
+  userLogin(body) {
+    return this.http.post(`${environment.BASE_URL}/user/login`, body)
+  }
 
-  login(body) {
+  adminLogin(body) {
     return this.http.post(`${environment.BASE_URL}/admin/login`, body)
   }
 

@@ -22,7 +22,7 @@ export class AdminLoginComponent implements OnInit {
   };
 
   handleSubmit() {
-    this.userSerivce.login(this.loginForm.value).subscribe(
+    this.userSerivce.adminLogin(this.loginForm.value).subscribe(
       (res: any) => {
         console.log(res)
         if (res.error) {

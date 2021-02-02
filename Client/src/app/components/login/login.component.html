@@ -45,9 +45,10 @@
                 </mat-form-field>
             </form>
 
-            <button (click)='registered = !registered' mat-raised-button>Not Registered? Click Here</button><br>
-            <button (click)='handleSubmit()' [disabled]='registerForm.invalid' mat-raised-button
-                color="primary">Login</button>
+            <button (click)='registered = !registered' mat-raised-button>{{registered ? "Not Registered ?" :
+                "Already Registered ?"}}</button><br>
+            <button (click)='handleSubmit()' mat-raised-button color="primary">{{registered ? "Login" :
+                "Register"}}</button>
         </mat-card-content>
     </mat-card>
 </div>

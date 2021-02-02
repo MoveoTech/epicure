@@ -10,11 +10,15 @@ const orderSchema = new Schema({
         type: mongoose.Types.ObjectId,
         ref: 'signature_dish'
     },
+    quantity: {
+        type: Number,
+        required: true,
+    },
     payed: {
         type: Boolean,
         default: false
     }
 });
 
-const Order = mongoose.model('admin', orderSchema);
+const Order = mongoose.model('order', orderSchema);
 module.exports = { Order };
