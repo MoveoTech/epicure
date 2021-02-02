@@ -1,22 +1,21 @@
-const { route } = require('./chefs');
+const { login, register } = require('../handlers/login.handler');
 
 const router = require('express').Router();
 
 router.post('/register', (req, res) => {
     const { fname, lname, username, password } = req.body
     if (!fname || !lname || !username || !password) {
-        return res.json({ error: true, msg: "Missing some info" }).status(403)
+        return res.status(404).json({ error: true, msg: "Missing some info" })
     }
-    res.send(req.body)
-
+    register(fname, lname, username, password, res)
 })
 
 router.post('/login', (req, res) => {
     const { username, password } = req.body
     if (!username || !password) {
-        return res.json({ error: true, msg: "Missing some info" }).status(403)
+        return res.status(404).json({ error: true, msg: "Missing some info" })
     }
-    res.send(req.body)
+    login(username, password, res);
 })
 
 

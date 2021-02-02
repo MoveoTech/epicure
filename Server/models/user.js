@@ -21,9 +21,9 @@ const userSchema = new Schema({
     },
     cartId: {
         type: mongoose.Types.ObjectId,
-        ref : 'cart'
+        ref: 'cart'
     }
 });
 
-const User = mongoose.model('admin', userSchema);
+const User = mongoose.model('user', userSchema);
 module.exports = { User };
