@@ -5,7 +5,7 @@
     margin: 40px auto;
 }
 .table{
-    margin: 40px auto;
+    margin: 0px auto;
     width: 100%;
     max-width: 1440px;
     table{
@@ -16,5 +16,12 @@
         .description{
             width: 25%;
         }
+    }
+}
+
+@media only screen and (max-width : 960px) {
+    .table{
+        width: 80%;
+        margin: 0 auto;
     }
 }

@@ -27,24 +27,28 @@ export class DishDialogComponent implements OnInit {
     private orderService: OrdersService,
     private userService: UserService) { }
 
-  quantity: number = 1
+  quantity: number = 1;
+  side_dish: string = "White bread"
 
   increment() {
     this.quantity += 1
-  }
+  };
+
   decrement() {
     if (this.quantity > 1) this.quantity -= 1
-  }
+  };
 
   addDishToCart() {
-    this.orderService.addOrder({ dish: this.data._id, quantity: this.quantity, user: this.userService.userId })
+    this.orderService.addOrder({ dish: this.data._id, quantity: this.quantity, user: this.userService.userId, side_dish: this.side_dish })
       .subscribe(res => console.log(res),
         err => console.log(err)
       )
-  }
+  };
 
-  ngOnInit(): void {
-    console.log(this.data)
-  }
+  changeSide() {
+    console.log(this.side_dish)
+  };
+
+  ngOnInit(): void { }
 
 }

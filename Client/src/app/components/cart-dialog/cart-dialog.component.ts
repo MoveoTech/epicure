@@ -14,7 +14,7 @@ interface tableData {
 export class CartDialogComponent implements OnInit {
 
   username: string;
-  displayedColumns: string[] = ['number', 'name', 'quantity', 'image', 'price', 'delete',];
+  displayedColumns: string[] = ['number', 'name', 'quantity','side dish' , 'image', 'price', 'delete',];
   tableData = [];
   totalOrderPrice: number = 0
 

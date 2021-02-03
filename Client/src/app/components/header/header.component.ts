@@ -17,7 +17,7 @@ export class HeaderComponent implements OnInit {
 
   openDialog() {
     this.dialog.open(CartDialogComponent, {
-      width: '40%'
+      maxWidth: '90vw'
     })
   }
 

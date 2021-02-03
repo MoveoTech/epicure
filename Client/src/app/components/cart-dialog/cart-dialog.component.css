@@ -21,8 +21,16 @@
           justify-content: space-evenly;
 }
 
+.wrapper .mat-display-1 {
+  text-align: center;
+}
+
 .wrapper table {
   width: 50%;
+}
+
+.wrapper table .quantity {
+  text-align: center;
 }
 
 .wrapper table img {

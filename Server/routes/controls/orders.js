@@ -3,11 +3,11 @@ const verifyUser = require('../../admin/authentication/verification.middleware')
 const router = require('express').Router();
 
 router.post('/add', (req, res) => {
-    const { user, quantity, dish } = req.body
-    if (!user || !quantity || !dish) {
+    const { user, quantity, dish, side_dish } = req.body
+    if (!user || !quantity || !dish || !side_dish) {
         res.status(404).json({ error: true, msg: "missing some info..." })
     }
-    addOrder(user, dish, quantity)
+    addOrder(user, dish, quantity, side_dish)
         .then(order => res.send(order))
         .catch(err => res.status(404).send(err))
 })

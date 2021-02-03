@@ -14,6 +14,10 @@ const orderSchema = new Schema({
         type: Number,
         required: true,
     },
+    side_dish: {
+        type: String,
+        required: true
+    },
     payed: {
         type: Boolean,
         default: false
