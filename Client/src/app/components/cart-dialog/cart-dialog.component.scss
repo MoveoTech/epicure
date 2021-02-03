@@ -1,0 +1,13 @@
+@import '../../../assets/base.styles.scss';
+
+.wrapper{
+    @extend %flex-column;
+    height: 80%;
+    justify-content: space-evenly;
+    table{
+        width: 50%;
+        img{
+            height: 50px;
+        }
+    }
+}

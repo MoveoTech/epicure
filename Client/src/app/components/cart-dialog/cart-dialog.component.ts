@@ -12,8 +12,11 @@ interface tableData {
 })
 export class CartDialogComponent implements OnInit {
 
-  displayedColumns: string[] = ['number', 'name'];
-  tableData = []
+  username: string;
+  displayedColumns: string[] = ['number', 'name', 'quantity','image' , 'price', 'delete' ,];
+  tableData = [];
+  totalOrderPrice: number = 0
+
   constructor(private orderService: OrdersService) { }
 
   ngOnInit(): void {
@@ -21,6 +24,10 @@ export class CartDialogComponent implements OnInit {
       (res: any) => {
         console.log(res)
         this.tableData = res
+        this.username = res[0].user.username
+        res.forEach(item => {
+          this.totalOrderPrice += item.dish.dish_price * item.quantity
+        });
       }
     )
   }
