@@ -19,8 +19,11 @@ export class AppComponent {
       { name: 'robots', content: 'index, follow' }
     ]);
     this.userService.verifyLogged().subscribe(
-      (res: any) => { this.userService.userId = res._id },
-      err => console.log(err)
+      (res: any) => {
+        this.userService.userId = res._id
+        this.userService.username = res.username
+      },
+      err => ''
     )
   }
 }

@@ -8,7 +8,9 @@ import { environment } from 'src/environments/environment';
 export class UserService {
 
   constructor(private http: HttpClient) { }
-  userId: string
+  userId: string;
+  username : string;
+
   userRegister(body) {
     return this.http.post(`${environment.BASE_URL}/user/register`, body)
   }

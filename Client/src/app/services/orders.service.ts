@@ -21,4 +21,13 @@ export class OrdersService {
     })
   }
 
+  removeOrderItem(_id) {
+    return this.http.request('delete', `${environment.BASE_URL}/orders`,
+      {
+        body: { _id },
+        headers: environment.loaclStorageHeader
+      }
+    )
+  }
+
 }

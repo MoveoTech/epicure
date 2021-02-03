@@ -51,7 +51,6 @@ export class LoginComponent implements OnInit {
       this.userService.userRegister(this.registerForm.value).subscribe(
         (res: { user: { _id: string }, access_token }) => {
           this.router.navigateByUrl('')
-          console.log(res)
           localStorage.access_token = res.access_token
           this.userService.userId = res.user._id
         },

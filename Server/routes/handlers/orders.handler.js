@@ -19,4 +19,8 @@ const getUserOrders = (user_id) => {
         ])
 }
 
-module.exports = { addOrder, getUserOrders }
+const removeOrder = (_id) => {
+    return Order.deleteOne({ dish: _id })
+}
+
+module.exports = { addOrder, getUserOrders, removeOrder }

@@ -21,7 +21,6 @@ app.use('/orders', require('./routes/controls/orders'));
 //  ----- Admin Middleware -----
 app.use('/admin', require('./admin/routes/controls/admin_navigator'));
 
-
 const PORT = process.env.PORT || 1000;
 
 mongoose.connect('mongodb://localhost/epicure', { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true })

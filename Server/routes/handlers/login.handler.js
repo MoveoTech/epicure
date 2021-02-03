@@ -10,7 +10,7 @@ const login = async (username, password, res) => {
             return
         } else {
             if (compareSync(password, user[0].password)) {
-                let access_token = jwt.sign({ _id: user[0]._id }, "epicure", { expiresIn: "45m" });
+                let access_token = jwt.sign({ _id: user[0]._id , username : user[0].username}, "epicure", { expiresIn: "45m" });
                 res.json({ access_token, _id: user[0]._id })
             } else {
                 res.json({ error: true, msg: "Username or password are incorrect" }).status(403);
@@ -26,7 +26,7 @@ const register = (fname, lname, username, password, res) => {
     const hash = hashSync(password, salt)
     new User({ password: hash, username, fname, lname }).save()
         .then(user => {
-            let access_token = jwt.sign({ _id: user._id }, "epicure", { expiresIn: "45m" });
+            let access_token = jwt.sign({ _id: user._id, username : user.username }, "epicure", { expiresIn: "45m" });
             res.json({ user, access_token })
         })
         .catch(err => res.send(err).status(403));
