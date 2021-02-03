@@ -21,8 +21,6 @@ app.use('/orders', require('./routes/controls/orders'));
 //  ----- Admin Middleware -----
 app.use('/admin', require('./admin/routes/controls/admin_navigator'));
 
-//------MailGun Trial ------
-app.use('/mail', require('./mail_gun_trial/mail_trial.controller'));
 
 const PORT = process.env.PORT || 1000;
 
