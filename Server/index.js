@@ -17,6 +17,7 @@ app.use('/dishes', require('./routes/controls/dishes'));
 app.use('/chefs', require('./routes/controls/chefs'));
 app.use('/user', require('./routes/controls/login'));
 app.use('/orders', require('./routes/controls/orders'));
+app.use('/reviews', require('./routes/controls/reviews'))
 
 //  ----- Admin Middleware -----
 app.use('/admin', require('./admin/routes/controls/admin_navigator'));
