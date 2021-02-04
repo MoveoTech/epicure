@@ -13,9 +13,8 @@ const routes: Routes = [
   { path: '', component: MainComponent, canActivate: [UserAuthGuard], pathMatch: 'full' },
   { path: 'admin', component: AdminMainComponent, canActivate: [AuthGuard] },
   { path: 'login', component: LoginComponent },
-  { path: 'restaurants', component: RestaurantsPageComponent },
+  { path: 'restaurants', component: RestaurantsPageComponent, canActivate: [UserAuthGuard] },
   { path: 'admin/login', component: AdminLoginComponent },
-  { path: 'mail', component: MailGunComponent },
   { path: '**', redirectTo: '' },
 ];
 

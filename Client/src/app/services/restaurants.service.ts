@@ -23,19 +23,19 @@ export class RestaurantsService {
 
   deleteRestaurant(_id) {
     return this.http.request('delete', `${environment.BASE_URL}/admin/restaurants/delete`, {
-      headers: environment.loaclStorageHeader,
+      headers: environment.loaclStorageHeader(),
       body: { _id }
     })
   };
 
   addRestaurant(body) {
     return this.http.post(`${environment.BASE_URL}/admin/restaurants/add`, body, {
-      headers: environment.loaclStorageHeader,
+      headers: environment.loaclStorageHeader(),
     })
   };
   editRestaurant(body) {
     return this.http.put(`${environment.BASE_URL}/admin/restaurants/edit`, body, {
-      headers: environment.loaclStorageHeader,
+      headers: environment.loaclStorageHeader(),
     })
   };
 

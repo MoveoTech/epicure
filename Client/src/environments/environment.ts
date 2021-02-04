@@ -3,7 +3,7 @@
 // The list of file replacements can be found in `angular.json`.
 
 import { HttpHeaders } from "@angular/common/http";
-const headers = new HttpHeaders({ 'Authorization': localStorage.access_token })
+const headers = () => { return new HttpHeaders({ 'Authorization': localStorage.access_token }) }
 export const environment = {
   production: false,
   BASE_URL: 'http://localhost:1000',

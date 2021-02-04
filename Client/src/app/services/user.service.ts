@@ -9,7 +9,7 @@ export class UserService {
 
   constructor(private http: HttpClient) { }
   userId: string;
-  username : string;
+  username: string;
 
   userRegister(body) {
     return this.http.post(`${environment.BASE_URL}/user/register`, body)
@@ -24,7 +24,7 @@ export class UserService {
 
   verifyLogged() {
     return this.http.get(`${environment.BASE_URL}/admin/verify`, {
-      headers: { "Authorization": localStorage.access_token }
+      headers: environment.loaclStorageHeader()
     })
   }
 

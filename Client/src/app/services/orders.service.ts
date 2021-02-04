@@ -11,13 +11,13 @@ export class OrdersService {
 
   getUserOrders() {
     return this.http.get(`${environment.BASE_URL}/orders`, {
-      headers: environment.loaclStorageHeader
+      headers: environment.loaclStorageHeader()
     })
   }
 
   addOrder(body) {
     return this.http.post(`${environment.BASE_URL}/orders/add`, body, {
-      headers: environment.loaclStorageHeader
+      headers: environment.loaclStorageHeader()
     })
   }
 
@@ -25,7 +25,7 @@ export class OrdersService {
     return this.http.request('delete', `${environment.BASE_URL}/orders`,
       {
         body: { _id },
-        headers: environment.loaclStorageHeader
+        headers: environment.loaclStorageHeader()
       }
     )
   }
