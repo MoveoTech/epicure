@@ -1,7 +1,13 @@
 <div ngClass.lt-md="mobile" ngClass.gt-sm="desktop">
     <div class="wrapper">
         <div aria-label="תפריט" class="burger" fxHide.gt-sm>
-            <img style="margin-top: 11px;" src="assets/group-13.svg">
+            <button [mat-menu-trigger-for]='menu'>
+                <img style="margin-top: 11px;" src="assets/group-13.svg">
+            </button>
+            <mat-menu #menu="matMenu">
+                <button (click)='r.navigateByUrl("")' mat-menu-item>Home</button>
+                <button (click)='r.navigateByUrl("restaurants")' mat-menu-item>Restaurants</button>
+            </mat-menu>
         </div>
         <div class="title-logo">
             <img tabindex="0" aria-label="מעבר לדף הבית" (click)='r.navigateByUrl("")' src="assets/logo.jpg"

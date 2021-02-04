@@ -218,6 +218,16 @@
           flex-grow: 1;
 }
 
+.mobile .wrapper .burger button {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+}
+
 .mobile .wrapper .icon-pics {
   width: 100%;
   -webkit-box-pack: justify;
