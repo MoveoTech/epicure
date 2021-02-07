@@ -7,6 +7,8 @@
             <mat-menu #menu="matMenu">
                 <button (click)='r.navigateByUrl("")' mat-menu-item>Home</button>
                 <button (click)='r.navigateByUrl("restaurants")' mat-menu-item>Restaurants</button>
+                <button (click)='r.navigateByUrl("reviews")' mat-menu-item>Reviews</button>
+                <button (click)='openDialog()' mat-menu-item>Cart</button>
             </mat-menu>
         </div>
         <div class="title-logo">
@@ -18,6 +20,8 @@
                 class="Restaurants" fxHide.lt-md>Restaurants</span>
             <span aria-label="מעבר לעמוד שפים" class="Chefs" fxHide.lt-md>Chefs</span>
             <span aria-label="מעבר לעמוד שפים" class="Chefs" fxHide.lt-md (click)='openDialog()'>Cart</span>
+            <span aria-label="מעבר לעמוד ביקורות" class="Chefs" fxHide.lt-md
+                (click)='r.navigateByUrl("reviews")'>Reviews</span>
         </div>
         <div class="icons">
             <input aria-label="שדה חיפוש מסעדות" fxHide.fxLayout.lt-md class="Search-Field" id="search" name="search"
