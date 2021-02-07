@@ -9,11 +9,11 @@ const scrapeRestaurant = async (saerch) => {
             args: ['--lang="en-US"'], //gets the return value in english,
             ignoreDefaultArgs: ["--enable-automation"]
         });
-        let phoneNumber = ''
-        let address = ''
+        let phoneNumber = '';
+        let address = '';
         let activeTime = {
 
-        }
+        };
         const page = await browser.newPage();
         await page.setExtraHTTPHeaders({
             'Accept-Language': 'en-ie'
@@ -33,28 +33,20 @@ const scrapeRestaurant = async (saerch) => {
                     }
                     else if (value === 'hours') {
                         switch (day) {
-                            case 1:
-                                activeTime.sunday = await txt.jsonValue()
+                            case 1: activeTime.sunday = await txt.jsonValue()
                                 break;
-                            case 2:
-                                activeTime.monday = await txt.jsonValue()
+                            case 2: activeTime.monday = await txt.jsonValue()
                                 break;
-                            case 3:
-                                activeTime.tuesday = await txt.jsonValue()
+                            case 3: activeTime.tuesday = await txt.jsonValue()
                                 break;
-                            case 4:
-                                activeTime.wednesday = await txt.jsonValue()
+                            case 4: activeTime.wednesday = await txt.jsonValue()
                                 break;
-                            case 5:
-                                activeTime.thursday = await txt.jsonValue()
+                            case 5: activeTime.thursday = await txt.jsonValue()
                                 break;
-                            case 6:
-                                activeTime.friday = await txt.jsonValue()
+                            case 6: activeTime.friday = await txt.jsonValue()
                                 break;
-                            case 7:
-                                activeTime.saturday = await txt.jsonValue()
+                            case 7: activeTime.saturday = await txt.jsonValue()
                                 break;
-
                             default:
                                 break;
                         }
@@ -91,4 +83,4 @@ const scrapeRestaurant = async (saerch) => {
 
 }
 
-scrapeRestaurant('Teder')
+scrapeRestaurant('girrafe iben gabirol')
