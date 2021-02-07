@@ -74,6 +74,13 @@ const scrapeRestaurant = async (saerch) => {
         await scrape('//*[@id="rhs"]/div[1]/div[1]/div/div[1]/div/div[3]/div/div[4]/div/div/div/div[1]/div[2]/div[1]/table/tbody/tr[5]/td[2]', 'hours', 5);
         await scrape('//*[@id="rhs"]/div[1]/div[1]/div/div[1]/div/div[3]/div/div[4]/div/div/div/div[1]/div[2]/div[1]/table/tbody/tr[6]/td[2]', 'hours', 6);
         await scrape('//*[@id="rhs"]/div[1]/div[1]/div/div[1]/div/div[3]/div/div[4]/div/div/div/div[1]/div[2]/div[1]/table/tbody/tr[7]/td[2]', 'hours', 7);
+        await scrape('//*[@id="rhs"]/div/div[1]/div/div[1]/div/div[3]/div/div[4]/div/div/div/div[1]/div[2]/div[1]/table/tbody/tr[1]/td[2]', 'hours', 1);
+        await scrape('//*[@id="rhs"]/div/div[1]/div/div[1]/div/div[3]/div/div[4]/div/div/div/div[1]/div[2]/div[1]/table/tbody/tr[2]/td[2]', 'hours', 2);
+        await scrape('//*[@id="rhs"]/div/div[1]/div/div[1]/div/div[3]/div/div[4]/div/div/div/div[1]/div[2]/div[1]/table/tbody/tr[3]/td[2]', 'hours', 3);
+        await scrape('//*[@id="rhs"]/div/div[1]/div/div[1]/div/div[3]/div/div[4]/div/div/div/div[1]/div[2]/div[1]/table/tbody/tr[4]/td[2]', 'hours', 4);
+        await scrape('//*[@id="rhs"]/div/div[1]/div/div[1]/div/div[3]/div/div[4]/div/div/div/div[1]/div[2]/div[1]/table/tbody/tr[5]/td[2]', 'hours', 5);
+        await scrape('//*[@id="rhs"]/div/div[1]/div/div[1]/div/div[3]/div/div[4]/div/div/div/div[1]/div[2]/div[1]/table/tbody/tr[6]/td[2]', 'hours', 6);
+        await scrape('//*[@id="rhs"]/div/div[1]/div/div[1]/div/div[3]/div/div[4]/div/div/div/div[1]/div[2]/div[1]/table/tbody/tr[7]/td[2]', 'hours', 7);
         await browser.close();
         return { phoneNumber, address, activeTime }
     } catch (error) {
