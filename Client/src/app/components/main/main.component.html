@@ -10,7 +10,8 @@
             </div>
             <h2 aria-label="המסעדות הפופולאריות שלנו" class="popular-rest">THE POPULAR RESTAURANTS IN EPICURE :</h2>
             <swiper [config]='config'>
-                <div class="card" *ngFor='let restaurant of restaurantsService.allRestaurants'>
+                <div (click)='r.navigateByUrl("restaurant_reviews/"+restaurant._id)' class="card"
+                    *ngFor='let restaurant of restaurantsService.allRestaurants'>
                     <app-card tabindex="0" [restaurant]="restaurant.name" [chef]="restaurant.chef.name"
                         [img_src]='"assets/" + restaurant.img_src'>
                     </app-card>

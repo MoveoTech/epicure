@@ -42,6 +42,10 @@
       flex-wrap: wrap;
 }
 
+.desktop .card:hover {
+  cursor: pointer;
+}
+
 .desktop .popular-rest {
   font-size: 30px;
   margin: 0 0 42px 0;

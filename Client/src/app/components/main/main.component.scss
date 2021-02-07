@@ -20,6 +20,9 @@
     justify-content: space-evenly;
     flex-wrap: wrap;
   }
+  .card:hover{
+    cursor: pointer;
+  }
   
   .popular-rest{
     font-size: 30px;
