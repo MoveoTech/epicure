@@ -10,7 +10,7 @@ export class ReviewsService {
 
   constructor(private http: HttpClient) { }
 
-  restaurantReviews: Review[] = []
+  restaurantReviews: Review[]
 
   getReviews(restaurant) {
     return this.http.get(`${environment.BASE_URL}/reviews?restaurant=${restaurant}`)

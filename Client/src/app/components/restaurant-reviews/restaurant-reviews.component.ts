@@ -13,11 +13,9 @@ export class RestaurantReviewsComponent implements OnInit {
   constructor(public reviewsService: ReviewsService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    console.log(this.reviewsService.restaurantReviews)
     this.reviewsService.getReviews(this.route.snapshot.url[1].path)
       .subscribe(
         (res: Review[]) => {
-          console.log(res)
           this.reviewsService.restaurantReviews = res
         },
         err => console.log(err)
