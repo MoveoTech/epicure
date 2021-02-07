@@ -1,7 +1,7 @@
 const puppeteer = require('puppeteer');
 
-const scrapeRestaurant = async (saerch) => {
-    const query = saerch.split(' ').join('+');
+const scrapeRestaurant = async (search) => {
+    const query = search.split(' ').join('+');
     const baseURL = 'https://www.google.com/search?&q=';
     try {
         const browser = await puppeteer.launch({
