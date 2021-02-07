@@ -48,7 +48,15 @@ export class ReviewComponent implements OnInit {
   handleSubmit() {
     console.log(this.reviewForm.value)
     this.reviewService.addReview(this.reviewForm.value).subscribe(
-      res => console.log(res),
+      res => {
+        console.log(res)
+        this.reviewForm = this.fb.group({
+          body: ['', Validators.required],
+          user: [this.reviewForm.value.user, Validators.required],
+          restaurant: ['', Validators.required],
+          rating: ['', Validators.required]
+        })
+      },
       err => console.log(err)
     )
   }

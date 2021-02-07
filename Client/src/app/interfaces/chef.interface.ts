@@ -7,4 +7,4 @@ export interface Chef {
     description: string,
     weekly: boolean,
     img_src : string
-}
+};

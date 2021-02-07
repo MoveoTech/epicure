@@ -1,1 +1,17 @@
-<p>restaurant-reviews works!</p>
+<div *ngIf='reviewsService.restaurantReviews' class="wrapper">
+    <h1>Users Reviews For :{{reviewsService.restaurantReviews[0]?.restaurant?.name}}</h1>
+    <div class="cards" *ngIf='reviewsService.restaurantReviews'>
+        <mat-card *ngFor='let review of reviewsService.restaurantReviews' class="example-card">
+            <mat-card-header>
+                <div mat-card-avatar class="example-header-image"></div>
+                <mat-card-title>From : {{review.user.username}}</mat-card-title>
+                <mat-card-subtitle>Rating : {{review.rating}}</mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+                <p>
+                    {{review.body}}
+                </p>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>
