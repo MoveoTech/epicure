@@ -1,0 +1,34 @@
+<div class="wrapper">
+    <mat-card>
+        <mat-card-content>
+            <form [formGroup]="reviewForm">
+                <h2>Epicure Reviews</h2>
+
+                <mat-form-field appearance="fill">
+                    <mat-label>Pick A Restaurant</mat-label>
+                    <mat-select formControlName='restaurant'>
+                        <mat-option *ngFor="let restaurant of restaurants" [value]="restaurant._id">
+                            {{restaurant.name}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+                <mat-form-field appearance="fill">
+                    <mat-label>Rating</mat-label>
+                    <mat-select formControlName='rating'>
+                        <mat-option *ngFor="let num of ratingsArray" [value]="+num">
+                            {{num}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+                <mat-form-field class="example-full-width">
+                    <mat-label>Leave a comment</mat-label>
+                    <textarea formControlName='body' matInput placeholder="Review..."></textarea>
+                </mat-form-field>
+            </form>
+            <button (click)='handleSubmit()' mat-raised-button color="primary">Submit
+                Review</button>
+        </mat-card-content>
+    </mat-card>
+</div>

@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AACA,ACGA,QDHQ,CCGK;EAAC,OAAO,EAAE,IAAI;EAAG,WAAW,EAAE,MAAM;EAAE,cAAc,EAAE,MAAM;EAAE,eAAe,EAAE,MAAM;CAAI;;ADHtG,AAAA,QAAQ,CAAA;EAEN,MAAM,EAAE,IAAI;CAcb;;AAhBD,AAGE,QAHM,CAGN,IAAI,CAAA;EACF,SAAS,EAAE,IAAI;CAChB;;AALH,AAME,QANM,CAMN,QAAQ,CAAC;EACL,SAAS,EAAE,KAAK;EAChB,MAAM,EAAE,QAAQ;EAChB,UAAU,EAAE,MAAM;EAClB,KAAK,EAAE,GAAG;CACX;;AAXL,AAaI,QAbI,CAaJ,cAAc,CAAC;EACb,OAAO,EAAE,KAAK;CACf",
+    "sources": [
+        "review.component.scss",
+        "../../../assets/base.styles.scss"
+    ],
+    "names": [],
+    "file": "review.component.css"
+}
