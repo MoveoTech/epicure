@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const scrapeRestaurant = require('../../../routes/handlers/crawler.handler');
 const verifyUser = require('../../authentication/verification.middleware');
 const { addRestaurant, editRestaurant, deleteRestaurant } = require('../handlers/restaurant.handler');
 
@@ -9,9 +10,12 @@ router.post('/add', verifyUser, (req, res) => {
         res.json({ error: true, msg: "Missing some info..." }).status(404);
         return;
     }
-    addRestaurant(name, chef, img_src, popularity)
-        .then(result => res.send(result))
-        .catch(err => res.send(err))
+    scrapeRestaurant(name).then(result => {
+
+        addRestaurant(name, chef, img_src, popularity, result.address, result.activeTime, result.phoneNumber)
+            .then(result => res.send(result))
+            .catch(err => res.send(err))
+    })
 });
 
 // ---- Edit Restaurant -------
@@ -21,9 +25,12 @@ router.put('/edit', verifyUser, (req, res) => {
         res.json({ error: true, msg: "Missing some info..." }).status(404);
         return;
     }
-    editRestaurant(_id, name, chef, img_src, popularity)
-        .then(result => res.send(result))
-        .catch(err => res.send(err))
+    scrapeRestaurant(name).then(result => {
+        editRestaurant(_id, name, chef, img_src, popularity, result.address, result.activeTime, result.phoneNumber)
+            .then(result => res.send(result))
+            .catch(err => res.send(err))
+    }
+    )
 });
 
 router.delete('/delete', verifyUser, (req, res) => {

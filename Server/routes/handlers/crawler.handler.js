@@ -74,13 +74,12 @@ const scrapeRestaurant = async (saerch) => {
         await scrape('//*[@id="rhs"]/div[1]/div[1]/div/div[1]/div/div[3]/div/div[4]/div/div/div/div[1]/div[2]/div[1]/table/tbody/tr[5]/td[2]', 'hours', 5);
         await scrape('//*[@id="rhs"]/div[1]/div[1]/div/div[1]/div/div[3]/div/div[4]/div/div/div/div[1]/div[2]/div[1]/table/tbody/tr[6]/td[2]', 'hours', 6);
         await scrape('//*[@id="rhs"]/div[1]/div[1]/div/div[1]/div/div[3]/div/div[4]/div/div/div/div[1]/div[2]/div[1]/table/tbody/tr[7]/td[2]', 'hours', 7);
-
-        console.log({ phoneNumber, address, activeTime })
         await browser.close();
+        return { phoneNumber, address, activeTime }
     } catch (error) {
         console.log(error)
     }
 
 }
 
-scrapeRestaurant('girrafe iben gabirol')
+module.exports = scrapeRestaurant

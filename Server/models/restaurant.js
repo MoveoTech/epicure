@@ -21,6 +21,15 @@ const restaurantSchema = new Schema({
     popularity: {
         type: Number,
         required: true
+    },
+    hours: {
+        type: Object
+    },
+    address: {
+        type: String
+    },
+    phoneNumber: {
+        type: String
     }
 });
 

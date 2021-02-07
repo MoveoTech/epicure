@@ -90,7 +90,6 @@ export class AdminDialogEditComponent implements OnInit {
   }
 
   editItem() {
-    console.log(this.editForm.value)
     if (this.data.selectedCategory === 'chefs') {
       this.chefService.editChef({ ...this.editForm.value, restaurants: this.restaurants.value }).subscribe(
         res => console.log(res),
