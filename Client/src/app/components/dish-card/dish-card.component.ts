@@ -13,6 +13,7 @@ export class DishCardComponent implements OnInit {
   @Input() description: string
   @Input() icon: string
   @Input() price: string
+  @Input() _id: string
   constructor(private dialog: MatDialog) { }
 
   ngOnInit(): void {
@@ -25,7 +26,8 @@ export class DishCardComponent implements OnInit {
         dish_name: this.dish_name,
         description: this.description,
         price: this.price,
-        icon: this.icon
+        icon: this.icon,
+        _id: this._id
       },
       height: "1080px"
     })

@@ -5,7 +5,7 @@ import { UserService } from '../services/user.service';
 @Injectable({
   providedIn: 'root'
 })
-export class AuthGuard implements CanActivate {
+export class UserAuthGuard implements CanActivate {
   constructor(private userService: UserService, private r: Router) { }
 
   async canActivate(
@@ -14,7 +14,7 @@ export class AuthGuard implements CanActivate {
 
     return new Promise((resolve) => {
       if (!localStorage.access_token) {
-        this.r.navigateByUrl('admin/login')
+        this.r.navigateByUrl('login')
         resolve(false);
       }
       this.userService.verifyLogged().subscribe(
@@ -24,12 +24,12 @@ export class AuthGuard implements CanActivate {
           }
 
           else {
-            this.r.navigateByUrl('admin/login')
+            this.r.navigateByUrl('login')
             resolve(false)
           }
         },
         err => {
-          this.r.navigateByUrl('admin/login')
+          this.r.navigateByUrl('login')
           console.log(err)
         }
       )
@@ -38,3 +38,5 @@ export class AuthGuard implements CanActivate {
   }
 
 }
+
+

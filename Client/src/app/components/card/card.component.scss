@@ -63,7 +63,8 @@
 .mobile{
     .card{
         display: inline-block;
-    @extend %mobileBackgroundColor;
+        width: 100%;
+        @extend %mobileBackgroundColor;
     img{
         width: 100%;
         height: 224px;

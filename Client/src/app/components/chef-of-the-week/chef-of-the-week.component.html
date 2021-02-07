@@ -3,7 +3,7 @@
         <h2 aria-label="שף השבוע" class="chef-week">CHEF OF THE WEEK :</h2>
         <div class="content">
             <div class="pic">
-                <img [src]='"assets/"+chefService.weeklyChef?.img_src' alt="chef-image" fxHide.lt-md>
+                <img *ngIf='chefService.weeklyChef?.img_src' [src]='"assets/"+chefService.weeklyChef.img_src' alt="chef-image" fxHide.lt-md>
                 <div aria-label="שם השף השבועי" class="name" fxHide.gt-sm>{{chefService.weeklyChef?.name}}</div>
             </div>
             <p aria-describedby="description" id="description" class="description">

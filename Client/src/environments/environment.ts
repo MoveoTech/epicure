@@ -3,13 +3,14 @@
 // The list of file replacements can be found in `angular.json`.
 
 import { HttpHeaders } from "@angular/common/http";
-
+const headers = () => { return new HttpHeaders({ 'Authorization': localStorage.access_token }) }
 export const environment = {
   production: false,
-  BASE_URL: 'https://epicure-ron.moveodevelop.com/api',
-  loaclStorageHeader: new HttpHeaders()
-    .set('Authorization', localStorage.access_token)
+  BASE_URL: 'http://localhost:1000',
+  loaclStorageHeader: headers
 };
+
+// https://epicure-ron.moveodevelop.com/api
 
 /*
  * For easier debugging in development mode, you can import the following file

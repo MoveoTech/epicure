@@ -22,19 +22,19 @@ export class ChefsService {
 
   addChef(body) {
     return this.http.post(`${environment.BASE_URL}/admin/chef/add`, body, {
-      headers: environment.loaclStorageHeader,
+      headers: environment.loaclStorageHeader(),
     })
   }
 
   editChef(body) {
     return this.http.put(`${environment.BASE_URL}/admin/chef/edit`, body, {
-      headers: environment.loaclStorageHeader,
+      headers: environment.loaclStorageHeader(),
     })
   }
 
   deleteChef(_id) {
     return this.http.request('delete', `${environment.BASE_URL}/admin/chef/delete`, {
-      headers: environment.loaclStorageHeader,
+      headers: environment.loaclStorageHeader(),
       body: { _id }
     })
   }

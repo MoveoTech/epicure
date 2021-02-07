@@ -1,0 +1,18 @@
+@import '../../../assets/base.styles.scss';
+
+.wrapper{
+    .mat-display-1{
+        text-align: center;
+    }
+    @extend %flex-column;
+    height: 80%;
+    justify-content: space-evenly;
+    table{
+        .quantity{
+            text-align: center;
+        }
+        img{
+            height: 50px;
+        }
+    }
+}

@@ -74,6 +74,7 @@
 
 .mobile .card {
   display: inline-block;
+  width: 100%;
 }
 
 .mobile .card img {

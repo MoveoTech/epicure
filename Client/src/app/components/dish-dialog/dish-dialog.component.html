@@ -14,22 +14,24 @@
             </div>
             <div role="radiogroup" class="side-dish">
                 <p aria-label="בחר תוספות בצד" class="side-title">Choose a side</p>
-                <mat-radio-button #radio1 [attr.aria-checked]='radio1.checked' role="radio" aria-label="לחם לבן"
-                    class="example-margin">
-                    White Bread
-                </mat-radio-button> <br>
-                <mat-radio-button #radio2 [attr.aria-checked]='radio2.checked' role="radio" aria-label="אורז דביק"
-                    class="example-margin">Sticky
-                    Rice
-                </mat-radio-button>
+                <mat-radio-group (change)='changeSide()' [(ngModel)]='side_dish'>
+                    <mat-radio-button #radio1 [attr.aria-checked]='radio1.checked' [value]=' "White bread"' role="radio"
+                        aria-label="לחם לבן">
+                        White Bread
+                    </mat-radio-button> <br>
+                    <mat-radio-button #radio2 [attr.aria-checked]='radio2.checked' value="Sticky rice" role="radio"
+                        aria-label="אורז דביק">Sticky
+                        Rice
+                    </mat-radio-button>
+                </mat-radio-group>
             </div>
             <div class="side-dish">
                 <p aria-label="שינויים במנה" class="side-title">Changes</p>
-                <mat-checkbox #checkbox1 [attr.aria-checked]='checkbox1.checked' role="checkbox" aria-label="ללא בוטנים"
-                    class="example-margin">Without Peanuts
+                <mat-checkbox #checkbox1 [attr.aria-checked]=' checkbox1.checked' role="checkbox"
+                    aria-label="ללא בוטנים">Without Peanuts
                 </mat-checkbox>
-                <mat-checkbox #checkbox2 [attr.aria-checked]='checkbox2.checked' role="checkbox" aria-label="לא חריף"
-                    class="example-margin">Less Spicy
+                <mat-checkbox #checkbox2 [attr.aria-checked]='checkbox2.checked' role="checkbox" aria-label="לא חריף">
+                    Less Spicy
                 </mat-checkbox>
             </div>
             <p style="margin: 70px 0 0 0;" class="side-title">Quantity</p>
@@ -42,6 +44,8 @@
                 </button>
             </div>
         </div>
-        <button aria-label="הוספה לסל הקניות" id="button" mat-button mat-dialog-close>ADD TO BAG </button>
+        <button [disabled]='!side_dish' (click)='addDishToCart()' aria-label="הוספה לסל הקניות" id="button" mat-button
+            mat-dialog-close>ADD TO
+            BAG </button>
     </div>
 </div>
