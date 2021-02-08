@@ -10,16 +10,15 @@ export class ReviewsService {
 
   constructor(private http: HttpClient) { }
 
-  restaurantReviews: Review[]
+  restaurantReviews: Review[];
 
-  getReviews(restaurant) {
-    return this.http.get(`${environment.BASE_URL}/reviews?restaurant=${restaurant}`)
+  getReviews(restaurant): any {
+    return this.http.get(`${environment.BASE_URL}/reviews?restaurant=${restaurant}`);
   }
 
-  addReview(body) {
+  addReview(body): any {
     return this.http.post(`${environment.BASE_URL}/reviews/add`, body, {
       headers: environment.loaclStorageHeader()
-    })
+    });
   }
-
 }

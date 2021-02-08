@@ -11,16 +11,16 @@ import { ReviewsService } from 'src/app/services/reviews.service';
 export class RestaurantReviewsComponent implements OnInit {
 
   constructor(public reviewsService: ReviewsService, private route: ActivatedRoute) { }
-  averageRating: number = 0;
+  averageRating = 0;
   ngOnInit(): void {
     this.reviewsService.getReviews(this.route.snapshot.url[1].path)
       .subscribe(
         (res: Review[]) => {
-          this.reviewsService.restaurantReviews = res
-          res.forEach(review => this.averageRating += review.rating)
+          this.reviewsService.restaurantReviews = res;
+          res.forEach(review => this.averageRating += review.rating);
         },
         err => console.log(err)
-      )
+      );
   }
 
 }

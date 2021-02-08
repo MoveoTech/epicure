@@ -14,7 +14,7 @@
             </div>
             <div role="radiogroup" class="side-dish">
                 <p aria-label="בחר תוספות בצד" class="side-title">Choose a side</p>
-                <mat-radio-group (change)='changeSide()' [(ngModel)]='side_dish'>
+                <mat-radio-group (change)='changeSide()' [(ngModel)]='sideDish'>
                     <mat-radio-button #radio1 [attr.aria-checked]='radio1.checked' [value]=' "White bread"' role="radio"
                         aria-label="לחם לבן">
                         White Bread
@@ -44,7 +44,7 @@
                 </button>
             </div>
         </div>
-        <button [disabled]='!side_dish' (click)='addDishToCart()' aria-label="הוספה לסל הקניות" id="button" mat-button
+        <button [disabled]='!sideDish' (click)='addDishToCart()' aria-label="הוספה לסל הקניות" id="button" mat-button
             mat-dialog-close>ADD TO
             BAG </button>
     </div>

@@ -30,24 +30,15 @@ export class ReviewComponent implements OnInit {
     this.userSerivce.verifyLogged().subscribe(
       (res: any) => {
         this.userId = res._id;
-      }
-    );
-    this.reviewForm = this.fb.group({
-      body: ['', Validators.required],
-      user: [this.userId],
-      restaurant: ['', Validators.required],
-      rating: ['', Validators.required]
-    });
-        this.userId = res._id
-        this.userSerivce.userId = res._id
+        this.userSerivce.userId = res._id;
         this.reviewForm = this.fb.group({
           body: ['', Validators.required],
           user: [res._id, Validators.required],
           restaurant: ['', Validators.required],
           rating: ['', Validators.required]
-        })
+        });
       }
-    )
+    );
 
     for (let i = 1; i <= 10; i++) {
       this.ratingsArray.push(i);
@@ -56,20 +47,17 @@ export class ReviewComponent implements OnInit {
 
   handleSubmit(): void {
     console.log(this.reviewForm.value);
-  handleSubmit() {
-    console.log(this.reviewForm.value)
     this.reviewService.addReview(this.reviewForm.value).subscribe(
       res => {
-        console.log(res)
+        console.log(res);
         this.reviewForm = this.fb.group({
           body: ['', Validators.required],
           user: [this.reviewForm.value.user, Validators.required],
           restaurant: ['', Validators.required],
           rating: ['', Validators.required]
-        })
+        });
       },
       err => console.log(err)
-    )
+    );
   }
-
 }

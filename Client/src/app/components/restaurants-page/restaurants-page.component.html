@@ -9,7 +9,7 @@
         <div (click)='getRestaurantReviews(restaurant._id)' class="card"
             *ngFor='let restaurant of restaurantsService.limitRestaurants'>
             <app-card [restaurant]="restaurant.name" [chef]="restaurant.chef.name"
-                [img_src]='"assets/" + restaurant.img_src'>
+                [imgSrc]='"assets/" + restaurant.img_src'>
             </app-card>
         </div>
     </div>
@@ -17,7 +17,7 @@
         <div (click)='getRestaurantReviews(restaurant._id)' class="card"
             *ngFor='let restaurant of restaurantsService.mostPupularRestaurants'>
             <app-card [restaurant]="restaurant.name" [chef]="restaurant.chef.name"
-                [img_src]='"assets/" + restaurant.img_src'>
+                [imgSrc]='"assets/" + restaurant.img_src'>
             </app-card>
         </div>
     </div>
