@@ -14,9 +14,9 @@ import { RestaurantsService } from 'src/app/services/restaurants.service';
 export class AdminDialogComponent implements OnInit {
   selectedCategory: string;
   options = ['Restaurants', 'Dishes', 'Chefs'];
-  popularity: number[] = []
+  popularity: number[] = [];
   addForm: FormGroup;
-  restaurants: FormArray
+  restaurants: FormArray;
   constructor(
     private fb: FormBuilder,
     public chefService: ChefsService,
@@ -26,35 +26,35 @@ export class AdminDialogComponent implements OnInit {
 
   ngOnInit(): void {
     for (let i = 1; i <= 10; i++) {
-      this.popularity.push(i)
+      this.popularity.push(i);
     }
     this.chefService.getAllChefs().subscribe(
       (res: Chef[]) => this.chefService.chefs = res,
       err => console.log(err)
-    )
+    );
     this.restaurantsService.getAllRestaurants().subscribe(
       (res: { restaurants: Restaurant[] }) => this.restaurantsService.allRestaurants = res.restaurants,
       err => console.log(err)
-    )
-  };
+    );
+  }
 
-  changeCategory(value) {
-    this.selectedCategory = value
+  changeCategory(value): void {
+    this.selectedCategory = value;
     if (this.selectedCategory === 'Restaurants') {
       this.addForm = this.fb.group({
         name: ['', Validators.required],
         chef: ['', Validators.required],
         img_src: ['', Validators.required],
         popularity: [1, Validators.required]
-      })
+      });
     }
     else if (this.selectedCategory === 'Chefs') {
-      this.restaurants = new FormArray([])
+      this.restaurants = new FormArray([]);
       this.addForm = this.fb.group({
         name: ['', Validators.required],
         description: ['', Validators.required],
-        img_src: ['',],
-      })
+        img_src: [''],
+      });
     }
     else if (this.selectedCategory === 'Dishes') {
       this.addForm = this.fb.group({
@@ -63,37 +63,37 @@ export class AdminDialogComponent implements OnInit {
         dish_price: ['1', Validators.required],
         img_src: ['', Validators.required],
         restaurant: ['', Validators.required],
-        icon: ['',]
-      })
+        icon: ['']
+      });
     }
-  };
-
-  addRestaurants() {
-    this.restaurants.push(new FormControl(''))
   }
 
-  removeRestaurant(index: number) {
+  addRestaurants(): void {
+    this.restaurants.push(new FormControl(''));
+  }
+
+  removeRestaurant(index: number): void {
     this.restaurants.removeAt(index);
   }
 
-  add() {
+  add(): void {
     if (this.selectedCategory === 'Restaurants') {
       this.restaurantsService.addRestaurant(this.addForm.value).subscribe(
         res => console.log(res),
         err => console.log(err)
-      )
+      );
     }
     else if (this.selectedCategory === 'Dishes') {
       this.dishService.addDish(this.addForm.value).subscribe(
         res => console.log(res),
         err => console.log(err)
-      )
+      );
     }
     else if (this.selectedCategory === 'Chefs') {
       this.chefService.addChef({ ...this.addForm.value, restaurants: this.restaurants.value }).subscribe(
         res => console.log(res),
         err => console.log(err),
-      )
+      );
     }
   }
-};
+}

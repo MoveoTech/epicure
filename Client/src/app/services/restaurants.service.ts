@@ -12,33 +12,31 @@ export class RestaurantsService {
 
   allRestaurants: Restaurant[] = [];
   limitRestaurants: Restaurant[] = [];
-  restaurantLimit: number = 9;
-  mostPupularRestaurants: Restaurant[] = []
-  popularityRate: number = 7
-  restaurantPaginationCount: number
+  restaurantLimit = 9;
+  mostPupularRestaurants: Restaurant[] = [];
+  popularityRate = 7;
+  restaurantPaginationCount: number;
 
-  getAllRestaurants(limit = 0, skip = 0, popularity = 0) {
-    return this.http.get(`${environment.BASE_URL}/restaurants?limit=${limit}&skip=${skip}&popularity=${popularity}`)
-  };
+  getAllRestaurants(limit = 0, skip = 0, popularity = 0): any {
+    return this.http.get(`${environment.BASE_URL}/restaurants?limit=${limit}&skip=${skip}&popularity=${popularity}`);
+  }
 
-  deleteRestaurant(_id) {
+  deleteRestaurant(id): any {
     return this.http.request('delete', `${environment.BASE_URL}/admin/restaurants/delete`, {
       headers: environment.loaclStorageHeader(),
-      body: { _id }
-    })
-  };
+      body: { id }
+    });
+  }
 
-  addRestaurant(body) {
+  addRestaurant(body): any {
     return this.http.post(`${environment.BASE_URL}/admin/restaurants/add`, body, {
       headers: environment.loaclStorageHeader(),
-    })
-  };
-  editRestaurant(body) {
+    });
+  }
+
+  editRestaurant(body): any {
     return this.http.put(`${environment.BASE_URL}/admin/restaurants/edit`, body, {
       headers: environment.loaclStorageHeader(),
-    })
-  };
-
-
-
+    });
+  }
 }

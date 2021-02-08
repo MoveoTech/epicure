@@ -20,15 +20,24 @@ export class ReviewComponent implements OnInit {
 
   reviewForm: FormGroup;
   restaurants: [];
-  ratingsArray = []
-  userId: string
+  ratingsArray = [];
+  userId: string;
 
   ngOnInit(): void {
     this.restaurantService.getAllRestaurants().subscribe(
       (res: any) => this.restaurants = res.restaurants
-    )
+    );
     this.userSerivce.verifyLogged().subscribe(
       (res: any) => {
+        this.userId = res._id;
+      }
+    );
+    this.reviewForm = this.fb.group({
+      body: ['', Validators.required],
+      user: [this.userId],
+      restaurant: ['', Validators.required],
+      rating: ['', Validators.required]
+    });
         this.userId = res._id
         this.userSerivce.userId = res._id
         this.reviewForm = this.fb.group({
@@ -41,10 +50,12 @@ export class ReviewComponent implements OnInit {
     )
 
     for (let i = 1; i <= 10; i++) {
-      this.ratingsArray.push(i)
+      this.ratingsArray.push(i);
     }
   }
 
+  handleSubmit(): void {
+    console.log(this.reviewForm.value);
   handleSubmit() {
     console.log(this.reviewForm.value)
     this.reviewService.addReview(this.reviewForm.value).subscribe(

@@ -8,7 +8,7 @@ import { environment } from 'src/environments/environment';
 export class MailGusService {
 
   constructor(private http: HttpClient) { }
-  sendMail(body) {
-    return this.http.post(`${environment.BASE_URL}/mail`, body)
+  sendMail(body): any {
+    return this.http.post(`${environment.BASE_URL}/mail`, body);
   }
 }

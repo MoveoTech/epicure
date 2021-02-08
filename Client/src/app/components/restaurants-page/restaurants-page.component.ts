@@ -16,68 +16,73 @@ export class RestaurantsPageComponent implements OnInit {
     public restaurantsService: RestaurantsService,
     private router: Router) { }
   restaurantsCategories = ['All', 'New', 'Most Popular', 'Active Now'];
+  selectedItem = 0;
+  selectedCategory = 'All';
   selectedItem: number = 0;
   selectedCategory: string = 'All';
 
   ngOnInit(): void {
     this.restaurantsService.getAllRestaurants(this.restaurantsService.restaurantLimit).subscribe(
       (res: { restaurants: Restaurant[], count: number }) => {
-        this.restaurantsService.limitRestaurants = res.restaurants
-        this.restaurantsService.restaurantPaginationCount = res.count
+        this.restaurantsService.limitRestaurants = res.restaurants;
+        this.restaurantsService.restaurantPaginationCount = res.count;
       },
       err => console.log(err)
-    )
-  };
+    );
+  }
 
-  getMostPopular() {
+  getMostPopular(): void {
     this.restaurantsService.getAllRestaurants(undefined, undefined, this.restaurantsService.popularityRate)
       .subscribe((res: { restaurants: Restaurant[], count: number }) => {
+        this.restaurantsService.mostPupularRestaurants = res.restaurants;
+        this.restaurantsService.restaurantPaginationCount = res.count;
+      });
+  }
         this.restaurantsService.mostPupularRestaurants = res.restaurants
         this.restaurantsService.restaurantPaginationCount = res.count
       })
   };
 
-  nextPage(e) {
+  nextPage(e): void {
     if (e.pageIndex === 0) {
       this.restaurantsService.getAllRestaurants(this.restaurantsService.restaurantLimit, 0).subscribe(
         (res: { restaurants: Restaurant[], count: number }) => {
-          this.restaurantsService.limitRestaurants = res.restaurants
-          this.restaurantsService.restaurantPaginationCount = res.count
+          this.restaurantsService.limitRestaurants = res.restaurants;
+          this.restaurantsService.restaurantPaginationCount = res.count;
         },
         err => console.log(err)
-      )
+      );
     }
     if (e.pageIndex > 0) {
-      const skip = e.pageIndex * this.restaurantsService.restaurantLimit
+      const skip = e.pageIndex * this.restaurantsService.restaurantLimit;
       this.restaurantsService.getAllRestaurants(this.restaurantsService.restaurantLimit, skip).subscribe(
         (res: { restaurants: Restaurant[], count: number }) => {
-          this.restaurantsService.limitRestaurants = res.restaurants
-          this.restaurantsService.restaurantPaginationCount = res.count
+          this.restaurantsService.limitRestaurants = res.restaurants;
+          this.restaurantsService.restaurantPaginationCount = res.count;
         },
         err => console.log(err)
-      )
+      );
     }
-  };
+  }
 
-  changeCategory(e, i) {
-    this.selectedCategory = e.target.innerHTML
-    this.selectedItem = i
+  changeCategory(e, i): void {
+    this.selectedCategory = e.target.innerHTML;
+    this.selectedItem = i;
     if (this.selectedCategory === 'All') {
       this.restaurantsService.getAllRestaurants(this.restaurantsService.restaurantLimit).subscribe(
         (res: { restaurants: Restaurant[], count: number }) => {
-          this.restaurantsService.limitRestaurants = res.restaurants
-          this.restaurantsService.restaurantPaginationCount = res.count
+          this.restaurantsService.limitRestaurants = res.restaurants;
+          this.restaurantsService.restaurantPaginationCount = res.count;
         },
         err => console.log(err)
-      )
+      );
     }
     else if (this.selectedCategory === 'Most Popular') {
-      this.getMostPopular()
+      this.getMostPopular();
     }
   };
 
   getRestaurantReviews(restaurantId) {
     this.router.navigateByUrl(`restaurant_reviews/${restaurantId}`)
   }
-
 }

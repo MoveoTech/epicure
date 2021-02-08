@@ -1,8 +1,8 @@
 <div ngClass.lt-md="mobile" ngClass.gt-sm="desktop">
-    <div aria-label="פתיחת חלון להזמנת המנה" class="card" (click)='openDialog()' *ngIf='dish_name'>
-        <img src={{img_src}} alt="restaurant-image">
+    <div aria-label="פתיחת חלון להזמנת המנה" class="card" (click)='openDialog()' *ngIf='dishName'>
+        <img src={{imgSrc}} alt="restaurant-image">
         <div class="details">
-            <p aria-label="שם המנה" class="restaurant">{{dish_name}}</p>
+            <p aria-label="שם המנה" class="restaurant">{{dishName}}</p>
             <p *ngIf='description' class="chef">{{description}}</p>
         </div>
         <div *ngIf='price' class="priceContent">
@@ -14,5 +14,5 @@
             </div>
         </div>
     </div>
-    <img *ngIf='!dish_name' src={{img_src}} alt="spice-icon">
+    <img *ngIf='!dishName' src={{imgSrc}} alt="spice-icon">
 </div>

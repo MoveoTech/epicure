@@ -18,22 +18,21 @@ export class AdminLoginComponent implements OnInit {
     this.loginForm = this.fb.group({
       username: ['', Validators.required],
       password: ['', Validators.required]
-    })
-  };
+    });
+  }
 
-  handleSubmit() {
+  handleSubmit(): void {
     this.userSerivce.adminLogin(this.loginForm.value).subscribe(
       (res: any) => {
-        console.log(res)
+        console.log(res);
         if (res.error) {
-          this.loginInvalid = true
-          return
+          this.loginInvalid = true;
+          return;
         }
-        localStorage.access_token = res.access_token
-        setTimeout(() => { this.r.navigateByUrl('admin') }, 50);
+        localStorage.access_token = res.access_token;
+        setTimeout(() => { this.r.navigateByUrl('admin'); }, 50);
       },
       err => console.log(err)
-    )
-  };
-
+    );
+  }
 }

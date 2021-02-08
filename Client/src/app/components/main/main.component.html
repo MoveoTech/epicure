@@ -13,7 +13,7 @@
                 <div (click)='r.navigateByUrl("restaurant_reviews/"+restaurant._id)' class="card"
                     *ngFor='let restaurant of restaurantsService.allRestaurants'>
                     <app-card tabindex="0" [restaurant]="restaurant.name" [chef]="restaurant.chef.name"
-                        [img_src]='"assets/" + restaurant.img_src'>
+                        [imgSrc]='"assets/" + restaurant.img_src'>
                     </app-card>
                 </div>
             </swiper>
@@ -23,8 +23,8 @@
             <swiper [config]='dishConfig'>
                 <div class="card" *ngFor='let dish of dishesService.dishes'>
                     <p class="title">{{dish.restaurant.name}}</p>
-                    <app-dish-card tabindex="0" [dish_name]="dish.dish_name" [description]="dish.description"
-                        [img_src]='"assets/"+dish.img_src' [icon]='"assets/"+dish.icon' [_id]='dish._id' [price]="'88'">
+                    <app-dish-card tabindex="0" [dishName]="dish.dish_name" [description]="dish.description"
+                        [imgSrc]='"assets/"+dish.img_src' [icon]='"assets/"+dish.icon' [id]='dish._id' [price]="'88'">
                     </app-dish-card>
                 </div>
             </swiper>

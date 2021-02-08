@@ -31,7 +31,7 @@ const materialModules = [
   MatSelectModule,
   MatPaginatorModule,
   MatMenuModule
-]
+];
 
 @NgModule({
   declarations: [],

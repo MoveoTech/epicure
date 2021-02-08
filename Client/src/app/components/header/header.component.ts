@@ -15,10 +15,10 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  openDialog() {
+  openDialog(): void {
     this.dialog.open(CartDialogComponent, {
       maxWidth: '90vw',
-    })
+    });
   }
 
 }
