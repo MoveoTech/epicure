@@ -13,17 +13,22 @@ jobs:
       with:
         node-version: 12.8
     - name: Install dependencies
-      path : ~/Client
-      run: npm install
+      run: |  
+      cd Client/ 
+      npm install
     - name: Lint
-      path : ~/Client
-      run: npm run lint
+      run: |  
+      cd Client/ 
+      npm run lint
     - name: Build
-      path : ~/Client
-      run: npm run build -- --prod
+      run: |  
+      cd Client/ 
+      npm run build -- --prod
     - name: Test
-      path : ~/Client
-      run: npm test -- --configuration=ci
+      run: |  
+      cd Client/
+      npm test -- --configuration=ci
     - name: E2E
-      path : ~/Client
-      run: npm run e2e -- --configuration=ci
+      run: |  
+      cd Client/ 
+      npm run e2e -- --configuration=ci
