@@ -18,8 +18,6 @@ export class RestaurantsPageComponent implements OnInit {
   restaurantsCategories = ['All', 'New', 'Most Popular', 'Active Now'];
   selectedItem = 0;
   selectedCategory = 'All';
-  selectedItem: number = 0;
-  selectedCategory: string = 'All';
 
   ngOnInit(): void {
     this.restaurantsService.getAllRestaurants(this.restaurantsService.restaurantLimit).subscribe(
@@ -38,11 +36,6 @@ export class RestaurantsPageComponent implements OnInit {
         this.restaurantsService.restaurantPaginationCount = res.count;
       });
   }
-        this.restaurantsService.mostPupularRestaurants = res.restaurants
-        this.restaurantsService.restaurantPaginationCount = res.count
-      })
-  };
-
   nextPage(e): void {
     if (e.pageIndex === 0) {
       this.restaurantsService.getAllRestaurants(this.restaurantsService.restaurantLimit, 0).subscribe(
@@ -80,9 +73,8 @@ export class RestaurantsPageComponent implements OnInit {
     else if (this.selectedCategory === 'Most Popular') {
       this.getMostPopular();
     }
-  };
-
-  getRestaurantReviews(restaurantId) {
-    this.router.navigateByUrl(`restaurant_reviews/${restaurantId}`)
+  }
+  getRestaurantReviews(restaurantId): void {
+    this.router.navigateByUrl(`restaurant_reviews/${restaurantId}`);
   }
 }
