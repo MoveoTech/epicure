@@ -1,0 +1,29 @@
+name: CI
+
+on: [pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-18.04
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Use Node.js 12.8
+      uses: actions/setup-node@v1
+      with:
+        node-version: 12.8
+    - name: Install dependencies
+      path : ~/Client
+      run: npm install
+    - name: Lint
+      path : ~/Client
+      run: npm run lint
+    - name: Build
+      path : ~/Client
+      run: npm run build -- --prod
+    - name: Test
+      path : ~/Client
+      run: npm test -- --configuration=ci
+    - name: E2E
+      path : ~/Client
+      run: npm run e2e -- --configuration=ci
