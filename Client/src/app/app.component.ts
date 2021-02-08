@@ -8,10 +8,10 @@ import { UserService } from './services/user.service';
   styleUrls: ['./app.component.css']
 })
 
-export class AppComponent {
-  title = 'Epicure - The Perfect Food Delivery Experience. Use epicure to find the best restaurant for you, and order your favorite dishes!';
+export class AppComponent implements OnInit {
+  title = `Epicure - The Perfect Food Delivery Experience. Epicure finds the best restaurant for you, and order your favorite dishes!`;
   constructor(private titleService: Title, private metaService: Meta, private userService: UserService) { }
-  ngOnInit() {
+  ngOnInit(): void {
     this.titleService.setTitle(this.title);
     this.metaService.addTags([
       { name: 'keywords', content: 'Epicure - The Perfect Food Delivery Experience' },
@@ -20,10 +20,10 @@ export class AppComponent {
     ]);
     this.userService.verifyLogged().subscribe(
       (res: any) => {
-        this.userService.userId = res._id
-        this.userService.username = res.username
+        this.userService.userId = res._id;
+        this.userService.username = res.username;
       },
       err => ''
-    )
+    );
   }
 }
