@@ -19,7 +19,6 @@
             <span tabindex="0" aria-label="מעבר לעמוד המסעדות" (click)='r.navigateByUrl("restaurants")'
                 class="Restaurants" fxHide.lt-md>Restaurants</span>
             <span aria-label="מעבר לעמוד שפים" class="Chefs" fxHide.lt-md>Chefs</span>
-            <span aria-label="מעבר לעמוד שפים" class="Chefs" fxHide.lt-md (click)='openDialog()'>Cart</span>
             <span aria-label="מעבר לעמוד ביקורות" class="Chefs" fxHide.lt-md
                 (click)='r.navigateByUrl("reviews")'>Reviews</span>
         </div>
@@ -29,7 +28,7 @@
             <div class="icon-pics">
                 <img src="assets/search-icon.svg" alt="search-icon" class="solo-search-icon" fxHide.gt-md>
                 <img src="assets/user-icon.svg" alt="user-icon" class="User-icon">
-                <img src="assets/bag-icon.svg" alt="bag-icon" class="Bag-icon">
+                <img (click)='openDialog()' src="assets/bag-icon.svg" alt="bag-icon" class="Bag-icon">
             </div>
         </div>
     </div>

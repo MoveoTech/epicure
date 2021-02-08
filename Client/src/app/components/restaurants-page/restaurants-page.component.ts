@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Restaurant } from 'src/app/interfaces/restaurant.interfece';
+import { Review } from 'src/app/interfaces/review.interface';
 import { RestaurantsService } from 'src/app/services/restaurants.service';
+import { ReviewsService } from 'src/app/services/reviews.service';
 
 @Component({
   selector: 'app-restaurants-page',
@@ -9,10 +12,14 @@ import { RestaurantsService } from 'src/app/services/restaurants.service';
 })
 export class RestaurantsPageComponent implements OnInit {
 
-  constructor(public restaurantsService: RestaurantsService) { }
+  constructor(
+    public restaurantsService: RestaurantsService,
+    private router: Router) { }
   restaurantsCategories = ['All', 'New', 'Most Popular', 'Active Now'];
   selectedItem = 0;
   selectedCategory = 'All';
+  selectedItem: number = 0;
+  selectedCategory: string = 'All';
 
   ngOnInit(): void {
     this.restaurantsService.getAllRestaurants(this.restaurantsService.restaurantLimit).subscribe(
@@ -31,7 +38,10 @@ export class RestaurantsPageComponent implements OnInit {
         this.restaurantsService.restaurantPaginationCount = res.count;
       });
   }
-
+        this.restaurantsService.mostPupularRestaurants = res.restaurants
+        this.restaurantsService.restaurantPaginationCount = res.count
+      })
+  };
 
   nextPage(e): void {
     if (e.pageIndex === 0) {
@@ -70,5 +80,9 @@ export class RestaurantsPageComponent implements OnInit {
     else if (this.selectedCategory === 'Most Popular') {
       this.getMostPopular();
     }
+  };
+
+  getRestaurantReviews(restaurantId) {
+    this.router.navigateByUrl(`restaurant_reviews/${restaurantId}`)
   }
 }

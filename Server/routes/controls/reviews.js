@@ -4,8 +4,8 @@ const { addReview, getRestaurantReviews } = require('../handlers/reviews.handler
 
 // get restaurant reviews
 
-router.get('/', verifyUser, (req, res) => {
-    const { restaurant } = req.body
+router.get('/', (req, res) => {
+    const { restaurant } = req.query
     if (!restaurant) {
         res.status(403).json({ error: true, msg: "Missing some info...." })
         return

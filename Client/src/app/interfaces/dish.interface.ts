@@ -9,3 +9,11 @@ export interface Dish {
     img_src: string;
     icon?: string;
 }
+    _id: string,
+    dish_name: string,
+    restaurant: Restaurant,
+    description: string,
+    dish_price: string,
+    img_src: string,
+    icon?: string
+};

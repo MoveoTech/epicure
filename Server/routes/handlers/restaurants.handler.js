@@ -15,4 +15,8 @@ const countAllRestaurants = (popularity) => {
     return Restaurant.countDocuments({ deleted: false }, (err, count) => { })
 }
 
+const updateRestaurantRating = (_id, rating) => {
+    return Restaurant.findOneAndUpdate({ _id }, { popularity: popularity + rating })
+}
+
 module.exports = { getAllRetaurants, countAllRestaurants };

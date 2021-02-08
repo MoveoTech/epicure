@@ -33,6 +33,7 @@ import { environment } from '../environments/environment';
 import { LoginComponent } from './components/login/login.component';
 import { CartDialogComponent } from './components/cart-dialog/cart-dialog.component';
 import { ReviewComponent } from './components/review/review.component';
+import { RestaurantReviewsComponent } from './components/restaurant-reviews/restaurant-reviews.component'
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   direction: 'horizontal',
@@ -64,6 +65,7 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     LoginComponent,
     CartDialogComponent,
     ReviewComponent,
+    RestaurantReviewsComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'epicure' }),
