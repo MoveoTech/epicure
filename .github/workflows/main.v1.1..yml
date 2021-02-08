@@ -13,7 +13,7 @@ jobs:
       with:
         node-version: 12.8
     - name: Install dependencies
-      run: npm --prefix ./Client npm install
+      run: npm install --prefix ./Client
     - name: Lint
       run:  npm run lint
     - name: Build
