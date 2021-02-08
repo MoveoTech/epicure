@@ -9,25 +9,24 @@ export class OrdersService {
 
   constructor(private http: HttpClient) { }
 
-  getUserOrders() {
+  getUserOrders(): any {
     return this.http.get(`${environment.BASE_URL}/orders`, {
       headers: environment.loaclStorageHeader()
-    })
+    });
   }
 
-  addOrder(body) {
+  addOrder(body): any {
     return this.http.post(`${environment.BASE_URL}/orders/add`, body, {
       headers: environment.loaclStorageHeader()
-    })
+    });
   }
 
-  removeOrderItem(_id) {
+  removeOrderItem(id): any {
     return this.http.request('delete', `${environment.BASE_URL}/orders`,
       {
-        body: { _id },
+        body: { id },
         headers: environment.loaclStorageHeader()
       }
-    )
+    );
   }
-
 }

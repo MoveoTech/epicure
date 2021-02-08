@@ -10,28 +10,27 @@ export class DishesService {
 
   constructor(private http: HttpClient) { }
 
-  dishes: Dish[] = []
+  dishes: Dish[] = [];
 
-  getSignatureDishes() {
-    return this.http.get(`${environment.BASE_URL}/dishes/signature`)
+  getSignatureDishes(): any {
+    return this.http.get(`${environment.BASE_URL}/dishes/signature`);
   }
 
-  deleteDish(_id) {
+  deleteDish(id): any {
     return this.http.request('delete', `${environment.BASE_URL}/admin/dish/delete`, {
       headers: environment.loaclStorageHeader(),
-      body: { _id }
-    })
+      body: { id }
+    });
   }
 
-  addDish(body) {
+  addDish(body): any {
     return this.http.post(`${environment.BASE_URL}/admin/dish/add`, body, {
       headers: environment.loaclStorageHeader(),
-    })
+    });
   }
-  editDish(body) {
+  editDish(body): any {
     return this.http.put(`${environment.BASE_URL}/admin/dish/edit`, body, {
       headers: environment.loaclStorageHeader(),
-    })
+    });
   }
-
 }

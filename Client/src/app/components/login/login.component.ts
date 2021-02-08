@@ -21,44 +21,43 @@ export class LoginComponent implements OnInit {
     this.loginForm = this.fb.group({
       username: ['', Validators.required],
       password: ['', Validators.required],
-    })
+    });
     this.registerForm = this.fb.group({
       fname: ['', Validators.required],
       lname: ['', Validators.required],
       username: ['', Validators.required],
       password: ['', Validators.required],
-    })
+    });
   }
 
-  handleSubmit() {
+  handleSubmit(): void {
     if (this.registered) {
-      if (this.loginForm.invalid) return
+      if (this.loginForm.invalid) { return; }
       this.userService.userLogin(this.loginForm.value).subscribe(
         (res: { _id: string, access_token: string, error: boolean, username: string }) => {
           if (res.error) {
-            this.loginInvalid = true
+            this.loginInvalid = true;
             setTimeout(() => this.loginInvalid = false, 2000);
-            return
+            return;
           }
-          this.router.navigateByUrl('')
-          localStorage.access_token = res.access_token
-          this.userService.userId = res._id
-          this.userService.username = res.username
+          this.router.navigateByUrl('');
+          localStorage.access_token = res.access_token;
+          this.userService.userId = res._id;
+          this.userService.username = res.username;
         },
         err => console.log(err)
-      )
+      );
     } else {
-      if (this.registerForm.invalid) return
+      if (this.registerForm.invalid) { return; }
       this.userService.userRegister(this.registerForm.value).subscribe(
         (res: { user: { _id: string, username: string }, access_token }) => {
-          this.router.navigateByUrl('')
-          localStorage.access_token = res.access_token
-          this.userService.userId = res.user._id
-          this.userService.username = res.user.username
+          this.router.navigateByUrl('');
+          localStorage.access_token = res.access_token;
+          this.userService.userId = res.user._id;
+          this.userService.username = res.user.username;
         },
         err => console.log(err)
-      )
+      );
     }
   }
-
 }

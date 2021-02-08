@@ -8,29 +8,29 @@ import { DishDialogComponent } from '../dish-dialog/dish-dialog.component';
   styleUrls: ['./dish-card.component.css']
 })
 export class DishCardComponent implements OnInit {
-  @Input() img_src: string
-  @Input() dish_name: string
-  @Input() description: string
-  @Input() icon: string
-  @Input() price: string
-  @Input() _id: string
+  @Input() imgSrc: string;
+  @Input() dishName: string;
+  @Input() description: string;
+  @Input() icon: string;
+  @Input() price: string;
+  @Input() id: string;
   constructor(private dialog: MatDialog) { }
 
   ngOnInit(): void {
   }
 
-  openDialog() {
+  openDialog(): void {
     this.dialog.open(DishDialogComponent, {
       data: {
-        img_src: this.img_src,
-        dish_name: this.dish_name,
+        img_src: this.imgSrc,
+        dish_name: this.dishName,
         description: this.description,
         price: this.price,
         icon: this.icon,
-        _id: this._id
+        _id: this.id
       },
-      height: "1080px"
-    })
+      height: '1080px'
+    });
   }
 
 }

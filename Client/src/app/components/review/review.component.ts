@@ -14,31 +14,31 @@ export class ReviewComponent implements OnInit {
 
   reviewForm: FormGroup;
   restaurants: [];
-  ratingsArray = []
-  userId: string
+  ratingsArray = [];
+  userId: string;
 
   ngOnInit(): void {
     this.restaurantService.getAllRestaurants().subscribe(
       (res: any) => this.restaurants = res.restaurants
-    )
+    );
     this.userSerivce.verifyLogged().subscribe(
       (res: any) => {
-        this.userId = res._id
+        this.userId = res._id;
       }
-    )
+    );
     this.reviewForm = this.fb.group({
       body: ['', Validators.required],
       user: [this.userId],
       restaurant: ['', Validators.required],
       rating: ['', Validators.required]
-    })
+    });
     for (let i = 1; i <= 10; i++) {
-      this.ratingsArray.push(i)
+      this.ratingsArray.push(i);
     }
   }
 
-  handleSubmit() {
-    console.log(this.reviewForm.value)
+  handleSubmit(): void {
+    console.log(this.reviewForm.value);
   }
 
 }

@@ -18,17 +18,17 @@ export class MailGunComponent implements OnInit {
       from: ['', Validators.required],
       subject: ['', Validators.required],
       body: ['', Validators.required]
-    })
+    });
   }
 
-  handleSubmit() {
+  handleSubmit(): void {
     this.mailService.sendMail(this.mailForm.value).subscribe(
       res => {
-        console.log(res)
-        this.ngOnInit()
+        console.log(res);
+        this.ngOnInit();
       },
       err => console.log(err),
-    )
+    );
   }
 
 }

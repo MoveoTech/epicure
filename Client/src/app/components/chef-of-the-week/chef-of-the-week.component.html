@@ -13,7 +13,7 @@
             <p aria-label="מסעדות השף" class="chefs-restaurant">{{chefService.weeklyChef?.name}} restaurants :</p>
             <swiper [config]='config'>
                 <div class="card" *ngFor='let restaurant of chefService.weeklyChef?.restaurants'>
-                    <app-chef-restaurant-card [img_src]="'assets/'+restaurant?.img_src" [restaurant]='restaurant.name'>
+                    <app-chef-restaurant-card [imgSrc]="'assets/'+restaurant?.img_src" [restaurant]='restaurant.name'>
                     </app-chef-restaurant-card>
                 </div>
             </swiper>

@@ -14,24 +14,24 @@ export class ChefOfTheWeekComponent implements OnInit {
 
   config: SwiperOptions = {
     spaceBetween: 0,
-  }
+  };
 
-  resizeCarouselle() {
+  resizeCarouselle(): void {
     if (window.innerWidth > 960) {
-      this.config.slidesPerView = 3
-      this.config.width = 700
+      this.config.slidesPerView = 3;
+      this.config.width = 700;
     }
     if (window.innerWidth < 960) {
-      this.config.width = 800
-      this.config.slidesPerView = 3
+      this.config.width = 800;
+      this.config.slidesPerView = 3;
     }
     if (window.innerWidth < 860) {
-      this.config.width = 500
-      this.config.slidesPerView = 2
+      this.config.width = 500;
+      this.config.slidesPerView = 2;
     }
     if (window.innerWidth < 700) {
-      this.config.width = 300
-      this.config.slidesPerView = 1
+      this.config.width = 300;
+      this.config.slidesPerView = 1;
     }
   }
 
@@ -41,25 +41,7 @@ export class ChefOfTheWeekComponent implements OnInit {
     this.chefService.getWeeklyChef().subscribe(
       (res: Chef) => this.chefService.weeklyChef = res,
       err => console.log(err)
-    )
+    );
   }
 
 }
-// Might use in case theres an error at styling
-
-// window.innerWidth < 960 ? this.config.slidesPerView = 2 : this.config.slidesPerView = 3
-//     if (window.innerWidth > 960) {
-//       this.config.width = 700
-//     }
-//     if (window.innerWidth < 960) {
-//       this.config.width = 800
-//       this.config.slidesPerView = 3
-//     }
-//     if (window.innerWidth < 860) {
-//       this.config.width = 600
-//       this.config.slidesPerView = 2
-//     }
-//     if (window.innerWidth < 700) {
-//       this.config.width = 300
-//       this.config.slidesPerView = 1
-//     }

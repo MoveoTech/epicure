@@ -32,7 +32,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { LoginComponent } from './components/login/login.component';
 import { CartDialogComponent } from './components/cart-dialog/cart-dialog.component';
-import { ReviewComponent } from './components/review/review.component'
+import { ReviewComponent } from './components/review/review.component';
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   direction: 'horizontal',

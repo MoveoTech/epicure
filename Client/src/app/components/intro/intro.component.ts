@@ -8,7 +8,7 @@ export interface RestaurantsGroup {
   names: string[];
 }
 
-export const _filter = (opt: string[], value: string): string[] => {
+export const textFilter = (opt: string[], value: string): string[] => {
   const filterValue = value.toLowerCase();
 
   return opt.filter(item => item.toLowerCase().indexOf(filterValue) === 0);
@@ -24,40 +24,40 @@ export const _filter = (opt: string[], value: string): string[] => {
 export class IntroComponent implements OnInit {
 
 
-  constructor(private _formBuilder: FormBuilder) { }
+  constructor(private fb: FormBuilder) { }
 
-  restForm: FormGroup = this._formBuilder.group({
+  restForm: FormGroup = this.fb.group({
     restaurant: '',
   });
   restaurantsGroup: RestaurantsGroup[] = [
     {
-      option: "Restaurants",
-      names: ["Claro", "Lumina", "Tiger Lilly"]
+      option: 'Restaurants',
+      names: ['Claro', 'Lumina', 'Tiger Lilly']
     },
     {
-      option: "Cuisine",
-      names: ["Thai", "Israeli", "European"]
+      option: 'Cuisine',
+      names: ['Thai', 'Israeli', 'European']
     }
-  ]
+  ];
 
   restOptions: Observable<RestaurantsGroup[]>;
 
 
-  ngOnInit() {
-    this.restOptions = this.restForm.get('restaurant')!.valueChanges
+  ngOnInit(): void {
+    this.restOptions = this.restForm.get('restaurant').valueChanges
       .pipe(
         startWith(''),
-        map(value => this._filterGroup(value))
+        map(value => this.textFilterGroup(value))
       );
   }
 
-  private _filterGroup(value: string): RestaurantsGroup[] {
+  private textFilterGroup(value: string): RestaurantsGroup[] {
     if (value) {
       return this.restaurantsGroup
-        .map(group => ({ option: group.option, names: _filter(group.names, value) }))
+        .map(group => ({ option: group.option, names: textFilter(group.names, value) }))
         .filter(group => group.names.length > 0);
     }
 
     return this.restaurantsGroup;
   }
-};
+}

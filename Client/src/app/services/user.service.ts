@@ -11,21 +11,20 @@ export class UserService {
   userId: string;
   username: string;
 
-  userRegister(body) {
-    return this.http.post(`${environment.BASE_URL}/user/register`, body)
+  userRegister(body): any {
+    return this.http.post(`${environment.BASE_URL}/user/register`, body);
   }
-  userLogin(body) {
-    return this.http.post(`${environment.BASE_URL}/user/login`, body)
-  }
-
-  adminLogin(body) {
-    return this.http.post(`${environment.BASE_URL}/admin/login`, body)
+  userLogin(body): any {
+    return this.http.post(`${environment.BASE_URL}/user/login`, body);
   }
 
-  verifyLogged() {
+  adminLogin(body): any {
+    return this.http.post(`${environment.BASE_URL}/admin/login`, body);
+  }
+
+  verifyLogged(): any {
     return this.http.get(`${environment.BASE_URL}/admin/verify`, {
       headers: environment.loaclStorageHeader()
-    })
+    });
   }
-
 }

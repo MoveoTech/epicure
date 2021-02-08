@@ -14,27 +14,25 @@ export class AuthGuard implements CanActivate {
 
     return new Promise((resolve) => {
       if (!localStorage.access_token) {
-        this.r.navigateByUrl('admin/login')
+        this.r.navigateByUrl('admin/login');
         resolve(false);
       }
       this.userService.verifyLogged().subscribe(
         (res: any) => {
           if (!res.error) {
-            resolve(true)
+            resolve(true);
           }
 
           else {
-            this.r.navigateByUrl('admin/login')
-            resolve(false)
+            this.r.navigateByUrl('admin/login');
+            resolve(false);
           }
         },
         err => {
-          this.r.navigateByUrl('admin/login')
-          console.log(err)
+          this.r.navigateByUrl('admin/login');
+          console.log(err);
         }
-      )
-    })
-
+      );
+    });
   }
-
 }
