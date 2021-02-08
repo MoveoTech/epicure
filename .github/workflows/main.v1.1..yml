@@ -17,9 +17,9 @@ jobs:
 #     - name: Lint
 #       run:  npm run lint --prefix ./Client
     - name: Build
-      run:  npm run build -- --prod --prefix ./Client
+      run:  npm run build --prod --prefix ./Client
     - name: Test
 #       run: npm test -- --configuration=ci --prefix ./Client
 #     - name: E2E
-      run: npm run e2e -- --configuration=ci --prefix ./Client
+      run: npm run e2e --prefix ./Client
 
