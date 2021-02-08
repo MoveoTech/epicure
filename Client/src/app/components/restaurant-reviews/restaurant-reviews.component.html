@@ -1,0 +1,24 @@
+<div *ngIf='reviewsService.restaurantReviews' class="wrapper">
+    <h1 class="title mat-display-2" *ngIf='reviewsService.restaurantReviews.length > 0'>Users Reviews For
+        :{{reviewsService.restaurantReviews[0]?.restaurant?.name}}</h1>
+    <h2 *ngIf='reviewsService.restaurantReviews.length > 0' class="mat-display-1">
+        Average Rating : {{averageRating/reviewsService.restaurantReviews.length | number : '1.1-1'
+        }}/10</h2>
+    <h2 *ngIf='reviewsService.restaurantReviews?.length ===0' style="text-align: center;" class="mat-display-2">No
+        reviews
+        were made to
+        this restaurant...</h2>
+    <div class="cards">
+        <mat-card *ngFor='let review of reviewsService.restaurantReviews' class="example-card">
+            <mat-card-header>
+                <mat-card-title>From : {{review.user.username}}</mat-card-title>
+                <mat-card-subtitle>Rating : {{review.rating }}/10</mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+                <p>
+                    <b>Review</b> : <br>{{review.body}}
+                </p>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>

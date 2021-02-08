@@ -32,6 +32,9 @@
             height: 339px;
             margin: 19px 14px 19px 13px;
         }
+        .card:hover{
+            cursor: pointer;
+        }
     }
 }
 @media only screen and (max-width : 960px) {

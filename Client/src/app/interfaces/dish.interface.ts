@@ -8,4 +8,4 @@ export interface Dish {
     dish_price: string,
     img_src: string,
     icon?: string
-}
+};

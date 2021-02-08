@@ -6,14 +6,16 @@
         </ul>
     </div>
     <div *ngIf='selectedCategory !== "Most Popular"' class="restaurants">
-        <div class="card" *ngFor='let restaurant of restaurantsService.limitRestaurants'>
+        <div (click)='getRestaurantReviews(restaurant._id)' class="card"
+            *ngFor='let restaurant of restaurantsService.limitRestaurants'>
             <app-card [restaurant]="restaurant.name" [chef]="restaurant.chef.name"
                 [img_src]='"assets/" + restaurant.img_src'>
             </app-card>
         </div>
     </div>
     <div *ngIf='selectedCategory ==="Most Popular"' class="restaurants">
-        <div class="card" *ngFor='let restaurant of restaurantsService.mostPupularRestaurants'>
+        <div (click)='getRestaurantReviews(restaurant._id)' class="card"
+            *ngFor='let restaurant of restaurantsService.mostPupularRestaurants'>
             <app-card [restaurant]="restaurant.name" [chef]="restaurant.chef.name"
                 [img_src]='"assets/" + restaurant.img_src'>
             </app-card>
