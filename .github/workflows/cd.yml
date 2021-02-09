@@ -1,20 +1,19 @@
-name: CD
-
+name: Deploy EC2
 on:
   push:
     branches:
       - develop
- 
 jobs:
-  deploy:
-    name: Deploy
+  merge-PR:
     runs-on: ubuntu-latest
-
     steps:
-      - name: executing remote ssh commands using ssh key
-        uses: appleboy/ssh-action@master
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Install SSH key
+        uses: shimataro/ssh-key-action@v2
         with:
-          host: ${{ secrets.AWS_HOST }}
-          username: ${{ secrets.AWS_USER }}
-          key: ${{ secrets.AWS_KEY }}
-          script: sh deploy.sh
+          key: ${{ secrets.SSH_KEY }}
+          name: id_rsa
+          known_hosts: ${{ secrets.KNOWN_HOSTS }}
+      - name: rsync over ssh
+        run: ./deploy_to_aws.sh
