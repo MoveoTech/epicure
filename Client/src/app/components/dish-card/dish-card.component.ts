@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { DishDialogComponent } from '../dish-dialog/dish-dialog.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @Component({
   selector: 'app-dish-card',
@@ -14,7 +15,7 @@ export class DishCardComponent implements OnInit {
   @Input() icon: string;
   @Input() price: string;
   @Input() id: string;
-  constructor(private dialog: MatDialog) { }
+  constructor(public dialog: MatDialog) { }
 
   ngOnInit(): void {
   }
