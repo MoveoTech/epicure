@@ -41,8 +41,8 @@ describe('CardComponent', () => {
     });
 
     it('should open dialog', () => {
-        spyOn(component.dialog, 'open')
+        spyOn(component.dialog, 'open');
         component.openDialog();
-        expect(component.dialog.open).toHaveBeenCalled()
-    })
+        expect(component.dialog.open).toHaveBeenCalled();
+    });
 });

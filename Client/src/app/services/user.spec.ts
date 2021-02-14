@@ -7,14 +7,14 @@ import { UserService } from './user.service';
 
 describe('User Service', () => {
     let service: UserService;
-    let http: HttpTestingController
+    let http: HttpTestingController;
     beforeEach(() => {
         TestBed.configureTestingModule({
             imports: [HttpClientTestingModule],
             providers: [UserService],
         });
-        service = TestBed.inject(UserService)
-        http = TestBed.inject(HttpTestingController)
+        service = TestBed.inject(UserService);
+        http = TestBed.inject(HttpTestingController);
     });
 
     it('should be created', () => {
@@ -23,19 +23,19 @@ describe('User Service', () => {
 
     it('should register and return user data', () => {
         const userInfo = {
-            _id: "601fa660f6586c10f8f933ae",
+            _id: '601fa660f6586c10f8f933ae',
             username: 'test',
             password: '423432'
-        }
+        };
         let userResponse;
 
         service.userRegister(userInfo).subscribe(
             res => userResponse = res
-        )
+        );
 
         http.expectOne(`${environment.BASE_URL}/user/register`).flush(userInfo);
-        expect(userResponse).toEqual(userResponse)
-    })
+        expect(userResponse).toEqual(userResponse);
+    });
 
     it('should return observable on user login', () => {
         expect(service.userLogin({})).toBeInstanceOf(Observable);

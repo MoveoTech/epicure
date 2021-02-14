@@ -9,7 +9,7 @@ import { DishDialogComponent } from './dish-dialog.component';
 describe('CardComponent', () => {
     let component: DishDialogComponent;
     let fixture: ComponentFixture<DishDialogComponent>;
-    let orderService: OrdersService
+    let orderService: OrdersService;
 
     beforeEach(async () => {
         await TestBed.configureTestingModule({
@@ -27,8 +27,8 @@ describe('CardComponent', () => {
         fixture = TestBed.createComponent(DishDialogComponent);
         component = fixture.componentInstance;
         fixture.detectChanges();
-        component.quantity = 1
-        orderService = TestBed.inject(OrdersService)
+        component.quantity = 1;
+        orderService = TestBed.inject(OrdersService);
     });
 
     it('should create', () => {
@@ -36,14 +36,14 @@ describe('CardComponent', () => {
     });
 
     it('should increment quantity by 1', () => {
-        const quantityStartValue = component.quantity
-        component.increment()
-        expect(component.quantity).toEqual(quantityStartValue + 1)
+        const quantityStartValue = component.quantity;
+        component.increment();
+        expect(component.quantity).toEqual(quantityStartValue + 1);
     });
 
     it('should decrement quantity by 1', () => {
-        const quantityStartValue = component.quantity
-        component.decrement()
+        const quantityStartValue = component.quantity;
+        component.decrement();
         if (component.quantity > 1) {
             expect(component.quantity).toEqual(quantityStartValue);
         }
@@ -53,22 +53,22 @@ describe('CardComponent', () => {
         else {
             expect(component.quantity).toEqual(quantityStartValue - 1);
         }
-    })
+    });
     it('should add dish to cart', fakeAsync(() => {
         // expect(service.addOrder({})).toBeInstanceOf(Observable);
         const response = { msg: 'dish added' };
         spyOn(orderService, 'addOrder').and.returnValue(of(response));
         component.addDishToCart();
         fixture.detectChanges();
-    }))
+    }));
 
     it('should throw error if bad request', () => {
         const mockCall = spyOn(orderService, 'addOrder').and.returnValue(throwError({ status: 404 }));
         component.addDishToCart();
         fixture.detectChanges();
-    })
+    });
 
     it('should log side dish', () => {
-        expect(component.changeSide())
-    })
+        expect(component.changeSide());
+    });
 });

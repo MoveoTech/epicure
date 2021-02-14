@@ -7,14 +7,14 @@ import { environment } from 'src/environments/environment';
 
 describe('Order Service ', () => {
     let service: OrdersService;
-    let http: HttpTestingController
+    let http: HttpTestingController;
     beforeEach(() => {
         TestBed.configureTestingModule({
             imports: [HttpClientTestingModule],
             providers: [OrdersService],
         });
-        service = TestBed.inject(OrdersService)
-        http = TestBed.inject(HttpTestingController)
+        service = TestBed.inject(OrdersService);
+        http = TestBed.inject(HttpTestingController);
     });
 
     it('should be created', () => {
@@ -27,21 +27,20 @@ describe('Order Service ', () => {
             payed: false,
             dish: '4324809tsd',
             quantity: 3
-        }]
+        }];
         let orderResponse;
 
         service.getUserOrders().subscribe(
             res => orderResponse = res
-        )
+        );
 
         http.expectOne(`${environment.BASE_URL}/orders`).flush(orderInfo);
-        expect(orderResponse).toEqual(orderInfo)
-    })
+        expect(orderResponse).toEqual(orderInfo);
+    });
     it('should return observable on post', () => {
         expect(service.addOrder({})).toBeInstanceOf(Observable);
-    })
+    });
     it('should return observable on delete', () => {
-        expect(service.removeOrderItem(3)).toBeInstanceOf(Observable)
-    })
-
+        expect(service.removeOrderItem(3)).toBeInstanceOf(Observable);
+    });
 });
